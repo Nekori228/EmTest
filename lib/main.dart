@@ -1,4 +1,4 @@
-import 'package:emtest/pages.dart';
+import 'package:emtest/pages/news.dart';
 import 'package:flutter/material.dart';
 
 void main() {
