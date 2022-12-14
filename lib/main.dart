@@ -1,3 +1,4 @@
+import 'package:emtest/pages.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -95,12 +96,25 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Container(
+              width: 120,
+              height: 40,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => news()));
+                }, child: Text('Button'),
+              ),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline4,
             ),
           ],
         ),
