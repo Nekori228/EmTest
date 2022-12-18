@@ -60,7 +60,12 @@ class news_info extends StatelessWidget {
             child: SizedBox(
                 width: 165,
                 height: 120,
-                child: Text('Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, fontFamily: 'SourceSansPro'))),
+                child: Text(
+                    'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'SourceSansPro'))),
           )
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:emtest/pages/material.dart';
 import 'package:emtest/pages/news.dart';
 import 'package:flutter/material.dart';
 
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => news()));
+                    context, MaterialPageRoute(builder: (context) => material()));
                 }, child: Text('Button'),
               ),
             ),
