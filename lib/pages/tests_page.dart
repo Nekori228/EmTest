@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+class tests extends StatelessWidget {
+  const tests({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          'Тесты',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.language,
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            tests_block(),
+            tests_block(),
+            tests_block(),
+            tests_block(),
+            tests_block(),
+            tests_block(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class tests_block extends StatelessWidget {
+  const tests_block({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(color: Colors.grey)),
+        width: 340,
+        height: 100,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 20, 15, 5),
+              child: Text('1 программа для правоохраненительной службы', style: TextStyle(color: Colors.black, fontSize: 18),),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+              child: Text('1248 вопросов', style: TextStyle(color: Colors.grey, fontSize: 15),),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

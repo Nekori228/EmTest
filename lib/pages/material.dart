@@ -1,8 +1,14 @@
+import 'package:emtest/pages/material_cont.dart';
 import 'package:flutter/material.dart';
 
-class material extends StatelessWidget {
+class material extends StatefulWidget {
   const material({Key? key}) : super(key: key);
 
+  @override
+  State<material> createState() => _materialState();
+}
+
+class _materialState extends State<material> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +38,7 @@ class material extends StatelessWidget {
             material_list(),
             material_list(),
             material_list(),
-
             material_list(),
-
-
           ],
         ),
       ),
@@ -48,36 +51,41 @@ class material_list extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Container(
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                  image: AssetImage('assets/images/material_list.png'),
-                  fit: BoxFit.cover)),
-          width: 340,
-          height: 200,
-          child: Padding(
-            padding: const EdgeInsets.all(25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset("assets/images/nav.png"),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                  child: SizedBox(
-                    width: 250,
-                    height: 70,
-                    child: Text(
-                      'Подготовка сотрудников органов внутренних дел к тестам на аттестацию',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => material_content()));
+      },
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                    image: AssetImage('assets/images/material_list.png'),
+                    fit: BoxFit.cover)),
+            width: 340,
+            height: 200,
+            child: Padding(
+              padding: const EdgeInsets.all(25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset("assets/images/nav.png"),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                    child: SizedBox(
+                      width: 250,
+                      height: 70,
+                      child: Text(
+                        'Подготовка сотрудников органов внутренних дел к тестам на аттестацию',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
