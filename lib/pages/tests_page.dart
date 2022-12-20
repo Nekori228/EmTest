@@ -1,6 +1,8 @@
 import 'package:emtest/pages/intro_test.dart';
 import 'package:flutter/material.dart';
 
+import 'info_regist.dart';
+
 class tests extends StatelessWidget {
   const tests({Key? key}) : super(key: key);
 
@@ -54,7 +56,7 @@ class tests_block extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => intro_test()));
+              context, MaterialPageRoute(builder: (context) => info_registr()));
         },
         child: Container(
           decoration: BoxDecoration(

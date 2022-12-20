@@ -34,6 +34,18 @@ class intro_test extends StatelessWidget {
             block_test(),
             block_grey(),
             block_test(),
+            block_grey(),
+            block_test(),
+            block_grey(),
+            block_test(),
+            block_grey(),
+            block_test(),
+            block_grey(),
+            block_test(),
+            block_grey(),
+            block_test(),
+            block_grey(),
+            block_test(),
           ],
         ),
       ),
@@ -51,7 +63,10 @@ class block_test extends StatelessWidget {
       height: 80,
       child: Row(
         children: [
-          Text('01', style: TextStyle(color: Colors.grey, fontSize: 15)),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+            child: Text('01', style: TextStyle(color: Colors.grey, fontSize: 15)),
+          ),
           Column(
             children: [
               Padding(
