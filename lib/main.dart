@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add_card),
-                label: 'Тесты'
+                label: 'Тесtы'
             ),
           ],
         ),
