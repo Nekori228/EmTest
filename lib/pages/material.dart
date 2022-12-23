@@ -25,7 +25,7 @@ class _materialState extends State<material> {
               child: GestureDetector(
                 onTap: () {},
                 child: Icon(
-                  Icons.language,
+                  Icons.translate,
                   color: Colors.grey,
                 ),
               )),

@@ -20,7 +20,7 @@ class intro_test extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: Icon(
-                Icons.language,
+                Icons.translate,
                 color: Colors.grey,
               ),
             ),

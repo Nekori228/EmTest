@@ -22,7 +22,7 @@ class tests extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: Icon(
-                Icons.language,
+                Icons.translate,
                 color: Colors.grey,
               ),
             ),
@@ -56,7 +56,7 @@ class tests_block extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => info_registr()));
+              context, MaterialPageRoute(builder: (context) => intro_test()));
         },
         child: Container(
           decoration: BoxDecoration(

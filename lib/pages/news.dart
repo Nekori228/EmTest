@@ -24,7 +24,7 @@ class _newsState extends State<news> {
               child: GestureDetector(
                 onTap: () {},
                 child: Icon(
-                  Icons.language,
+                  Icons.translate,
                   color: Colors.grey,
                 ),
               )),

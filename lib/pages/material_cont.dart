@@ -25,7 +25,7 @@ class _material_contentState extends State<material_content> {
             child: GestureDetector(
               onTap: () {},
               child: Icon(
-                Icons.language,
+                Icons.translate,
                 color: Colors.grey,
               ),
             ),
