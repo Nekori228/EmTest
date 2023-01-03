@@ -32,14 +32,18 @@ class _newsState extends State<news> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            news_info(),
-            news_info(),
-            news_info(),
-            news_info(),
-            news_info(),
-          ],
+        child: Center(
+          child: Column(
+            children: [
+              news_info(),
+              news_info(),
+              news_info(),
+              news_info(),
+              news_info(),
+              news_info(),
+              news_info(),
+            ],
+          ),
         ),
       ),
     );

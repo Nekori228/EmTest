@@ -52,6 +52,9 @@ class material_list extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ButtonStyle(
+        
+      ),
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => material_content()));
       },

@@ -31,15 +31,17 @@ class tests extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            tests_block(),
-            tests_block(),
-            tests_block(),
-            tests_block(),
-            tests_block(),
-            tests_block(),
-          ],
+        child: Center(
+          child: Column(
+            children: [
+              tests_block(),
+              tests_block(),
+              tests_block(),
+              tests_block(),
+              tests_block(),
+              tests_block(),
+            ],
+          ),
         ),
       ),
     );
