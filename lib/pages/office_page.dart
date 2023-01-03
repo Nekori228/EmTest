@@ -37,9 +37,13 @@ class icon_block extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.white),
+          foregroundColor: MaterialStateProperty.all(Colors.black),
+        ),
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => date()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => date()));
         },
         child: SizedBox(
           width: 300,

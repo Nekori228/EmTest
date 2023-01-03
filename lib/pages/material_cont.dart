@@ -37,8 +37,8 @@ class _material_contentState extends State<material_content> {
         child: Column(
           children: [
             Container(
-              width: 360,
-              height: 210,
+              width: 430,
+              height: 230,
               decoration: BoxDecoration(
                 color: Colors.white,
                 image: DecorationImage(
@@ -50,23 +50,23 @@ class _material_contentState extends State<material_content> {
             Padding(
               padding: const EdgeInsets.all(20),
               child: SizedBox(
-                width: 280,
-                height: 80,
+                width: 330,
+                height: 100,
                 child: Text(
                     'Подготовка сотрудников органов внутренних дел к тестам на аттестацию',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 22)),
+                    style: TextStyle(color: Colors.black, fontSize: 26)),
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: SizedBox(
-                width: 330,
-                height: 300,
+                width: 350,
+                height: 420,
                 child: Text(
                   'Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего ',
                   textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.black, fontSize: 18),
+                  style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
             ),
@@ -74,7 +74,7 @@ class _material_contentState extends State<material_content> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                 child: Container(
-                  width: 340,
+                  width: 400,
                   height: 210,
                   decoration: BoxDecoration(
                     color: Colors.white,

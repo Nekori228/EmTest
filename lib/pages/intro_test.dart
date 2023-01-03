@@ -66,22 +66,22 @@ class block_test extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
             child: Text('01', style: TextStyle(color: Colors.grey, fontSize: 15)),
           ),
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 2),
                 child: Text(
                   'Контрольный тест',
-                  style: TextStyle(color: Colors.black, fontSize: 18),
+                  style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 50, 0),
                 child: Text('122 вопроса',
-                    style: TextStyle(color: Colors.grey, fontSize: 15)),
+                    style: TextStyle(color: Colors.grey, fontSize: 16)),
               ),
             ],
           )
@@ -97,7 +97,7 @@ class block_grey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 360,
       height: 1,
       color: Colors.grey,
     );
