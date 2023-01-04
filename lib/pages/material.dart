@@ -53,7 +53,8 @@ class material_list extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.white)
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        elevation: MaterialStateProperty.all(0),
       ),
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => material_content()));
