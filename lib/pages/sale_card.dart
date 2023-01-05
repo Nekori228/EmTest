@@ -37,7 +37,7 @@ class sale_card extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   image: DecorationImage(
-                    image: AssetImage('assets/images/proffile_photo.png'),
+                    image: AssetImage('assets/images/discont.png'),
                     fit: BoxFit.cover,
                   ),
                 ),

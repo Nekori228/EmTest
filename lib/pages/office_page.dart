@@ -12,6 +12,7 @@ class office extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           acc_photo(),
@@ -24,23 +25,67 @@ class office extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
+                    context, MaterialPageRoute(builder: (context) => bio_info()));
               },
               child: SizedBox(
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.account_box),
+                        ),
+                        Text(
+                          'Личные данные',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.account_box),
-                    ),
-                    Text(
-                      'Личные данные',
-                      style: TextStyle(fontSize: 18),
+                      child: Icon(Icons.arrow_forward_ios),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          block_grey(),
+          Center(
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.white),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                elevation: MaterialStateProperty.all(0),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => sale_card()));
+              },
+              child: SizedBox(
+                width: 400,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 15, 0),
+                          child: Icon(Icons.credit_card),
+                        ),
+                        Text(
+                          'Скидочная карта',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],
@@ -64,17 +109,22 @@ class office extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.account_balance_outlined),
+                        ),
+                        Text(
+                          'Мои финансовые данные',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.credit_card),
-                    ),
-                    Text(
-                      'Скидочная карта',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],
@@ -98,17 +148,22 @@ class office extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.settings_applications_outlined),
+                        ),
+                        Text(
+                          'Заявки',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.account_balance_outlined),
-                    ),
-                    Text(
-                      'Мои финансовые данные',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],
@@ -132,17 +187,22 @@ class office extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.history),
+                        ),
+                        Text(
+                          'История',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.settings_applications_outlined),
-                    ),
-                    Text(
-                      'Заявки',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(170, 0, 0, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],
@@ -166,17 +226,22 @@ class office extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.password),
+                        ),
+                        Text(
+                          'Смена пароля',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.history),
-                    ),
-                    Text(
-                      'История',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(155, 0, 0, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],
@@ -200,51 +265,22 @@ class office extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                          child: Icon(Icons.logout),
+                        ),
+                        Text(
+                          'Выйти',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.password),
-                    ),
-                    Text(
-                      'Смена пароля',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(105, 0, 0, 0),
-                      child: Icon(Icons.arrow_forward_ios),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          block_grey(),
-          Center(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-                foregroundColor: MaterialStateProperty.all(Colors.black),
-                elevation: MaterialStateProperty.all(0),
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
-              },
-              child: SizedBox(
-                width: 400,
-                height: 50,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Icon(Icons.logout),
-                    ),
-                    Text(
-                      'Выйти',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(175, 0, 0, 0),
                       child: Icon(Icons.arrow_forward_ios),
                     )
                   ],

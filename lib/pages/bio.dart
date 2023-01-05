@@ -34,85 +34,86 @@ class bio_info extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Пол'),
-                    Text('Женский'),
+                    Text('Пол', style: TextStyle(fontSize: 17)),
+                    Text('Женский', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Дата рождения'),
-                    Text('02/08/2003'),
+                    Text('Дата рождения', style: TextStyle(fontSize: 17)),
+                    Text('02/08/2003', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Место проживания'),
-                    Text('г.Сургут мира 1'),
+                    Text('Место проживания', style: TextStyle(fontSize: 17)),
+                    Text('г.Сургут мира 1', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Компания'),
-                    Text('PULL AND BEAR CIS LIMITED'),
+                    Text('Компания', style: TextStyle(fontSize: 17)),
+                    Text('PULL AND BEAR CIS LIMITED',
+                        style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Дата приёма'),
-                    Text('13/10/2021'),
+                    Text('Дата приёма', style: TextStyle(fontSize: 17)),
+                    Text('13/10/2021', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Электронная почта'),
-                    Text('sofyaro@indetex.com'),
+                    Text('Электронная почта', style: TextStyle(fontSize: 17)),
+                    Text('sofyaro@indetex.com', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
               block_grey(),
               SizedBox(
-                width: 300,
+                width: 350,
                 height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Мобильный телефон'),
-                    Text('89223284859'),
+                    Text('Мобильный телефон', style: TextStyle(fontSize: 17)),
+                    Text('89223284859', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
