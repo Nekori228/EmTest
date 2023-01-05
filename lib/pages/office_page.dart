@@ -2,6 +2,7 @@ import 'package:emtest/pages/finansal_date.dart';
 import 'package:emtest/pages/sale_card.dart';
 import 'package:flutter/material.dart';
 
+import 'applications.dart';
 import 'bio.dart';
 import 'intro_test.dart';
 import 'material_cont.dart';
@@ -142,7 +143,7 @@ class office extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
+                    context, MaterialPageRoute(builder: (context) => applications()));
               },
               child: SizedBox(
                 width: 400,

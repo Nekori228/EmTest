@@ -33,125 +33,21 @@ class date extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: Row(
-                  children: [
-                    Icon(Icons.picture_as_pdf),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: Text('Октябрь - расчётный лист'),
-                    ),
-                    Text('10/11/2022'),
-                  ],
-                ),
-              ),
+              pdf_block(),
               block_grey(),
             ],
           ),
@@ -160,3 +56,31 @@ class date extends StatelessWidget {
     );
   }
 }
+
+class pdf_block extends StatelessWidget {
+  const pdf_block({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 350,
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.picture_as_pdf),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text('Октябрь - расчётный лист', style: TextStyle(fontSize: 16),),
+              ),
+            ],
+          ),
+          Text('10/11/2022'),
+        ],
+      ),
+    );
+  }
+}
+

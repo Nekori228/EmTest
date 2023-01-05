@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class sale_card extends StatelessWidget {
-  const sale_card({Key? key}) : super(key: key);
+class applications extends StatelessWidget {
+  const applications
+({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class sale_card extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Скидочная карта',
+          'Заявки',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -32,21 +33,14 @@ class sale_card extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child: Container(
-                  width: 380,
-                  height: 400,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/discont.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              )
+              SizedBox(
+                width: 350,
+                height: 125,
+                child: TextField(decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Сообщение",
+                )),
+              ),
             ],
           ),
         ),
@@ -54,3 +48,4 @@ class sale_card extends StatelessWidget {
     );
   }
 }
+
