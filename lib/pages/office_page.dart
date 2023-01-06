@@ -1,5 +1,9 @@
+import 'package:emtest/pages/change_password.dart';
 import 'package:emtest/pages/finansal_date.dart';
+import 'package:emtest/pages/history.dart';
 import 'package:emtest/pages/sale_card.dart';
+import 'package:emtest/pages/test.dart';
+import 'package:emtest/pages/tests_page.dart';
 import 'package:flutter/material.dart';
 
 import 'applications.dart';
@@ -182,7 +186,7 @@ class office extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
+                    context, MaterialPageRoute(builder: (context) => history()));
               },
               child: SizedBox(
                 width: 400,
@@ -221,7 +225,7 @@ class office extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
+                    context, MaterialPageRoute(builder: (context) => password_change()));
               },
               child: SizedBox(
                 width: 400,
@@ -260,7 +264,7 @@ class office extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => date()));
+                    context, MaterialPageRoute(builder: (context) => test()));
               },
               child: SizedBox(
                 width: 400,
