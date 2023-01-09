@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/pages/material.dart';
 import 'package:emtest/pages/material_cont.dart';
 import 'package:emtest/pages/news.dart';
@@ -5,7 +6,22 @@ import 'package:emtest/pages/office_page.dart';
 import 'package:emtest/pages/tests_page.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+import 'generated/codegen_loader.g.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('ru')],
+        path: 'assets/translation',
+        fallbackLocale: Locale('en'),
+        assetLoader: CodegenLoader(),
+        child: MyApp()
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -43,6 +59,9 @@ class _pagesState extends State<bottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       home: Scaffold(
         body: Center(
           child: _widgetOptions[_selectedPage],
