@@ -76,7 +76,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Компания', style: TextStyle(fontSize: 17)),
-                    Text('PULL AND BEAR CIS LIMITED',
+                    Text('',
                         style: TextStyle(fontSize: 15)),
                   ],
                 ),
