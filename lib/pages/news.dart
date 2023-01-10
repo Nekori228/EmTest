@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'material_cont.dart';
+
 class news extends StatefulWidget {
   const news({Key? key}) : super(key: key);
 
@@ -35,10 +37,182 @@ class _newsState extends State<news> {
         child: Center(
           child: Column(
             children: [
-              news_info(),
-              news_info(),
-              news_info(),
-              news_info(),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  elevation: MaterialStateProperty.all(0),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => material_content()));
+                },
+                child: SizedBox(
+                  width: 350,
+                  height: 120,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 140,
+                          height: 120,
+                          child: Image.asset("assets/images/news1.png"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: SizedBox(
+                            width: 155,
+                            height: 95,
+                            child: Text(
+                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'SourceSansPro'),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  elevation: MaterialStateProperty.all(0),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => material_content()));
+                },
+                child: SizedBox(
+                  width: 350,
+                  height: 120,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 140,
+                          height: 120,
+                          child: Image.asset("assets/images/news2.png"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: SizedBox(
+                            width: 155,
+                            height: 95,
+                            child: Text(
+                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'SourceSansPro'),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  elevation: MaterialStateProperty.all(0),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => material_content()));
+                },
+                child: SizedBox(
+                  width: 350,
+                  height: 120,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 140,
+                          height: 120,
+                          child: Image.asset("assets/images/news3.png"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: SizedBox(
+                            width: 155,
+                            height: 95,
+                            child: Text(
+                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'SourceSansPro'),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  elevation: MaterialStateProperty.all(0),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => material_content()));
+                },
+                child: SizedBox(
+                  width: 350,
+                  height: 120,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 140,
+                          height: 120,
+                          child: Image.asset("assets/images/news4.png"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: SizedBox(
+                            width: 155,
+                            height: 95,
+                            child: Text(
+                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'SourceSansPro'),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
               news_info(),
               news_info(),
               news_info(),
@@ -55,28 +229,46 @@ class news_info extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Container(
-            width: 165,
-            height: 120,
-            child: Image.asset("assets/images/news_picture.png"),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-            child: SizedBox(
-                width: 165,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        elevation: MaterialStateProperty.all(0),
+      ),
+      onPressed: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => material_content()));
+      },
+      child: SizedBox(
+        width: 350,
+        height: 120,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Container(
+                width: 140,
                 height: 120,
-                child: Text(
+                child: Image.asset("assets/images/news_picture.png"),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: SizedBox(
+                  width: 155,
+                  height: 95,
+                  child: Text(
                     'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                    textAlign: TextAlign.start,
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 14,
+                        color: Colors.black,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'SourceSansPro'))),
-          )
-        ],
+                        fontFamily: 'SourceSansPro'),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

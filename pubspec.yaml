@@ -39,7 +39,7 @@ dependencies:
   dropdown_button2: ^1.9.2
   easy_localization: ^3.0.1
   passwordfield: ^0.1.0
-  flutter_downloader: ^1.10.1
+#  flutter_downloader: ^1.10.1
 
 dev_dependencies:
   flutter_test:
