@@ -1,7 +1,9 @@
+import 'package:emtest/pages/news3.dart';
 import 'package:flutter/material.dart';
 
 import 'news1.dart';
 import 'news2.dart';
+import 'news4.dart';
 
 class news extends StatefulWidget {
   const news({Key? key}) : super(key: key);
@@ -65,10 +67,10 @@ class _newsState extends State<news> {
                             width: 155,
                             height: 95,
                             child: Text(
-                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              'С наступающим Новым 2023 годом! Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...',
                               textAlign: TextAlign.start,
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SourceSansPro'),
@@ -107,10 +109,10 @@ class _newsState extends State<news> {
                             width: 155,
                             height: 95,
                             child: Text(
-                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              'Телефонное мошенничество. Мы живем в эру технологий, и это огромное поле для...',
                               textAlign: TextAlign.start,
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SourceSansPro'),
@@ -129,7 +131,7 @@ class _newsState extends State<news> {
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_one()));
+                      MaterialPageRoute(builder: (context) => news_three()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -149,10 +151,10 @@ class _newsState extends State<news> {
                             width: 155,
                             height: 95,
                             child: Text(
-                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              'Первая линия защиты от кибератак – это вы. Знаете ли вы, что причиной более 85% кибератак является...',
                               textAlign: TextAlign.start,
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SourceSansPro'),
@@ -171,7 +173,7 @@ class _newsState extends State<news> {
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_one()));
+                      MaterialPageRoute(builder: (context) => news_four()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -191,10 +193,10 @@ class _newsState extends State<news> {
                             width: 155,
                             height: 95,
                             child: Text(
-                              'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                              'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности 13 апре...',
                               textAlign: TextAlign.start,
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SourceSansPro'),
