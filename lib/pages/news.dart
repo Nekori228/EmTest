@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'material_cont.dart';
+import 'news1.dart';
+import 'news2.dart';
 
 class news extends StatefulWidget {
   const news({Key? key}) : super(key: key);
@@ -43,10 +44,8 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => material_content()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => news_one()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -87,10 +86,8 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => material_content()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => news_two()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -131,10 +128,8 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => material_content()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => news_one()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -175,10 +170,8 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => material_content()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => news_one()));
                 },
                 child: SizedBox(
                   width: 350,
@@ -235,8 +228,8 @@ class news_info extends StatelessWidget {
         elevation: MaterialStateProperty.all(0),
       ),
       onPressed: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => material_content()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => news_one()));
       },
       child: SizedBox(
         width: 350,
