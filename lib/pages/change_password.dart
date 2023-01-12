@@ -9,6 +9,10 @@ class password_change extends StatefulWidget {
 }
 
 class _password_changeState extends State<password_change> {
+  bool _obscureText1 = true;
+  bool _obscureText2 = true;
+  bool _obscureText3 = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,11 +47,22 @@ class _password_changeState extends State<password_change> {
                 child: SizedBox(
                   width: 350,
                   height: 50,
-                  child: TextField(
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Старый пароль",
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _obscureText1 = !_obscureText1;
+                          });
+                        },
+                        child: Icon(_obscureText1
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                      ),
                     ),
+                    obscureText: _obscureText1,
                   ),
                 ),
               ),
@@ -56,11 +71,22 @@ class _password_changeState extends State<password_change> {
                 child: SizedBox(
                   width: 350,
                   height: 50,
-                  child: TextField(
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Новый пароль",
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _obscureText2 = !_obscureText2;
+                          });
+                        },
+                        child: Icon(_obscureText2
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                      ),
                     ),
+                    obscureText: _obscureText2,
                   ),
                 ),
               ),
@@ -68,26 +94,23 @@ class _password_changeState extends State<password_change> {
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
                 child: SizedBox(
                   width: 350,
-                  height: 80,
-                  child: PasswordField(
-                    hintText: 'Повторите пароль',
-                    color: Colors.blue,
-                    passwordConstraint: r'1',
-                    inputDecoration: PasswordDecoration(),
-                    border: PasswordBorder(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
+                  height: 50,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: "Повторите пароль",
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _obscureText3 = !_obscureText3;
+                          });
+                        },
+                        child: Icon(_obscureText3
+                            ? Icons.visibility
+                            : Icons.visibility_off),
                       ),
                     ),
+                    obscureText: _obscureText3,
                   ),
                 ),
               ),
@@ -99,13 +122,15 @@ class _password_changeState extends State<password_change> {
                         borderRadius: BorderRadius.circular(15)))),
                 onPressed: () {},
                 child: SizedBox(
-                    width: 320,
-                    height: 50,
-                    child: Center(
-                        child: Text(
+                  width: 320,
+                  height: 50,
+                  child: Center(
+                    child: Text(
                       'Сменить пароль',
                       style: TextStyle(fontSize: 21),
-                    ))),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
