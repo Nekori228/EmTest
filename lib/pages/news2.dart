@@ -11,7 +11,7 @@ class news_two extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Материал',
+          'Новости',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -66,11 +66,7 @@ class news_two extends StatelessWidget {
               ),
             ),
             Center(
-              child: SizedBox(
-                  width: 400,
-                  height: 260,
-                  child: _ButterFlyAssetVideo()
-              ),
+              child: _ButterFlyAssetVideo(),
             ),
           ],
         ),

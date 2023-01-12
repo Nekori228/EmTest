@@ -10,7 +10,7 @@ class news_four extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Материал',
+          'Новости',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -56,7 +56,7 @@ class news_four extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: SizedBox(
                 width: 350,
-                height: 1300,
+                height: 1320,
                 child: RichText(
                   textAlign: TextAlign.start,
                   text: TextSpan(

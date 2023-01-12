@@ -10,7 +10,7 @@ class news_three extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Материал',
+          'Новости',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
