@@ -1,14 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:emtest/pages/home_screen.dart';
 import 'package:emtest/pages/material.dart';
 import 'package:emtest/pages/material_cont.dart';
 import 'package:emtest/pages/news.dart';
 import 'package:emtest/pages/office_page.dart';
 import 'package:emtest/pages/tests_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'generated/codegen_loader.g.dart';
 
+
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
@@ -59,6 +64,16 @@ class _pagesState extends State<bottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        }),
+      ),
+      routes: {
+        '/home': (context) => const HomeScreen(),
+      },
+      initialRoute: '/',
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

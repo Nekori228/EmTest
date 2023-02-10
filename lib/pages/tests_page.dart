@@ -2,6 +2,7 @@ import 'package:emtest/pages/intro_test.dart';
 import 'package:flutter/material.dart';
 
 import 'info_regist.dart';
+import 'login_screen.dart';
 
 class tests extends StatelessWidget {
   const tests({Key? key}) : super(key: key);
@@ -67,7 +68,7 @@ class tests_block extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => tests()));
+              context, MaterialPageRoute(builder: (context) => LoginScreen()));
         },
          child: SizedBox(
           width: 380,
