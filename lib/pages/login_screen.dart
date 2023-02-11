@@ -69,7 +69,25 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Войти'),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: const Text(
+          'Кабинет',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.translate,
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -77,6 +95,15 @@ class _LoginScreenState extends State<LoginScreen> {
           key: formKey,
           child: Column(
             children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 40, 0, 50),
+                    child: Text('Вход',
+                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ],
+              ),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
@@ -86,8 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ? 'Введите правильный Email'
                         : null,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Введите Email',
+                  hintText: 'Почта',
                 ),
               ),
               const SizedBox(height: 30),
@@ -100,8 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     : null,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  hintText: 'Введите пароль',
+                  hintText: 'Пароль',
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(
@@ -114,24 +139,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: login,
-                child: const Center(child: Text('Войти')),
-              ),
-              const SizedBox(height: 30),
-              TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/signup'),
-                child: const Text(
-                  'Регистрация',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
               TextButton(
                 onPressed: () =>
                     Navigator.of(context).pushNamed('/reset_password'),
-                child: const Text('Сбросить пароль'),
+                child: const Text(
+                  'Забыли пароль?',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                ),
+              ),
+              SizedBox(
+                width: 360,
+                height: 55,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      textStyle: TextStyle(fontSize: 21),
+                      backgroundColor: Colors.blueAccent,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                  onPressed: login,
+                  child: const Center(child: Text('Войти')),
+                ),
               ),
             ],
           ),
