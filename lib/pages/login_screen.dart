@@ -1,7 +1,13 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:emtest/globals.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:emtest/services/snack_bar.dart';
+
+import 'office_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -30,6 +36,13 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
+  void onSelectTab(int index) {
+    if (selectedPage == index) return;
+    setState(() {
+      selectedPage = index;
+    });
+  }
+
   Future<void> login() async {
     final navigator = Navigator.of(context);
 
@@ -37,10 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!isValid) return;
 
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      var user = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailTextInputController.text.trim(),
         password: passwordTextInputController.text.trim(),
       );
+      print(user.user);
     } on FirebaseAuthException catch (e) {
       print(e.code);
 
@@ -61,7 +75,8 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
 
-    navigator.pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false);
+    user = user[emailTextInputController.text.trim()];
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => office()));
   }
 
   @override
@@ -70,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         title: const Text(
           'Кабинет',
           style: TextStyle(color: Colors.black),
@@ -78,10 +93,10 @@ class _LoginScreenState extends State<LoginScreen> {
         centerTitle: true,
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {},
-              child: Icon(
+              child: const Icon(
                 Icons.translate,
                 color: Colors.grey,
               ),
@@ -96,11 +111,10 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Row(
-                children: [
+                children: const [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 40, 0, 50),
-                    child: Text('Вход',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                    padding: EdgeInsets.fromLTRB(0, 40, 0, 50),
+                    child: Text('Вход', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -108,10 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
                 controller: emailTextInputController,
-                validator: (email) =>
-                    email != null && !EmailValidator.validate(email)
-                        ? 'Введите правильный Email'
-                        : null,
+                validator: (email) => email != null && !EmailValidator.validate(email) ? 'Введите правильный Email' : null,
                 decoration: const InputDecoration(
                   hintText: 'Почта',
                 ),
@@ -121,18 +132,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 autocorrect: false,
                 controller: passwordTextInputController,
                 obscureText: isHiddenPassword,
-                validator: (value) => value != null && value.length < 6
-                    ? 'Минимум 6 символов'
-                    : null,
+                validator: (value) => value != null && value.length < 6 ? 'Минимум 6 символов' : null,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
                   hintText: 'Пароль',
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(
-                      isHiddenPassword
-                          ? Icons.visibility_off
-                          : Icons.visibility,
+                      isHiddenPassword ? Icons.visibility_off : Icons.visibility,
                       color: Colors.black,
                     ),
                   ),
@@ -140,8 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 30),
               TextButton(
-                onPressed: () =>
-                    Navigator.of(context).pushNamed('/reset_password'),
+                onPressed: () => Navigator.of(context).pushNamed('/reset_password'),
                 child: const Text(
                   'Забыли пароль?',
                   style: TextStyle(fontSize: 16, color: Colors.black),
@@ -152,10 +158,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 55,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      textStyle: TextStyle(fontSize: 21),
+                      textStyle: const TextStyle(fontSize: 21),
                       backgroundColor: Colors.blueAccent,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
                   onPressed: login,
                   child: const Center(child: Text('Войти')),
                 ),

@@ -1,5 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:emtest/globals.dart';
 import 'intro_test.dart';
 
 class bio_info extends StatelessWidget {
@@ -40,7 +41,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Пол', style: TextStyle(fontSize: 17)),
-                    Text('Женский', style: TextStyle(fontSize: 15)),
+                    Text(user['Пол'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -52,7 +53,8 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Дата рождения', style: TextStyle(fontSize: 17)),
-                    Text('02/08/2003', style: TextStyle(fontSize: 15)),
+                    Text('${(user['Дата рождения'] as Timestamp).toDate().day.toString()}.${(user['Дата рождения'] as Timestamp).toDate().month
+                        .toString()}.${(user['Дата рождения'] as Timestamp).toDate().year.toString()}', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -64,7 +66,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Место проживания', style: TextStyle(fontSize: 17)),
-                    Text('г.Сургут мира 1', style: TextStyle(fontSize: 15)),
+                    Text(user['Место проживания'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -76,7 +78,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Компания', style: TextStyle(fontSize: 17)),
-                    Text('',
+                    Text(user['Компания'],
                         style: TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -89,7 +91,8 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Дата приёма', style: TextStyle(fontSize: 17)),
-                    Text('13/10/2021', style: TextStyle(fontSize: 15)),
+                    Text('${(user['Дата приёма'] as Timestamp).toDate().day.toString()}.${(user['Дата приёма'] as Timestamp).toDate().month
+                        .toString()}.${(user['Дата приёма'] as Timestamp).toDate().year.toString()}', style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -101,7 +104,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Электронная почта', style: TextStyle(fontSize: 17)),
-                    Text('sofyaro@indetex.com', style: TextStyle(fontSize: 15)),
+                    Text(user['Адрес электронной почты'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -113,7 +116,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Мобильный телефон', style: TextStyle(fontSize: 17)),
-                    Text('89223284859', style: TextStyle(fontSize: 15)),
+                    Text(user['Мобильный телефон'].toString(), style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),

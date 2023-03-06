@@ -1,21 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/pages/home_screen.dart';
+import 'package:emtest/pages/login_screen.dart';
 import 'package:emtest/pages/material.dart';
-import 'package:emtest/pages/material_cont.dart';
 import 'package:emtest/pages/news.dart';
 import 'package:emtest/pages/office_page.dart';
 import 'package:emtest/pages/tests_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'globals.dart';
 
+import 'firebase_options.dart';
 import 'generated/codegen_loader.g.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  initPrefs();
 
   runApp(
     EasyLocalization(
@@ -23,8 +28,7 @@ Future<void> main() async {
         path: 'assets/translation',
         fallbackLocale: Locale('en'),
         assetLoader: CodegenLoader(),
-        child: MyApp()
-    ),
+        child: MyApp()),
   );
 }
 
@@ -45,20 +49,28 @@ class bottomNavigation extends StatefulWidget {
 }
 
 class _pagesState extends State<bottomNavigation> {
-
-  int _selectedPage = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    news(),
-    material(),
-    tests(),
-    office()
-  ];
+  static final List<Widget> _widgetOptions = <Widget>[news(), material(), tests(), prefs.getString('user') == null ? LoginScreen() : office()];
 
   void onSelectTab(int index) {
-    if (_selectedPage == index) return;
+    if (selectedPage == index) return;
     setState(() {
-      _selectedPage = index;
+      selectedPage = index;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getProfile();
+  }
+
+  void getProfile() async {
+    for (var i = 1; i < 6; i++) {
+      var collection = FirebaseFirestore.instance.collection('Perconal_info').doc('Personal_date').collection('Person$i');
+      collection.get().then((value) {
+        user[value.docs.first.data()['Адрес электронной почты']] = value.docs.first.data();
+      });
+    }
   }
 
   @override
@@ -79,29 +91,17 @@ class _pagesState extends State<bottomNavigation> {
       locale: context.locale,
       home: Scaffold(
         body: Center(
-          child: _widgetOptions[_selectedPage],
+          child: _widgetOptions[selectedPage],
         ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue,
-          currentIndex: _selectedPage,
+          currentIndex: selectedPage,
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.newspaper),
-                label: 'Новости'
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.library_books_outlined),
-                label: 'Материал'
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.quiz_outlined),
-                label: 'Тесты'
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                label: 'Кабинет'
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Новости'),
+            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: 'Материал'),
+            BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
           ],
           onTap: onSelectTab,
         ),
@@ -109,4 +109,3 @@ class _pagesState extends State<bottomNavigation> {
     );
   }
 }
-
