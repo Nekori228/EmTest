@@ -1,3 +1,4 @@
+import 'package:emtest/main.dart';
 import 'package:emtest/pages/change_password.dart';
 import 'package:emtest/pages/finansal_date.dart';
 import 'package:emtest/pages/history.dart';
@@ -29,10 +30,14 @@ class office extends StatelessWidget {
         currentIndex: selectedPage,
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Новости'),
-          BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: 'Материал'),
-          BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.newspaper), label: 'Новости'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.library_books_outlined), label: 'Материал'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
         ],
         onTap: onSelectTab,
       ),
@@ -49,7 +54,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => bio_info()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => bio_info()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -87,7 +93,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => sale_card()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sale_card()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -125,7 +132,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => date()));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => date()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -163,7 +171,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => applications()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => applications()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -201,7 +210,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => history()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => history()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -239,7 +249,10 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => password_change()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => password_change()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -277,7 +290,8 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => translate()));
+                  prefs.remove('user');
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
                 },
                 child: SizedBox(
                   width: 400,
