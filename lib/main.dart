@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:emtest/pages/change_password.dart';
 import 'package:emtest/pages/home_screen.dart';
 import 'package:emtest/pages/login_screen.dart';
 import 'package:emtest/pages/material.dart';
@@ -84,6 +85,7 @@ class _pagesState extends State<bottomNavigation> {
       ),
       routes: {
         '/home': (context) => const HomeScreen(),
+        '/reset_password': (context) => password_change(),
       },
       initialRoute: '/',
       localizationsDelegates: context.localizationDelegates,

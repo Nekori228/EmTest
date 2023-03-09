@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     user = user[emailTextInputController.text.trim()];
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => office()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => office()));
   }
 
   @override

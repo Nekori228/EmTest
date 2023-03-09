@@ -25,22 +25,6 @@ class office extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue,
-        currentIndex: selectedPage,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.newspaper), label: 'Новости'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.library_books_outlined), label: 'Материал'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
-        ],
-        onTap: onSelectTab,
-      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -323,6 +307,22 @@ class office extends StatelessWidget {
             block_grey(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.blue,
+        currentIndex: selectedPage,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.newspaper), label: 'Новости'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.library_books_outlined), label: 'Материал'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
+        ],
+        onTap: onSelectTab,
       ),
     );
   }
