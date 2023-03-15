@@ -46,7 +46,6 @@ class news_four extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: SizedBox(
                 width: 330,
-                height: 120,
                 child: Text('ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26)),

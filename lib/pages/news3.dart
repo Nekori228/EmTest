@@ -46,7 +46,6 @@ class news_three extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: SizedBox(
                 width: 330,
-                height: 80,
                 child: Text('Первая линия защиты от кибератак – это вы',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26)),
@@ -56,7 +55,6 @@ class news_three extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: SizedBox(
                 width: 350,
-                height: 1350,
                 child: RichText(
                   textAlign: TextAlign.start,
                   text: TextSpan(
@@ -97,7 +95,6 @@ class news_three extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
               child: SizedBox(
                 width: 350,
-                height: 100,
                 child: Text('\n\nБезопасность начинается с вас',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold)),

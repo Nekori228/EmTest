@@ -61,19 +61,21 @@ class _newsState extends State<news> {
                           height: 120,
                           child: Image.asset("assets/images/news1.png"),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            width: 155,
-                            height: 95,
-                            child: Text(
-                              'С наступающим Новым 2023 годом! Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'SourceSansPro'),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: SizedBox(
+                              width: 155,
+                              height: 95,
+                              child: Text(
+                                'С наступающим Новым 2023 годом! Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
                             ),
                           ),
                         )
@@ -103,19 +105,21 @@ class _newsState extends State<news> {
                           height: 120,
                           child: Image.asset("assets/images/news2.png"),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            width: 155,
-                            height: 95,
-                            child: Text(
-                              'Телефонное мошенничество. Мы живем в эру технологий, и это огромное поле для...',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'SourceSansPro'),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: SizedBox(
+                              width: 155,
+                              height: 95,
+                              child: Text(
+                                'Телефонное мошенничество. Мы живем в эру технологий, и это огромное поле для...',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
                             ),
                           ),
                         )
@@ -145,19 +149,21 @@ class _newsState extends State<news> {
                           height: 120,
                           child: Image.asset("assets/images/news3.png"),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            width: 155,
-                            height: 95,
-                            child: Text(
-                              'Первая линия защиты от кибератак – это вы. Знаете ли вы, что причиной более 85% кибератак является...',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'SourceSansPro'),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: SizedBox(
+                              width: 155,
+                              height: 95,
+                              child: Text(
+                                'Первая линия защиты от кибератак – это вы. Знаете ли вы, что причиной более 85% кибератак является...',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
                             ),
                           ),
                         )
@@ -187,19 +193,21 @@ class _newsState extends State<news> {
                           height: 120,
                           child: Image.asset("assets/images/news4.png"),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            width: 155,
-                            height: 95,
-                            child: Text(
-                              'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности 13 апре...',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'SourceSansPro'),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: SizedBox(
+                              width: 155,
+                              height: 95,
+                              child: Text(
+                                'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности 13 апре...',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
                             ),
                           ),
                         )
@@ -245,19 +253,21 @@ class news_info extends StatelessWidget {
                 height: 120,
                 child: Image.asset("assets/images/news_picture.png"),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: SizedBox(
-                  width: 155,
-                  height: 95,
-                  child: Text(
-                    'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'SourceSansPro'),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: SizedBox(
+                    width: 155,
+                    height: 95,
+                    child: Text(
+                      'Информация о новости Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает...',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'SourceSansPro'),
+                    ),
                   ),
                 ),
               )
