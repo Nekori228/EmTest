@@ -43,24 +43,22 @@ class news_two extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: SizedBox(
-                width: 330,
-                child: Text('Телефонное мошенничество',
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05),
+              child: Column(
+                children: [
+                  Text(
+                    'Телефонное мошенничество',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 26)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: SizedBox(
-                width: 350,
-                child: Text(
-                  'Мы живем в эру технологий, и это огромное поле для деятельности разного рода мошенников. К сожалению, в последнее время участились случаи «нападения» киберпреступниками на сотрудников нашей компании в России. И зачастую даже опытные сотрудники поддавались на их уловки и несли финансовые потери. \n\nДля того, чтобы снизить количество подобных ситуаций мы подготовили короткий видеоролик, рассказывающий о самой частой схеме мошенничества. \n\nПередайте информацию своим коллегам и порекомендуйте посмотреть данный ролик! Если вы заметите, что ваш коллега планирует передать кому-то денежные средства магазина, остановите его и расскажите о возможных последствиях. \n\nДавайте совместно сделаем так, чтобы таких ситуаций больше не происходило!',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.black, fontSize: 19),
-                ),
+                    style: TextStyle(color: Colors.black, fontSize: 26),
+                  ),
+                  Text(
+                    'Мы живем в эру технологий, и это огромное поле для деятельности разного рода мошенников. К сожалению, в последнее время участились случаи «нападения» киберпреступниками на сотрудников нашей компании в России. И зачастую даже опытные сотрудники поддавались на их уловки и несли финансовые потери. \n\nДля того, чтобы снизить количество подобных ситуаций мы подготовили короткий видеоролик, рассказывающий о самой частой схеме мошенничества. \n\nПередайте информацию своим коллегам и порекомендуйте посмотреть данный ролик! Если вы заметите, что ваш коллега планирует передать кому-то денежные средства магазина, остановите его и расскажите о возможных последствиях. \n\nДавайте совместно сделаем так, чтобы таких ситуаций больше не происходило!',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(color: Colors.black, fontSize: 19),
+                  ),
+                ],
               ),
             ),
             Center(
@@ -103,22 +101,22 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  VideoPlayer(_controller),
-                  _ControlsOverlay(controller: _controller),
-                  VideoProgressIndicator(_controller, allowScrubbing: true),
-                ],
-              ),
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.all(20),
+          child: AspectRatio(
+            aspectRatio: _controller.value.aspectRatio,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: <Widget>[
+                VideoPlayer(_controller),
+                _ControlsOverlay(controller: _controller),
+                VideoProgressIndicator(_controller, allowScrubbing: true),
+              ],
             ),
           ),
-        ],
+        ),
+      ],
     );
   }
 }
@@ -139,16 +137,16 @@ class _ControlsOverlay extends StatelessWidget {
           child: controller.value.isPlaying
               ? const SizedBox.shrink()
               : Container(
-            color: Colors.black26,
-            child: const Center(
-              child: Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-                size: 100.0,
-                semanticLabel: 'Play',
-              ),
-            ),
-          ),
+                  color: Colors.black26,
+                  child: const Center(
+                    child: Icon(
+                      Icons.play_arrow,
+                      color: Colors.white,
+                      size: 100.0,
+                      semanticLabel: 'Play',
+                    ),
+                  ),
+                ),
         ),
         GestureDetector(
           onTap: () {

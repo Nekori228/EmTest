@@ -124,3 +124,4 @@ class _pagesState extends State<bottomNavigation> {
     );
   }
 }
+

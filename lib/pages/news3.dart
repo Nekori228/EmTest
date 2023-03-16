@@ -42,62 +42,63 @@ class news_three extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: SizedBox(
-                width: 330,
-                child: Text('Первая линия защиты от кибератак – это вы',
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05),
+              child: Column(
+                children: [
+                  Text(
+                    'Первая линия защиты от кибератак – это вы',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 26)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: SizedBox(
-                width: 350,
-                child: RichText(
-                  textAlign: TextAlign.start,
-                  text: TextSpan(
-                    text:
-                        'Знаете ли вы, что причиной более 85% кибератак является человеческий фактор? \n\nКибератаки на компании и частных лиц продолжают увеличиваться и становятся все более изощренными. Однако лучшей защитой от этих кибератак остаемся мы сами. Поэтому сегодня, во Всемирный день информационной безопасности, мы хотим напомнить вам о некоторых рекомендациях, с помощью которых их можно избежать:',
-                    style: TextStyle(color: Colors.black, fontSize: 19),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: '\n\nПароли\n\n',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text:
-                              'Создавайте уникальные пароли для каждого сервиса, длинные и надежные. Избегайте использования общих слов и сочетайте прописные и строчные буквы, числа и символы. По возможности используйте двухфакторную аутентификацию и никогда никому не сообщайте свои пароли.!'),
-                      TextSpan(
-                          text: '\n\nОбновления\n\n',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text:
-                              'Обновляйте операционную систему и приложения на своих устройствах, это защитит нас от уязвимостей, используемых киберпреступниками.'),
-                      TextSpan(
-                          text: '\n\nWi-Fi\n\n',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text:
-                              'Избегайте подключения к общедоступным сетям Wi-Fi, поскольку они небезопасны и злоумышленники могут легко украсть нашу информацию. Если вы работаете вне офиса, не забудьте подключиться к VPN (Pulse Secure).'),
-                      TextSpan(
-                          text: '\n\nЭлектронная почта\n\n',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text:
-                              'Электронная почта является наиболее распространенной точкой входа для кибератак. Если вы получаете электронные письма неизвестного происхождения или которых вы не ожидаете, а также электронные письма со странными запросами, не открывайте их вложения и не переходите по ссылкам.'),
-                    ],
+                    style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
-                ),
+                  RichText(
+                    textAlign: TextAlign.start,
+                    text: TextSpan(
+                      text:
+                      'Знаете ли вы, что причиной более 85% кибератак является человеческий фактор? \n\nКибератаки на компании и частных лиц продолжают увеличиваться и становятся все более изощренными. Однако лучшей защитой от этих кибератак остаемся мы сами. Поэтому сегодня, во Всемирный день информационной безопасности, мы хотим напомнить вам о некоторых рекомендациях, с помощью которых их можно избежать:',
+                      style: TextStyle(color: Colors.black, fontSize: 19),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '\n\nПароли\n\n',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text:
+                            'Создавайте уникальные пароли для каждого сервиса, длинные и надежные. Избегайте использования общих слов и сочетайте прописные и строчные буквы, числа и символы. По возможности используйте двухфакторную аутентификацию и никогда никому не сообщайте свои пароли!'),
+                        TextSpan(
+                            text: '\n\nОбновления\n\n',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text:
+                            'Обновляйте операционную систему и приложения на своих устройствах, это защитит нас от уязвимостей, используемых киберпреступниками.'),
+                        TextSpan(
+                            text: '\n\nWi-Fi\n\n',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text:
+                            'Избегайте подключения к общедоступным сетям Wi-Fi, поскольку они небезопасны и злоумышленники могут легко украсть нашу информацию. Если вы работаете вне офиса, не забудьте подключиться к VPN (Pulse Secure).'),
+                        TextSpan(
+                            text: '\n\nЭлектронная почта\n\n',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text:
+                            'Электронная почта является наиболее распространенной точкой входа для кибератак. Если вы получаете электронные письма неизвестного происхождения или которых вы не ожидаете, а также электронные письма со странными запросами, не открывайте их вложения и не переходите по ссылкам.'),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
               child: SizedBox(
                 width: 350,
-                child: Text('\n\nБезопасность начинается с вас',
+                child: Text('\nБезопасность начинается с вас',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold)),
               ),
             ),
             Center(
