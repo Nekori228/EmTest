@@ -43,20 +43,23 @@ class news_two extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 15),
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Телефонное мошенничество',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
+                  SizedBox(height: 15),
                   Text(
                     'Мы живем в эру технологий, и это огромное поле для деятельности разного рода мошенников. К сожалению, в последнее время участились случаи «нападения» киберпреступниками на сотрудников нашей компании в России. И зачастую даже опытные сотрудники поддавались на их уловки и несли финансовые потери. \n\nДля того, чтобы снизить количество подобных ситуаций мы подготовили короткий видеоролик, рассказывающий о самой частой схеме мошенничества. \n\nПередайте информацию своим коллегам и порекомендуйте посмотреть данный ролик! Если вы заметите, что ваш коллега планирует передать кому-то денежные средства магазина, остановите его и расскажите о возможных последствиях. \n\nДавайте совместно сделаем так, чтобы таких ситуаций больше не происходило!',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 19),
+                    style: TextStyle(color: Colors.black, fontSize: 19, height: 1.3),
                   ),
                 ],
               ),

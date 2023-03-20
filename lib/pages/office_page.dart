@@ -89,7 +89,7 @@ class office extends StatelessWidget {
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 0, 15, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
                             child: Icon(Icons.credit_card),
                           ),
                           Text(

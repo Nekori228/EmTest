@@ -42,6 +42,7 @@ class news_three extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 15),
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05),
@@ -52,68 +53,57 @@ class news_three extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
+                  SizedBox(height: 15),
                   RichText(
                     textAlign: TextAlign.start,
                     text: TextSpan(
                       text:
-                      'Знаете ли вы, что причиной более 85% кибератак является человеческий фактор? \n\nКибератаки на компании и частных лиц продолжают увеличиваться и становятся все более изощренными. Однако лучшей защитой от этих кибератак остаемся мы сами. Поэтому сегодня, во Всемирный день информационной безопасности, мы хотим напомнить вам о некоторых рекомендациях, с помощью которых их можно избежать:',
-                      style: TextStyle(color: Colors.black, fontSize: 19),
+                          'Знаете ли вы, что причиной более 85% кибератак является человеческий фактор? \n\nКибератаки на компании и частных лиц продолжают увеличиваться и становятся все более изощренными. Однако лучшей защитой от этих кибератак остаемся мы сами. Поэтому сегодня, во Всемирный день информационной безопасности, мы хотим напомнить вам о некоторых рекомендациях, с помощью которых их можно избежать:',
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 19, height: 1.3),
                       children: <TextSpan>[
                         TextSpan(
                             text: '\n\nПароли\n\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(
                             text:
-                            'Создавайте уникальные пароли для каждого сервиса, длинные и надежные. Избегайте использования общих слов и сочетайте прописные и строчные буквы, числа и символы. По возможности используйте двухфакторную аутентификацию и никогда никому не сообщайте свои пароли!'),
+                                'Создавайте уникальные пароли для каждого сервиса, длинные и надежные. Избегайте использования общих слов и сочетайте прописные и строчные буквы, числа и символы. По возможности используйте двухфакторную аутентификацию и никогда никому не сообщайте свои пароли!'),
                         TextSpan(
                             text: '\n\nОбновления\n\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(
                             text:
-                            'Обновляйте операционную систему и приложения на своих устройствах, это защитит нас от уязвимостей, используемых киберпреступниками.'),
+                                'Обновляйте операционную систему и приложения на своих устройствах, это защитит нас от уязвимостей, используемых киберпреступниками.'),
                         TextSpan(
                             text: '\n\nWi-Fi\n\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(
                             text:
-                            'Избегайте подключения к общедоступным сетям Wi-Fi, поскольку они небезопасны и злоумышленники могут легко украсть нашу информацию. Если вы работаете вне офиса, не забудьте подключиться к VPN (Pulse Secure).'),
+                                'Избегайте подключения к общедоступным сетям Wi-Fi, поскольку они небезопасны и злоумышленники могут легко украсть нашу информацию. Если вы работаете вне офиса, не забудьте подключиться к VPN (Pulse Secure).'),
                         TextSpan(
                             text: '\n\nЭлектронная почта\n\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(
                             text:
-                            'Электронная почта является наиболее распространенной точкой входа для кибератак. Если вы получаете электронные письма неизвестного происхождения или которых вы не ожидаете, а также электронные письма со странными запросами, не открывайте их вложения и не переходите по ссылкам.'),
+                                'Электронная почта является наиболее распространенной точкой входа для кибератак. Если вы получаете электронные письма неизвестного происхождения или которых вы не ожидаете, а также электронные письма со странными запросами, не открывайте их вложения и не переходите по ссылкам.'),
+                        TextSpan(
+                            text: '\n\nБезопасность начинается с вас',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-              child: SizedBox(
-                width: 350,
-                child: Text('\nБезопасность начинается с вас',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold)),
-              ),
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-                child: Container(
-                  width: 400,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/news3_big.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+            Container(
+              margin: EdgeInsets.all(10),
+              width: 400,
+              height: 210,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/news3_big.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

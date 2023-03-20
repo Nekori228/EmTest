@@ -103,7 +103,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Электронная почта', style: TextStyle(fontSize: 17)),
+                    Text('Эл. почта', style: TextStyle(fontSize: 17)),
                     Text(user['Адрес электронной почты'], style: TextStyle(fontSize: 15)),
                   ],
                 ),

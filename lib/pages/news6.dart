@@ -42,23 +42,26 @@ class news_six extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 15),
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05),
               child: Column(
                 children: [
                   Text(
-                    'Bershka, Pull&Bear и Zara вернутся в Россию под новыми названиями' + '\n',
+                    'Bershka, Pull&Bear и Zara вернутся в Россию под новыми названиями',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
+                  SizedBox(height: 15),
                   RichText(
                     textAlign: TextAlign.start,
                     text: TextSpan(
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 19,
-                          fontFamily: "SourceSansPro"),
+                          fontFamily: "SourceSansPro",
+                          height: 1.3),
                       children: <TextSpan>[
                         TextSpan(
                             text:
