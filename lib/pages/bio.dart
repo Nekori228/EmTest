@@ -53,8 +53,10 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Дата рождения', style: TextStyle(fontSize: 17)),
-                    Text('${(user['Дата рождения'] as Timestamp).toDate().day.toString()}.${(user['Дата рождения'] as Timestamp).toDate().month
-                        .toString()}.${(user['Дата рождения'] as Timestamp).toDate().year.toString()}', style: TextStyle(fontSize: 15)),
+                    Text(
+                        '${(user['Дата рождения'] as Timestamp).toDate().day.toString().length == 1 ? '0' + (user['Дата рождения'] as Timestamp).toDate().day.toString() : (user['Дата рождения'] as Timestamp).toDate().day.toString()}.'
+                        '${(user['Дата рождения'] as Timestamp).toDate().month.toString().length == 1 ? '0' + (user['Дата рождения'] as Timestamp).toDate().month.toString() : (user['Дата рождения'] as Timestamp).toDate().month.toString()}.${(user['Дата рождения'] as Timestamp).toDate().year.toString()}',
+                        style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -78,8 +80,7 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Компания', style: TextStyle(fontSize: 17)),
-                    Text(user['Компания'],
-                        style: TextStyle(fontSize: 15)),
+                    Text(user['Компания'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
@@ -91,8 +92,10 @@ class bio_info extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Дата приёма', style: TextStyle(fontSize: 17)),
-                    Text('${(user['Дата приёма'] as Timestamp).toDate().day.toString()}.${(user['Дата приёма'] as Timestamp).toDate().month
-                        .toString()}.${(user['Дата приёма'] as Timestamp).toDate().year.toString()}', style: TextStyle(fontSize: 15)),
+                    Text(
+                        '${(user['Дата приёма'] as Timestamp).toDate().day.toString().length == 1 ? '0' + (user['Дата приёма'] as Timestamp).toDate().day.toString() : (user['Дата приёма'] as Timestamp).toDate().day.toString()}.'
+                        '${(user['Дата приёма'] as Timestamp).toDate().month.toString().length == 1 ? '0' + (user['Дата приёма'] as Timestamp).toDate().month.toString() : (user['Дата приёма'] as Timestamp).toDate().month.toString()}.${(user['Дата приёма'] as Timestamp).toDate().year.toString()}',
+                        style: TextStyle(fontSize: 15)),
                   ],
                 ),
               ),
