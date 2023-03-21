@@ -51,12 +51,6 @@ class bottomNavigation extends StatefulWidget {
 }
 
 class _pagesState extends State<bottomNavigation> {
-  static final List<Widget> _widgetOptions = <Widget>[
-    news(),
-    material(),
-    tests(),
-    prefs.getString('user') == null ? LoginScreen() : office()
-  ];
 
   void onSelectTab(int index) {
     if (selectedPage == index) return;
@@ -73,19 +67,16 @@ class _pagesState extends State<bottomNavigation> {
 
   void getProfile() async {
     for (var i = 1; i < 6; i++) {
-      var collection = FirebaseFirestore.instance
-          .collection('Perconal_info')
-          .doc('Personal_date')
-          .collection('Person$i');
+      var collection = FirebaseFirestore.instance.collection('Perconal_info').doc('Personal_date').collection('Person$i');
       collection.get().then((value) {
-        user[value.docs.first.data()['Адрес электронной почты']] =
-            value.docs.first.data();
+        user[value.docs.first.data()['Адрес электронной почты']] = value.docs.first.data();
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _widgetOptions = <Widget>[news(), material(), tests(), prefs.getString('isAuth') == null ? LoginScreen() : office()];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -111,14 +102,10 @@ class _pagesState extends State<bottomNavigation> {
           currentIndex: selectedPage,
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.newspaper), label: 'Новости'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.library_books_outlined), label: 'Материал'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
+            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Новости'),
+            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: 'Материал'),
+            BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
           ],
           onTap: onSelectTab,
         ),
@@ -126,4 +113,3 @@ class _pagesState extends State<bottomNavigation> {
     );
   }
 }
-
