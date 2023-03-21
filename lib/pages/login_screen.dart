@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailTextInputController,
                 validator: (email) => email != null && !EmailValidator.validate(email) ? 'Введите правильный Email' : null,
                 decoration: const InputDecoration(
-                  hintText: 'Почта',
+                  hintText: 'Эл. почта',
                 ),
               ),
               const SizedBox(height: 30),
@@ -147,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 30),
               TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/reset_password'),
+                onPressed: () => Navigator.of(context).pushNamed('/forgot_password'),
                 child: const Text(
                   'Забыли пароль?',
                   style: TextStyle(fontSize: 16, color: Colors.black),
