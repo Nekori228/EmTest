@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class sale_card extends StatelessWidget {
   const sale_card({Key? key}) : super(key: key);
@@ -32,18 +33,15 @@ class sale_card extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child: Container(
-                  width: 380,
-                  height: 400,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/discont.png'),
-                      fit: BoxFit.cover,
-                    ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 50, 10, 0),
+                width: 380,
+                height: 400,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/discont.png'),
+                    fit: BoxFit.cover,
                   ),
                 ),
               )

@@ -51,7 +51,7 @@ class news_two extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Телефонное мошенничество',
+                    'Телефонное мошенничество' + '\n',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
@@ -92,7 +92,7 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
     });
     _controller.setLooping(true);
     _controller.initialize().then((_) => setState(() {}));
-    _controller.play();
+    _controller.pause();
   }
 
   @override

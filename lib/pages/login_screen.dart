@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:emtest/globals.dart';
+import 'package:emtest/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:emtest/services/snack_bar.dart';
@@ -26,7 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
   void dispose() {
     emailTextInputController.dispose();
     passwordTextInputController.dispose();
-
     super.dispose();
   }
 
@@ -44,8 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> login() async {
-    final navigator = Navigator.of(context);
-
     final isValid = formKey.currentState!.validate();
     if (!isValid) return;
 
@@ -76,7 +74,10 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     user = user[emailTextInputController.text.trim()];
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => office()));
+    prefs.setString('isAuth', '1');
+    selectedPage = 3;
+    setState(() {});
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => bottomNavigation()));
   }
 
   @override
@@ -124,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailTextInputController,
                 validator: (email) => email != null && !EmailValidator.validate(email) ? 'Введите правильный Email' : null,
                 decoration: const InputDecoration(
-                  hintText: 'Почта',
+                  hintText: 'Эл. почта',
                 ),
               ),
               const SizedBox(height: 30),
@@ -147,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 30),
               TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/reset_password'),
+                onPressed: () => Navigator.of(context).pushNamed('/forgot_password'),
                 child: const Text(
                   'Забыли пароль?',
                   style: TextStyle(fontSize: 16, color: Colors.black),
