@@ -51,39 +51,36 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_six()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news6.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'Bershka, Pull&Bear и Zara вернутся в Россию' +
-                                                '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'В апреле Бренды ушедшей с российского рынка испанской фэшн...')
-                                  ]),
-                            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(child: Image.asset("assets/images/news6.png")),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text:
+                                          'Bershka, Pull&Bear и Zara вернутся в Россию' +
+                                              '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text:
+                                          'В апреле Бренды ушедшей с российского рынка испанской фэшн...')
+                                ]),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -96,39 +93,36 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_five()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news5.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'INsport – спортивные онлайн-тренировки с коллегами' +
-                                                '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'Больше месяца назад для всех сотрудников...')
-                                  ]),
-                            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(child: Image.asset("assets/images/news5.png")),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text:
+                                          'INsport – спортивные онлайн-тренировки с коллегами' +
+                                              '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text:
+                                          'Больше месяца назад для всех сотрудников...')
+                                ]),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -141,37 +135,35 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_four()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news4.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: 'ОТКРЫТЫЕ ТРЕНИНГИ' + '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'эффективная презентация в виртуальной реальности 13 апреля состоялась встреча...')
-                                  ]),
-                            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(child: Image.asset("assets/images/news4.png")),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text:
+                                          'ОТКРЫТЫЕ ТРЕНИНГИ эффективная презентация в виртуальной реальности' +
+                                              '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: '13 апреля состоялась встреча...')
+                                ]),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -184,39 +176,36 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_three()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news3.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'Первая линия защиты от кибератак – это вы.' +
-                                                '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'Знаете ли вы, что причиной более 85% кибератак является...')
-                                  ]),
-                            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(child: Image.asset("assets/images/news3.png")),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text:
+                                          'Первая линия защиты от кибератак – это вы' +
+                                              '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text:
+                                          'Знаете ли вы, что причиной более 85% кибератак является...')
+                                ]),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -229,38 +218,34 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_two()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news2.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'Телефонное мошенничество.' + '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
-                                  ]),
-                            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(child: Image.asset("assets/images/news2.png")),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: 'Телефонное мошенничество' + '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text:
+                                          'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
+                                ]),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -273,41 +258,40 @@ class _newsState extends State<news> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => news_one()));
                 },
-                child: SizedBox(
-                  height: 120,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/images/news1.png"),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: SizedBox(
-                              child: RichText(
-                                text: const TextSpan(
-                                    style: TextStyle(
-                                        color: Color(0xFF000000),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 15,
-                                        fontFamily: 'SourceSansPro'),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text:
-                                              'С наступающим Новым 2023 годом!' +
-                                                  '\n',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text:
-                                              'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
-                                    ]),
-                              ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Image.asset("assets/images/news1.png"),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: SizedBox(
+                            child: RichText(
+                              text: const TextSpan(
+                                  style: TextStyle(
+                                      color: Color(0xFF000000),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15,
+                                      fontFamily: 'SourceSansPro'),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text:
+                                            'С наступающим Новым 2023 годом!' +
+                                                '\n',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                    TextSpan(
+                                        text:
+                                            'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
+                                  ]),
                             ),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),

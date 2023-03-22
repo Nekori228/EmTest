@@ -74,7 +74,7 @@ class news_four extends StatelessWidget {
                             text:
                             '\n\nСледующий Открытый тренинг '),
                         TextSpan(
-                            text: 'Эффективная презентация в виртуальной реальности» состоится 27 апреля. ',
+                            text: '«Эффективная презентация в виртуальной реальности» состоится 27 апреля. ',
                             style: TextStyle(fontWeight: FontWeight.w500)),
                         TextSpan(
                             text:

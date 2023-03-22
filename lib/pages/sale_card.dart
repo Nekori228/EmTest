@@ -48,7 +48,7 @@ class sale_card extends StatelessWidget {
                 ),
               )
             ],
-          ),
+          ), 
         ),
       ),
     );
