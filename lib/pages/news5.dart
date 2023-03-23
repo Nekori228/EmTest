@@ -43,7 +43,6 @@ class news_five extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
-
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05),
@@ -53,9 +52,9 @@ class news_five extends StatelessWidget {
                     'INsport – спортивные онлайн-тренировки с коллегами',
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 26,
-                        fontFamily: "SourceSansPro"),
+                      color: Colors.black,
+                      fontSize: 26,
+                    ),
                   ),
                   SizedBox(height: 15),
                   RichText(
@@ -139,8 +138,7 @@ class news_five extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Carousel()),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 20), child: Carousel()),
           ],
         ),
       ),

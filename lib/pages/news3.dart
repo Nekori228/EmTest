@@ -49,7 +49,7 @@ class news_three extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Первая линия защиты от кибератак – это вы' + '\n',
+                    'Первая линия защиты от кибератак – это вы',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
