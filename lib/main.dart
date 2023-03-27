@@ -66,7 +66,6 @@ class bottomNavigation extends StatefulWidget {
 }
 
 class _pagesState extends State<bottomNavigation> {
-
   void onSelectTab(int index) {
     if (selectedPage == index) return;
     setState(() {
