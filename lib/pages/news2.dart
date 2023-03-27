@@ -51,7 +51,7 @@ class news_two extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Телефонное мошенничество',
+                    'Телефонное мошенничество' + '\n',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),

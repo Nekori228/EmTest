@@ -12,7 +12,7 @@ class date extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Мои финансовые данные',
+          'Новости',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,

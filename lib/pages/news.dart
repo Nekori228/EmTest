@@ -143,13 +143,23 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: Text(
-                            'ОТКРЫТЫЕ ТРЕНИНГИ эффективная презентация в виртуальной реальности',
-                            style: TextStyle(
-                                color: Color(0xFF000000),
-                                fontSize: 15,
-                                fontFamily: 'SourceSansPro',
-                                fontWeight: FontWeight.bold),
+                          child: RichText(
+                            text: const TextSpan(
+                                style: TextStyle(
+                                    color: Color(0xFF000000),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text:
+                                          'ОТКРЫТЫЕ ТРЕНИНГИ эффективная презентация в виртуальной реальности' +
+                                              '\n',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: '13 апреля состоялась встреча...')
+                                ]),
                           ),
                         ),
                       )
