@@ -49,7 +49,7 @@ class news_four extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности' + '\n',
+                    'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности',
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
