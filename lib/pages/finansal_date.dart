@@ -30,7 +30,9 @@ class date extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Center(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05),
           child: Column(
             children: [
               pdf_block(),

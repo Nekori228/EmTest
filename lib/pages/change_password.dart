@@ -39,80 +39,73 @@ class _password_changeState extends State<password_change> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Center(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.03),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 40, 0, 5),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Старый пароль",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText1 = !_obscureText1;
-                          });
-                        },
-                        child: Icon(_obscureText1
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    obscureText: _obscureText1,
-                  ),
-                ),
+              SizedBox(
+                height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Новый пароль",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText2 = !_obscureText2;
-                          });
-                        },
-                        child: Icon(_obscureText2
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    obscureText: _obscureText2,
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Старый пароль",
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText1 = !_obscureText1;
+                      });
+                    },
+                    child: Icon(_obscureText1
+                        ? Icons.visibility
+                        : Icons.visibility_off),
                   ),
                 ),
+                obscureText: _obscureText1,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Повторите пароль",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText3 = !_obscureText3;
-                          });
-                        },
-                        child: Icon(_obscureText3
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    obscureText: _obscureText3,
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Новый пароль",
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText2 = !_obscureText2;
+                      });
+                    },
+                    child: Icon(_obscureText2
+                        ? Icons.visibility
+                        : Icons.visibility_off),
                   ),
                 ),
+                obscureText: _obscureText2,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Повторите пароль",
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText3 = !_obscureText3;
+                      });
+                    },
+                    child: Icon(_obscureText3
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                  ),
+                ),
+                obscureText: _obscureText3,
+              ),
+              SizedBox(
+                height: 20,
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -122,7 +115,6 @@ class _password_changeState extends State<password_change> {
                         borderRadius: BorderRadius.circular(15)))),
                 onPressed: () {},
                 child: SizedBox(
-                  width: 320,
                   height: 50,
                   child: Center(
                     child: Text(

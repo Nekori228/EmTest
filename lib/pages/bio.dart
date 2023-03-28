@@ -31,12 +31,13 @@ class bio_info extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Center(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05),
           child: Column(
             children: [
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,9 +47,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -61,9 +61,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -73,9 +72,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -85,9 +83,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -100,9 +97,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -112,9 +108,8 @@ class bio_info extends StatelessWidget {
                 ),
               ),
               block_grey(),
-              SizedBox(
-                width: 350,
-                height: 50,
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 15, 10, 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

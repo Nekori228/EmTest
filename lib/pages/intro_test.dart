@@ -97,7 +97,6 @@ class block_grey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 360,
       height: 1,
       color: Colors.grey,
     );
