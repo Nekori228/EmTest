@@ -9,6 +9,7 @@ import 'package:emtest/pages/news.dart';
 import 'package:emtest/pages/office_page.dart';
 import 'package:emtest/pages/tests_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'globals.dart';
 
@@ -42,9 +43,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  late Future<ListResult> futureFiles;
+
   @override
   void initState() {
     super.initState();
+
+    futureFiles = FirebaseStorage.instance.ref('/Financial_data').listAll();
     removeInit();
   }
 
