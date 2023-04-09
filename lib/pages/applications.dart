@@ -214,7 +214,6 @@ class applications extends StatelessWidget {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
-                          showLoading(context);
                           mailSend(context).then((value) {
                             Navigator.of(context).pop();
                           });
