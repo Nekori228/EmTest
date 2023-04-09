@@ -8,9 +8,20 @@ class applications extends StatelessWidget {
 
   static final _formKey = GlobalKey<FormState>();
 
-  final List<String> genderItems = [
-    'Оборудование 1',
-    'Оборудование 2',
+  final List<String> equipmentItems = [
+    'RFID',
+    'iPod',
+    'Cканер',
+    'Касса',
+    'Принтер',
+  ];
+
+  final List<String> cause = [
+    'Не включается оборудование',
+    'Оборудование зависло',
+    'Сломалась устройство для зарядки',
+    'Нет определенного приложения',
+    'Другое',
   ];
 
   var descriptionController = TextEditingController();
@@ -107,7 +118,7 @@ class applications extends StatelessWidget {
                       dropdownDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      items: genderItems
+                      items: equipmentItems
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child: Text(
@@ -154,7 +165,7 @@ class applications extends StatelessWidget {
                       dropdownDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      items: genderItems
+                      items: cause
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child: Text(
