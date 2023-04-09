@@ -13,7 +13,10 @@ class applications extends StatelessWidget {
     'Оборудование 2',
   ];
 
+  var descriptionController = TextEditingController();
+
   String? selectedValue;
+  String? selectedValue2;
 
   Future<void> mailSend(context) async {
     final client = SmtpClient('enough.de', isLogEnabled: false);
@@ -29,11 +32,11 @@ class applications extends StatelessWidget {
       }
 
       final builder = MessageBuilder.prepareMultipartAlternativeMessage(
-        plainText: 'Hello world!',
-        htmlText: '<p>Hello world!</p>',
+        plainText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
+        htmlText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
       )
         ..from = [MailAddress('vadim', 'applications23@mail.ru')]
-        ..to = [MailAddress('Recipient ewdewd Name', 'kalichak_eo@mail.ru')];
+        ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')];
 
       final mimeMessage = builder.buildMimeMessage();
       final sendResponse = await client.sendMessage(mimeMessage);
@@ -171,13 +174,14 @@ class applications extends StatelessWidget {
                         //Do something when changing the item if you want.
                       },
                       onSaved: (value) {
-                        selectedValue = value.toString();
+                        selectedValue2 = value.toString();
                       },
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     TextField(
+                      controller: descriptionController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: "Сообщение",
