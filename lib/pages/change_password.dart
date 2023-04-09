@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:passwordfield/passwordfield.dart';
 
 class password_change extends StatefulWidget {
   const password_change({Key? key}) : super(key: key);

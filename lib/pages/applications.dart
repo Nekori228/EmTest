@@ -1,5 +1,7 @@
+import 'package:emtest/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:enough_mail/enough_mail.dart';
 
 class applications extends StatelessWidget {
   applications({Key? key}) : super(key: key);
@@ -12,6 +14,34 @@ class applications extends StatelessWidget {
   ];
 
   String? selectedValue;
+
+  Future<void> mailSend(context) async {
+    final client = SmtpClient('enough.de', isLogEnabled: false);
+    try {
+      await client.connectToServer('smtp.mail.ru', 465, isSecure: true);
+      await client.ehlo();
+      if (client.serverInfo.supportsAuth(AuthMechanism.plain)) {
+        await client.authenticate('applications23@mail.ru', 'BPwHuTdNHcVXQ3FsgQmL', AuthMechanism.plain);
+      } else if (client.serverInfo.supportsAuth(AuthMechanism.login)) {
+        await client.authenticate('applications23@mail.ru', 'BPwHuTdNHcVXQ3FsgQmL', AuthMechanism.login);
+      } else {
+        return;
+      }
+
+      final builder = MessageBuilder.prepareMultipartAlternativeMessage(
+        plainText: 'Hello world!',
+        htmlText: '<p>Hello world!</p>',
+      )
+        ..from = [MailAddress('vadim', 'applications23@mail.ru')]
+        ..to = [MailAddress('Recipient ewdewd Name', 'kalichak_eo@mail.ru')];
+
+      final mimeMessage = builder.buildMimeMessage();
+      final sendResponse = await client.sendMessage(mimeMessage);
+      print('message sent: ${sendResponse.isOkStatus}');
+    } on SmtpException catch (e) {
+      print('SMTP failed with $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +70,7 @@ class applications extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.03),
+          margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.03),
           child: Column(
             children: [
               Form(
@@ -71,8 +100,7 @@ class applications extends StatelessWidget {
                       ),
                       iconSize: 30,
                       buttonHeight: 60,
-                      buttonPadding:
-                          const EdgeInsets.only(left: 0, right: 10),
+                      buttonPadding: const EdgeInsets.only(left: 0, right: 10),
                       dropdownDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -119,8 +147,7 @@ class applications extends StatelessWidget {
                       ),
                       iconSize: 30,
                       buttonHeight: 60,
-                      buttonPadding:
-                          const EdgeInsets.only(left: 0, right: 10),
+                      buttonPadding: const EdgeInsets.only(left: 0, right: 10),
                       dropdownDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -162,8 +189,7 @@ class applications extends StatelessWidget {
                     const SizedBox(height: 0),
                     ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            Color.fromRGBO(1, 103, 255, 1.0)),
+                        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(1, 103, 255, 1.0)),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -173,6 +199,10 @@ class applications extends StatelessWidget {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
+                          showLoading(context);
+                          mailSend(context).then((value) {
+                            Navigator.of(context).pop();
+                          });
                         }
                       },
                       child: SizedBox(

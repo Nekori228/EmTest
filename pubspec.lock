@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+  asn1lib:
+    dependency: transitive
+    description:
+      name: asn1lib
+      sha256: ab96a1cb3beeccf8145c52e449233fe68364c9641623acd3adad66f8184f1039
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
   async:
     dependency: transitive
     description:
@@ -33,14 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
-  auto_orientation:
-    dependency: "direct main"
+  basic_utils:
+    dependency: transitive
     description:
-      name: auto_orientation
-      sha256: "56f688f3d943d5b22e5238a8aa2165a7ddce47c1760aedecea1052f1dea18546"
+      name: basic_utils
+      sha256: c4f6b890f961ee3d6f70e2d65be99839055a4b4d1bb12c778d26b53e96eb33aa
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.6"
+    version: "4.5.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -185,6 +193,46 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.17"
+  encrypt:
+    dependency: transitive
+    description:
+      name: encrypt
+      sha256: "4fd4e4fdc21b9d7d4141823e1e6515cd94e7b8d84749504c232999fba25d9bbb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.1"
+  enough_convert:
+    dependency: transitive
+    description:
+      name: enough_convert
+      sha256: c67d85ca21aaa0648f155907362430701db41f7ec8e6501a58ad9cd9d8569d01
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.0"
+  enough_mail:
+    dependency: "direct main"
+    description:
+      name: enough_mail
+      sha256: da5acfe639663485f9e869b0b7f90c3d9d5d99f4aa4fdd3bee3ac0f8597d631c
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
+  enough_serialization:
+    dependency: transitive
+    description:
+      name: enough_serialization
+      sha256: c073934db3dff512c5f63917dab1140f0cb8d79bb48d40a3e00d1b0f35d44fac
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
+  event_bus:
+    dependency: transitive
+    description:
+      name: event_bus
+      sha256: "44baa799834f4c803921873e7446a2add0f3efa45e101a054b1f0ab9b95f8edc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -389,6 +437,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.0"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "04094f2eb032cbb06c6f6e8d3607edcfcb0455e2bb6cbc010cb01171dcb64e6d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   matcher:
     dependency: transitive
     description:
@@ -421,14 +477,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  passwordfield:
-    dependency: "direct main"
-    description:
-      name: passwordfield
-      sha256: e32b201b6185a18b074995a175c5fa3471fa0bd0a24dc1b42daa938f26b064ae
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
   path:
     dependency: transitive
     description:
