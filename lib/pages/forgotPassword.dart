@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -8,9 +9,12 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPassword extends State<ForgotPassword> {
-  bool _obscureText1 = true;
-  bool _obscureText2 = true;
-  bool _obscureText3 = true;
+  var mailController = TextEditingController();
+
+  bool _obscureText1 = false;
+
+  // bool _obscureText2 = true;
+  // bool _obscureText3 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +51,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                   width: 350,
                   height: 50,
                   child: TextFormField(
+                    controller: mailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Эл. почта",
@@ -56,70 +61,68 @@ class _ForgotPassword extends State<ForgotPassword> {
                             _obscureText1 = !_obscureText1;
                           });
                         },
-                        child: Icon(_obscureText1
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                        child: Icon(_obscureText1 ? Icons.visibility : Icons.visibility_off),
                       ),
                     ),
                     obscureText: _obscureText1,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Новый пароль",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText2 = !_obscureText2;
-                          });
-                        },
-                        child: Icon(_obscureText2
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    obscureText: _obscureText2,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Повторите пароль",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText3 = !_obscureText3;
-                          });
-                        },
-                        child: Icon(_obscureText3
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    obscureText: _obscureText3,
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
+              //   child: SizedBox(
+              //     width: 350,
+              //     height: 50,
+              //     child: TextFormField(
+              //       decoration: InputDecoration(
+              //         border: OutlineInputBorder(),
+              //         hintText: "Новый пароль",
+              //         suffixIcon: GestureDetector(
+              //           onTap: () {
+              //             setState(() {
+              //               _obscureText2 = !_obscureText2;
+              //             });
+              //           },
+              //           child: Icon(_obscureText2
+              //               ? Icons.visibility
+              //               : Icons.visibility_off),
+              //         ),
+              //       ),
+              //       obscureText: _obscureText2,
+              //     ),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
+              //   child: SizedBox(
+              //     width: 350,
+              //     height: 50,
+              //     child: TextFormField(
+              //       decoration: InputDecoration(
+              //         border: OutlineInputBorder(),
+              //         hintText: "Повторите пароль",
+              //         suffixIcon: GestureDetector(
+              //           onTap: () {
+              //             setState(() {
+              //               _obscureText3 = !_obscureText3;
+              //             });
+              //           },
+              //           child: Icon(_obscureText3
+              //               ? Icons.visibility
+              //               : Icons.visibility_off),
+              //         ),
+              //       ),
+              //       obscureText: _obscureText3,
+              //     ),
+              //   ),
+              // ),
               ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        Color.fromRGBO(1, 103, 255, 1.0)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)))),
-                onPressed: () {},
+                    backgroundColor: MaterialStateProperty.all(Color.fromRGBO(1, 103, 255, 1.0)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))),
+                onPressed: () {
+                  FirebaseAuth.instance.sendPasswordResetEmail(email: mailController.text).then((value) => print('1'));
+                },
                 child: SizedBox(
                   width: 320,
                   height: 50,

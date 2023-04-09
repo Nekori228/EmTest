@@ -1,10 +1,9 @@
 import 'dart:io';
 
+import 'package:emtest/pages/pdfView.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-
-import 'intro_test.dart';
 
 class date extends StatelessWidget {
   const date({Key? key}) : super(key: key);
@@ -117,7 +116,6 @@ class _downloaderState extends State<downloader> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final files = snapshot.data!.items;
-
             return ListView.builder(
               itemCount: files.length,
               itemBuilder: (context, index) {
@@ -130,7 +128,7 @@ class _downloaderState extends State<downloader> {
                       Icons.download,
                       color: Colors.black,
                     ),
-                    onPressed: () => downloadFile(file),
+                    onPressed: () => openFile(file),
                   ),
                 );
               },
@@ -140,18 +138,26 @@ class _downloaderState extends State<downloader> {
               child: Text('Error'),
             );
           }
-          return Text('ss');
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: Scaffold.of(context).appBarMaxHeight),
+              CircularProgressIndicator(color: Colors.grey,),
+            ],
+          );
         });
   }
 
-  Future downloadFile(Reference ref) async {
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/${ref.name}');
+  Future openFile(Reference ref) async {
+    // final dir = await getApplicationDocumentsDirectory();
+    // final file = File('${dir.path}/${ref.name}');
 
-    await ref.writeToFile(file);
+    // await ref.writeToFile(file).then((p0) {});
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Download ${ref.name}')),
-    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PdfViewPage()));
+
+    // ScaffoldMessenger.of(context).showSnackBar(
+    //   SnackBar(content: Text('Download ${ref.name}')),
+    // );
   }
 }

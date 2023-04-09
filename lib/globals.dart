@@ -4,7 +4,6 @@ dynamic prefs;
 
 int selectedPage = 0;
 
-
 var user = {};
 
 void initPrefs() async {
