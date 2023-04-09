@@ -47,24 +47,47 @@ class _material_contentState extends State<material_content> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: SizedBox(
-                width: 330,
-                child: Text(
-                    'Подготовка сотрудников органов внутренних дел к тестам на аттестацию',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 26)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-              child: SizedBox(
-                width: 350,
-                child: Text(
-                  'Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего ',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.black, fontSize: 19, height: 1.3),
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Минимумы кассиров',
+                      style: TextStyle(color: Colors.black, fontSize: 30),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Icon(Icons.check),
+                        Expanded(
+                          child: Text(
+                            'Кассиры это наш последний контакт с покупателями. От его/ее отношения зависит конечная удовлетворенность покупателя',
+                            style: TextStyle(
+                                color: Colors.black, fontSize: 19, height: 1.3),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Icon(Icons.check),
+                        Expanded(
+                          child: Text(
+                            'Любая передача от кассира покупателю осуществляется из рук в руки: банковская карта, чек продажи/возврата, деньги, ручка и т.д.',
+                            style: TextStyle(
+                                color: Colors.black, fontSize: 19, height: 1.3),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
