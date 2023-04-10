@@ -55,16 +55,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Эл. почта",
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureText1 = !_obscureText1;
-                          });
-                        },
-                        child: Icon(_obscureText1 ? Icons.visibility : Icons.visibility_off),
-                      ),
                     ),
-                    obscureText: _obscureText1,
                   ),
                 ),
               ),
