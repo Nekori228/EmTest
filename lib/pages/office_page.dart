@@ -11,7 +11,7 @@ import '../globals.dart';
 import 'applications.dart';
 import 'bio.dart';
 import 'intro_test.dart';
-import 'material_cont.dart';
+import 'material_contant_page1.dart';
 
 class office extends StatelessWidget {
   const office({Key? key}) : super(key: key);
