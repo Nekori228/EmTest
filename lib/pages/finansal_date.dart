@@ -111,41 +111,56 @@ class _downloaderState extends State<downloader> {
   }
 
   Widget build(BuildContext context) {
-    return FutureBuilder<ListResult>(
-        future: futureFiles,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            final files = snapshot.data!.items;
-            return ListView.builder(
-              itemCount: files.length,
-              itemBuilder: (context, index) {
-                final file = files[index];
+    return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.05),
+      child: FutureBuilder<ListResult>(
+          future: futureFiles,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              final files = snapshot.data!.items;
+              return ListView.builder(
+                itemCount: files.length,
+                itemBuilder: (context, index) {
+                  final file = files[index];
 
-                return ListTile(
-                  title: Text(file.name),
-                  trailing: IconButton(
-                    icon: Icon(
-                      Icons.download,
-                      color: Colors.black,
+                  return Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Color(0xFFD9D9D9)),
+                      ),
                     ),
-                    onPressed: () => openFile(file),
-                  ),
-                );
-              },
+                    child: ListTile(
+                      contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
+                      leading: IconButton(
+                        icon: Icon(
+                          Icons.picture_as_pdf,
+                          color: Colors.black,
+                        ),
+                        onPressed: () => openFile(file),
+                      ),
+                      title: Text(file.name),
+                      trailing: Text('10/11/2022'),
+                    ),
+                  );
+                },
+              );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Text('Error'),
+              );
+            }
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: Scaffold.of(context).appBarMaxHeight),
+                CircularProgressIndicator(
+                  color: Colors.grey,
+                ),
+              ],
             );
-          } else if (snapshot.hasError) {
-            return Center(
-              child: Text('Error'),
-            );
-          }
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: Scaffold.of(context).appBarMaxHeight),
-              CircularProgressIndicator(color: Colors.grey,),
-            ],
-          );
-        });
+          }),
+    );
   }
 
   Future openFile(Reference ref) async {
@@ -154,7 +169,8 @@ class _downloaderState extends State<downloader> {
 
     // await ref.writeToFile(file).then((p0) {});
 
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PdfViewPage()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => PdfViewPage()));
 
     // ScaffoldMessenger.of(context).showSnackBar(
     //   SnackBar(content: Text('Download ${ref.name}')),
