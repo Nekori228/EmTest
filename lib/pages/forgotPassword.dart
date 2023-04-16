@@ -107,6 +107,9 @@ class _ForgotPassword extends State<ForgotPassword> {
               //     ),
               //   ),
               // ),
+              SizedBox(
+                height: 20,
+              ),
               ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Color.fromRGBO(1, 103, 255, 1.0)),

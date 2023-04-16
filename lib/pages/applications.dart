@@ -46,7 +46,7 @@ class applications extends StatelessWidget {
         plainText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
         htmlText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
       )
-        ..from = [MailAddress('vadim', 'applications23@mail.ru')]
+        ..from = [MailAddress('Application', 'applications23@mail.ru')]
         ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')];
 
       final mimeMessage = builder.buildMimeMessage();
