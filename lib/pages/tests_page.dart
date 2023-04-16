@@ -1,3 +1,4 @@
+import 'package:emtest/globals.dart';
 import 'package:emtest/pages/intro_test.dart';
 import 'package:emtest/pages/test_page_five.dart';
 import 'package:emtest/pages/test_page_four.dart';
@@ -40,14 +41,14 @@ class tests extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Center(
           child: Column(
-            children: [
+            children: prefs.getString('isAuth') == "1" ? [
               tests_block1(),
               tests_block2(),
               tests_block3(),
               tests_block4(),
               tests_block5(),
               tests_block6()
-            ],
+            ] : [Container()],
           ),
         ),
       ),

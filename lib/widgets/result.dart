@@ -16,7 +16,6 @@ class result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String msg = '';
-    Widget img;
 
     if (0 <= count && count <= 3) {
       msg = 'Вы не прошли тест!';
