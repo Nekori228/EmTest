@@ -1,6 +1,7 @@
 import 'package:emtest/pages/material_contant_page1.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:emtest/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
-
 import 'material_contant_page2.dart';
 import 'material_contant_page3.dart';
 import 'material_contant_page4.dart';
@@ -22,7 +23,7 @@ class _materialState extends State<material> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Материал',
+            LocaleKeys.Material.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -30,7 +31,13 @@ class _materialState extends State<material> {
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (context.locale == Locale('en')) {
+                    context.setLocale(Locale('ru'));
+                  } else {
+                    context.setLocale(Locale('en'));
+                  }
+                },
                 child: Icon(
                   Icons.translate,
                   color: Colors.grey,
@@ -92,7 +99,7 @@ class material_list1 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Минимумы кассиров',
+                          LocaleKeys.Cashiers_minimums.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -144,7 +151,7 @@ class material_list2 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Стандарты безопасности. Кассовая зона',
+                        LocaleKeys.Safety_standards_Cash_zone.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -196,7 +203,7 @@ class material_list3 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Стандарты безопасности. Алармы',
+                          LocaleKeys.Safety_standards_Alarms.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -248,7 +255,7 @@ class material_list4 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Стандарты безопасности. Кассовые операции',
+                        LocaleKeys.Safety_standards_Safe_deposit.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -300,7 +307,7 @@ class material_list5 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Стандарты безопасности. Сейф',
+                        LocaleKeys.Safety_standards_Safe_deposit.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -352,7 +359,7 @@ class material_list6 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        'Технические проблемы',
+                        LocaleKeys.Technical_problems.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),

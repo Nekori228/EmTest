@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:emtest/globals.dart';
 import 'package:emtest/main.dart';
@@ -8,6 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:emtest/services/snack_bar.dart';
 
+import '../generated/locale_keys.g.dart';
 import 'office_page.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -87,8 +89,8 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
-        title: const Text(
-          'Кабинет',
+        title: Text(
+            LocaleKeys.Profile.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -96,7 +98,13 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: const Icon(
                 Icons.translate,
                 color: Colors.grey,

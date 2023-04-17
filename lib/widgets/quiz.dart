@@ -18,7 +18,10 @@ class quiz extends StatelessWidget {
           padding: EdgeInsets.all(10),
           child: Text(
             questionData.questions[index].title,
-            style: TextStyle(fontSize: 22, fontFamily: 'SourceSansPro'),
+            style: TextStyle(
+                fontSize: 22,
+                fontFamily: 'SourceSansPro',
+                fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ),

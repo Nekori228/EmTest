@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/globals.dart';
 import 'package:emtest/pages/intro_test.dart';
 import 'package:emtest/pages/test_page_five.dart';
@@ -8,6 +9,7 @@ import 'package:emtest/pages/test_page_three.dart';
 import 'package:emtest/pages/test_page_two.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/locale_keys.g.dart';
 import 'info_regist.dart';
 import 'login_screen.dart';
 
@@ -20,7 +22,7 @@ class tests extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Тесты',
+          LocaleKeys.Tests.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -28,7 +30,13 @@ class tests extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -41,14 +49,16 @@ class tests extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Center(
           child: Column(
-            children: prefs.getString('isAuth') == "1" ? [
-              tests_block1(),
-              tests_block2(),
-              tests_block3(),
-              tests_block4(),
-              tests_block5(),
-              tests_block6()
-            ] : [Container()],
+            children: prefs.getString('isAuth') == "1"
+                ? [
+                    tests_block1(),
+                    tests_block2(),
+                    tests_block3(),
+                    tests_block4(),
+                    tests_block5(),
+                    tests_block6()
+                  ]
+                : [Container()],
           ),
         ),
       ),
@@ -73,9 +83,11 @@ class tests_block1 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_one())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_one())); //LoginScreen
         },
-         child: SizedBox(
+        child: SizedBox(
           width: 380,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +131,9 @@ class tests_block2 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_two())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_two())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -165,7 +179,9 @@ class tests_block3 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_three())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_three())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -211,7 +227,9 @@ class tests_block4 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_four())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_four())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -257,7 +275,9 @@ class tests_block5 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_five())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_five())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -303,7 +323,9 @@ class tests_block6 extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => quiz_six())); //LoginScreen
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_six())); //LoginScreen
         },
         child: SizedBox(
           width: 380,

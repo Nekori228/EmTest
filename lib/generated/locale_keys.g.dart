@@ -1,6 +1,25 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
-  static const Translate = 'Translate';
+  static const News = 'News';
+  static const Material = 'Material';
+  static const Tests = 'Tests';
+  static const Profile = 'Profile';
+  static const Cashiers_minimums = 'Cashiers_minimums';
+  static const Safety_standards_Cash_zone = 'Safety_standards_Cash_zone';
+  static const Safety_standards_Alarms = 'Safety_standards_Alarms';
+  static const Safety_standards_Cash_operations = 'Safety_standards_Cash_operations';
+  static const Safety_standards_Safe_deposit = 'Safety_standards_Safe_deposit';
+  static const Technical_problems = 'Technical_problems';
+  static const Cashiers_are_our_last_contact_with_customers_The_ultimate_customer_satisfaction_depends_on_his_her_attitude = 'Cashiers_are_our_last_contact_with_customers_The_ultimate_customer_satisfaction_depends_on_his_her_attitude';
+  static const Any_transfer_from_the_cashier_to_the_buyer_is_carried_out_from_hand_to_hand_bank_card_sale_refund_receipt_money_pen_etc = 'Any_transfer_from_the_cashier_to_the_buyer_is_carried_out_from_hand_to_hand_bank_card_sale_refund_receipt_money_pen_etc';
+  static const The_goods_coming_to_the_checkout_are_already_purchased_goods_The_cashier_always_treats_him_carefully_removing_the_alarm_folding_packing_the_thing_in_a_bag_as_well_as_handing_the_package_to_the_buyer = 'The_goods_coming_to_the_checkout_are_already_purchased_goods_The_cashier_always_treats_him_carefully_removing_the_alarm_folding_packing_the_thing_in_a-bag_as_well_as_handing_the_package_to_the_buyer';
+  static const The_cashier_always_announces_the_purchase_amount_loudly_enough = 'The_cashier_always_announces_the_purchase_amount_loudly_enough';
+  static const The_cashier_is_obliged_to_explain_to_the_buyer_the_importance_of_keeping_the_receipt = 'The_cashier_is_obliged_to_explain_to_the_buyer_the_importance_of_keeping_the_receipt';
+  static const The_cashier_is_obliged_to_staple_a_bank_card_receipt_and_a_fiscal_receipt_with_a_stapler = 'The_cashier_is_obliged_to_staple_a_bank_card_receipt_and_a_fiscal_receipt_with_a_stapler';
+  static const The_cashier_is_obliged_to_inform_the_buyer_of_all_the_information_he_is_interested_in_services_provided_by_the_store_rules = 'The_cashier_is_obliged_to_inform_the_buyer_of_all_the_information_he_is_interested_in_services_provided_by_the_store_rules';
+  static const The_cashier_does_not_talk_on_the_phone_at_the_time_of_payment_by_the_buyer_of_his_purchase = 'The_cashier_does_not_talk_on_the_phone_at_the_time_of_payment_by_the_buyer_of_his_purchase';
+  static const The_cashier_should_always_thank_the_customer_for_the_purchase_and_say_goodbye = 'The_cashier_should_always_thank_the_customer_for_the_purchase_and_say_goodbye';
+  static const Also_in_our_stores = 'Also_in_our_stores';
 
 }

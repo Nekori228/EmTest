@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:emtest/generated/locale_keys.g.dart';
 import 'package:emtest/pages/news3.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class _newsState extends State<news> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -29,7 +31,13 @@ class _newsState extends State<news> {
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (context.locale == Locale('en')) {
+                    context.setLocale(Locale('ru'));
+                  } else {
+                    context.setLocale(Locale('en'));
+                  }
+                },
                 child: Icon(
                   Icons.translate,
                   color: Colors.grey,

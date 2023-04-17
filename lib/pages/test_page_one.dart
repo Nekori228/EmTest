@@ -176,7 +176,7 @@ class answer extends StatelessWidget {
           textAlign: TextAlign.start,
           style: TextStyle(
             fontSize: 18,
-            color: Color(0xFF000000).withOpacity(0.3),
+            color: Color(0xFF000000),
           ),
         ),
       ),
