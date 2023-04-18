@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class material_content2 extends StatefulWidget {
   const material_content2({Key? key}) : super(key: key);
@@ -24,7 +27,13 @@ class _material_contentState extends State<material_content2> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -57,17 +66,17 @@ class _material_contentState extends State<material_content2> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Стандарты безопасности. Кассовая зона',
+                      LocaleKeys.Safety_standards_Cash_zone.tr(),
                       style: TextStyle(color: Colors.black, fontSize: 30),
                     ),
                     SizedBox(height: 20),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'К работе на кассе допускаются только сотрудники, прошедшие специальное обучение и подписавшие договор о полной материальной ответственности',
+                            LocaleKeys.Only.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -77,11 +86,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассир обязан поддерживать чистоту и порядок на кассе, в том числе проконтролировать отсутствие личных вещей на кассе и денежных средств вне денежного ящика. Во время работы на кассе у кассира не должно быть его личных денежных средств, банковских карт и мобильного телефона',
+                            LocaleKeys.The_cashier.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -91,11 +100,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Каждый сотрудник обязан работать на кассе только под своим табельным номером и убедиться в его корректном вводе до начала работы',
+                            LocaleKeys.Each.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -105,11 +114,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'В зоне касс могут находиться только кассиры, работающие в данный момент на кассе, и/или менеджер',
+                            LocaleKeys.Only_cashiers.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -119,11 +128,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассиру запрещено обслуживать родственников и/или друзей. Если на данный момент он является единственным кассиром в магазине – обслуживание должно происходить в присутствии ответственного лица',
+                            LocaleKeys.The_cashier_is_forbidden.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -133,11 +142,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Касса должна быть заблокирована на личный 6-ти значный код, если она не используется в данный момент. Кассиру запрещено сообщать свой личный код от кассы третьим лицам',
+                            LocaleKeys.The_cash.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -147,11 +156,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассиру запрещено передавать клиентам фирменные пакеты без покупки, а также использовать их в личных целях',
+                            LocaleKeys.The_cashier_is.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -161,11 +170,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Запрещено хранение потерянных и/или забытых личных вещей покупателя на кассовой зоне. В случае обнаружения забытых и/или потерянных вещей, их необходимо передать сотруднику СБ',
+                            LocaleKeys.It_is_prohibited.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -175,11 +184,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Запрещено обеспечивать кассу разменом более установленной суммы',
+                            LocaleKeys.It_is_forbidden.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -189,11 +198,11 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 20),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассиру запрещено самостоятельно осуществлять пересчет кассы, т.е. при сдаче выручки кассир должен соблюдать следующий порядок: ',
+                            LocaleKeys.The_cashier_is_prohibited.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -203,10 +212,10 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Expanded(
                           child: Text(
-                            '1. В присутствии второго сотрудника (за исключением случаев, когда работает один сотрудник в смену) кассир пересчитывает свою выручку, заполняет справку кассира-операциониста (СКО) по фактическим данным, после чего снимает баланс с кассы',
+                            LocaleKeys.In_the_presence.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -216,10 +225,10 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Expanded(
                           child: Text(
-                            '2. Полученная сумма сверяется с балансом кассы, а расхождения фиксируются в снятом с кассы балансе',
+                            LocaleKeys.The_amount.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -229,10 +238,10 @@ class _material_contentState extends State<material_content2> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Expanded(
                           child: Text(
-                            '3. Ответственный за сейф пересчитывает денежные средства повторно, сверяет их с СКО и убирает в сейф',
+                            LocaleKeys.The_person.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),

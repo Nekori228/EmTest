@@ -201,11 +201,11 @@ class _material_contentState extends State<material_content1> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Не меняют и не разменивают деньги',
+                            LocaleKeys.Do_not_change_and_do_not_exchange_money.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -215,11 +215,11 @@ class _material_contentState extends State<material_content1> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Вешалки – это элементы оформления магазина, поэтому строго запрещается отдавать их клиентам',
+                            LocaleKeys.Hangers.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -229,11 +229,11 @@ class _material_contentState extends State<material_content1> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Всегда сверяют размер на обуви (предупреждая образование разнопарок)',
+                            LocaleKeys.Always.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -243,11 +243,11 @@ class _material_contentState extends State<material_content1> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Если на вещи, которую собирается оплатить покупатель, вы замечаете брак, то сообщайте об этом клиенту и старайтесь предложить альтернативу',
+                            LocaleKeys.If_you.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -257,11 +257,11 @@ class _material_contentState extends State<material_content1> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Всегда отдают всю сдачу; если покупатель отказывается от мелочи, всегда стараемся вежливо его уговорить, либо положить мелочь вместе с покупкой в пакет',
+                            LocaleKeys.They_always.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),

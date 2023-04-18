@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class material_content3 extends StatefulWidget {
   const material_content3({Key? key}) : super(key: key);
@@ -24,7 +27,13 @@ class _material_contentState extends State<material_content3> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -56,17 +65,17 @@ class _material_contentState extends State<material_content3> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Стандарты безопасности. Алармы',
+                    LocaleKeys.Safety_standards_Alarms.tr(),
                       style: TextStyle(color: Colors.black, fontSize: 30),
                     ),
                     SizedBox(height: 20),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассир обязан контролировать наличие алармов на всем товаре в кассовой зоне: резерв, возвраты, портная, химчистка, брак, парфюм, аксессуары, а также на товаре, который выносится с кассы в зал и на склад',
+                            LocaleKeys.The_cashier_is_obliged.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -76,11 +85,11 @@ class _material_contentState extends State<material_content3> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'По окончании смены кассир убирает все алармы, накопившиеся за день, в предназначенную для этого коробку и опечатывает ее. На ночь ящик для алармов на кассе должен оставаться пустым',
+                            LocaleKeys.At_the_end.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -90,11 +99,11 @@ class _material_contentState extends State<material_content3> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'В случае обращения покупателя по факту неснятого аларма на уже оплаченном товаре, кассиру необходимо незамедлительно сообщить об этом менеджеру, если покупатель обратился по факту неснятого аларма на уже оплаченном товаре из другого магазина, покупателю необходимо обратиться в магазин, в котором был приобретен данный товар',
+                            LocaleKeys.In_the_case.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -104,11 +113,11 @@ class _material_contentState extends State<material_content3> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Выдача ручного алармосъемника осуществляется ответственным за сейф сотрудником лично в руки под подпись в бланке выдачи ручного алармосъемника',
+                            LocaleKeys.The_issuance.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),

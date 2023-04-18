@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class material_content5 extends StatefulWidget {
   const material_content5({Key? key}) : super(key: key);
@@ -24,7 +27,13 @@ class _material_contentState extends State<material_content5> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -57,17 +66,17 @@ class _material_contentState extends State<material_content5> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Стандарты безопасности. Сейф',
+                      LocaleKeys.Safety_standards_Safe_deposit.tr(),
                       style: TextStyle(color: Colors.black, fontSize: 30),
                     ),
                     SizedBox(height: 20),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Код от сейфа должен меняться старшим кассиром и/или менеджером 1 раз в месяц и при увольнении/переводе сотрудника, имевшего доступ к сейфу. Код меняется согласно инструкции',
+                            LocaleKeys.The_code.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -77,11 +86,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Сейф всегда должен быть закрыт и на ключ, и на код (если сейф открывается без кода, а только с использованием ключа, необходимо обратиться к курирующему ваш магазин менеджеру корпоративных бизнес-приложений для составления заявки на ремонт сейфа)',
+                            LocaleKeys.The_safe.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -91,11 +100,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Ключ от сейфа находится только у ответственного за него сотрудника, не выносится за пределы магазина и не передается другому сотруднику без пересчёта сейфа и внесения записи в журнал пересчета сейфа; во время перерыва ответственного кассира, ключ от сейфа хранится в денежном ящике кассы, за которой он работает, или в его личном шкафчике (если на кассе он не работает)',
+                            LocaleKeys.The_key.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -105,11 +114,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Приём и передача сейфа осуществляется три раза в день. Полученные после подсчёта денежных средства с учетом резерва всегда фиксируются в журнале пересчёта сейфа (согласно инструкции по пересчету сейфа)',
+                            LocaleKeys.Reception.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -119,11 +128,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Резервные денежные средства должны быть опечатаны кассиром и менеджером, номера пломб/сумок указаны в описи под подпись. Каждый раз при снятии пломбы, кассир совместно с менеджером пересчитывает всю наличность в данном мешке. Последняя опись должна находиться в сейфе',
+                            LocaleKeys.Reserve.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -133,11 +142,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Описи резервных д\с должны храниться в специальной папке в исходном виде (не вносить вручную никаких изменений). Описи хранятся до тех пор, пока в них содержится хотя бы одна актуальная пломба',
+                            LocaleKeys.The_inventories.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -147,11 +156,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'При каждом пересчете сейфа необходимо убедиться в целостности мешков в резерве и актуальности номеров пломб и сумм (их соответствие описи и данным на компьютере)',
+                            LocaleKeys.At.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -161,11 +170,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'После вечернего пересчёта сейфа ключ от сейфа хранится в денежном ящике главной кассы',
+                            LocaleKeys.After.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -175,11 +184,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Дубликат ключа от сейфа соединяется номерной пломбой с основным ключом от сейфа и хранится вместе с ним. Номер пломбы фиксируется в описи резерва денежных средств',
+                            LocaleKeys.A_duplicate.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -189,11 +198,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'В сейфе разрешается хранить: денежные средства, ручной алармосъемник (при его использовании необходимо заполнять бланк выдачи/приема алармосъемника), медицинские книжки и трудовые книжки уволившихся сотрудников (для регионов)',
+                            LocaleKeys.It_is_allowed.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -203,11 +212,11 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Сейф должен быть установлен в кассовой зоне под камерой или в специальной комнате (в этом случае комната должна быть всегда закрыта на ключ)',
+                            LocaleKeys.The_safe_must.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -217,10 +226,10 @@ class _material_contentState extends State<material_content5> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Expanded(
                           child: Text(
-                            'В случае экстренных ситуаций, связанных с денежными средствами (мошенничество, кражи, крупные недостачи), необходимо незамедлительно сообщить DT, HR, менеджеру корпоративных бизнес-приложений и отделу предотвращения потерь.',
+                            LocaleKeys.In_case.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3, fontWeight: FontWeight.bold),
                           ),

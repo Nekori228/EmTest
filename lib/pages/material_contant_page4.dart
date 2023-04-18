@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class material_content4 extends StatefulWidget {
   const material_content4({Key? key}) : super(key: key);
@@ -24,7 +27,13 @@ class _material_contentState extends State<material_content4> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -57,17 +66,17 @@ class _material_contentState extends State<material_content4> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Стандарты безопасности. Кассовые операции',
+                      LocaleKeys.Safety_standards_Safe_deposit.tr(),
                       style: TextStyle(color: Colors.black, fontSize: 30),
                     ),
                     SizedBox(height: 20),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'При авторизации возвратов (в том числе интернет-возвратов), аннулировании чеков, изменении формы оплаты менеджер должен до оформления операции на кассе указать на чеке (сопроводительном документе): дата, слово «ВОЗВРАТ», подпись, Фамилия И.О., табельный номер менеджера, количество единиц цифрами и прописью с их четким обозначением в чеке. Также менеджер обязан присутствовать на протяжении всей процедуры возврата и подписать расходный кассовый ордер и заявление сразу после оформления возврата. В случае если в магазине нет менеджера, то сотрудник, который был оставлен ответственным, должен подписать чек продажи (как указано выше) с оборотной стороны. Если ответственный сотрудник (или менеджер) работает за кассой, то он не может себе авторизовать возврат, это должно происходить на другой кассе',
+                            LocaleKeys.When_authorizing.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -77,11 +86,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Отмена чека осуществляется только в присутствии менеджера с использованием личного кода',
+                            LocaleKeys.Cancellation.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -91,11 +100,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Запрещается аннулировать чеки прихода по истечении 3-х минут, а также, если после данного чека уже были осуществлены другие продажи/возвраты',
+                            LocaleKeys.It_is_prohibited_to.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -105,11 +114,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Считывание артикулов производится с использованием RFID-системы. Кассир должен следить за тем, чтобы количество и стоимость изделий, артикулов в чеке соответствовали фактическому наличию',
+                            LocaleKeys.The_articles.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -119,11 +128,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Кассир обязан передать покупателю кассовый чек прихода/возврата прихода по окончании процедуры продажи/возврата',
+                            LocaleKeys.The_cashier_is_obliged_to.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -133,11 +142,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Товарный чек выдается кассиром покупателю по его просьбе только в дополнение к фискальному чеку прихода (заполняются все необходимые столбцы, ставится подпись кассира и печать магазина)',
+                            LocaleKeys.The_sales.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -147,11 +156,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'В случае возврата без чека возможно использование копии чека из 1с только в течение 10 минут с момента её печати и только в том магазине, в котором она была напечатана',
+                            LocaleKeys.In_case_of.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -161,11 +170,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'На передаваемых покупателям копиях кассовых чеков необходимо наличие печати компании, слов «КОПИЯ ВЕРНА», даты, подписи, расшифровки и табельного номера менеджера',
+                            LocaleKeys.Copies.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -175,11 +184,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Сотрудникам не разрешается хранить чеки покупателей. Если чек был найден или забыт покупателем, его необходимо уничтожить в присутствии ответственного сотрудника (менеджер, сотрудник СБ)',
+                            LocaleKeys.Employees.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -189,11 +198,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'В случае если покупатель возвращает не все позиции из исходного чека, необходимо предоставить ему заверенную кассовую копию этого чека. Если покупатель отказался от копии чека на невозвращенные позиции – данный чек должен быть уничтожен',
+                            LocaleKeys.If_the.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -203,11 +212,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Оплата/Возврат по карте покупателем должна осуществляться в присутствии держателя карты и при наличии документа, содержащего фотографию, ФИО и образец подписи. Без документа допускается принимать к оплате карты, имеющие на себе чип (требующие ввода ПИН-кода) или фото держателя карты, бесконтактные системы оплаты, а также карты, на которых не указано имя держателя',
+                            LocaleKeys.Payment.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -217,11 +226,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            '«Отчет менеджера» необходимо проверять ежедневно, по окончании своей смены. В данном отчете будут включены операции, требующие дополнительной проверки. Менеджер лично проверяет наличие и подписи во всех возвратах, аннулированных чеках, изменениях цены и ставит статус по каждой запрошенной операции в «отчет менеджера». В случае отсутствия менеджера в смене, отчёт менеджера проверяет сотрудник, который был оставлен ответственным',
+                            LocaleKeys.The.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
@@ -231,11 +240,11 @@ class _material_contentState extends State<material_content4> {
                     SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.check),
                         Expanded(
                           child: Text(
-                            'Менеджер магазина должен контролировать выполнение положений приказа о списке должностных лиц, имеющих право подписи кассовых документов',
+                            LocaleKeys.The_store.tr(),
                             style: TextStyle(
                                 color: Colors.black, fontSize: 19, height: 1.3),
                           ),
