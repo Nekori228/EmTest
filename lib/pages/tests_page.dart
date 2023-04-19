@@ -95,14 +95,14 @@ class tests_block1 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Минимумы кассиров',
+                  LocaleKeys.Cashiers_minimums.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '7 вопросов',
+                  '7 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),
@@ -143,14 +143,14 @@ class tests_block2 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Стандарты безопасности. Кассовая зона',
+                  LocaleKeys.Safety_standards_Cash_zone.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '7 вопросов',
+                  '7 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),
@@ -191,14 +191,14 @@ class tests_block3 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Стандарты безопасности. Алармы',
+                  LocaleKeys.Safety_standards_Alarms.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '4 вопросов',
+                  '4 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),
@@ -239,14 +239,14 @@ class tests_block4 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Стандарты безопасности. Кассовые операции',
+                  LocaleKeys.Safety_standards_Cash_operations.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '7 вопросов',
+                  '7 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),
@@ -287,14 +287,14 @@ class tests_block5 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Стандарты безопасности. Сейф',
+                  LocaleKeys.Safety_standards_Safe_deposit.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '5 вопросов',
+                  '5 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),
@@ -335,14 +335,14 @@ class tests_block6 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: Text(
-                  'Технические проблемы',
+                  LocaleKeys.Technical_problems.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 0, 20),
                 child: Text(
-                  '4 вопросов',
+                  '4 ' + LocaleKeys.question.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
               ),

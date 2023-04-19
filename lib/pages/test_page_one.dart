@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_one extends StatefulWidget {
   const quiz_one({Key? key}) : super(key: key);
@@ -26,10 +29,15 @@ class _quiz_oneState extends State<quiz_one> {
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
         if (isCorrect) {
-          _icons.add(Icon(Icons.crop_square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0), size: 30,));
+          _icons.add(Icon(Icons.square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0)));
           _countResult++;
         } else {
-          _icons.add(Icon(Icons.square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0)));
+          _icons.add(Icon(
+            Icons.crop_square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 30,
+          ));
         }
 
         _questionIndex += 1;
@@ -41,7 +49,7 @@ class _quiz_oneState extends State<quiz_one> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Тесты',
+          LocaleKeys.Tests.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -49,7 +57,13 @@ class _quiz_oneState extends State<quiz_one> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -168,7 +182,8 @@ class answer extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         width: double.infinity,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
+            border:
+                Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
             borderRadius: BorderRadius.circular(5),
             color: Colors.white),
         child: Text(

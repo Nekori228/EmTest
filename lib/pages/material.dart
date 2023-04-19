@@ -255,7 +255,7 @@ class material_list4 extends StatelessWidget {
                       width: 250,
                       height: 70,
                       child: Text(
-                        LocaleKeys.Safety_standards_Safe_deposit.tr(),
+                        LocaleKeys.Safety_standards_Cash_operations.tr(),
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),

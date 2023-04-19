@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class news_five extends StatelessWidget {
   const news_five({Key? key}) : super(key: key);
@@ -10,7 +13,7 @@ class news_five extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -18,7 +21,13 @@ class news_five extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -49,7 +58,7 @@ class news_five extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'INsport – спортивные онлайн-тренировки с коллегами',
+                    LocaleKeys.INsport_online.tr(),
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       color: Colors.black,
@@ -66,70 +75,56 @@ class news_five extends StatelessWidget {
                           fontFamily: "SourceSansPro",
                           height: 1.3),
                       children: <TextSpan>[
-                        TextSpan(
-                            text:
-                                'Больше месяца назад для всех сотрудников АО «Новая Мода» был запущен проект '),
+                        TextSpan(text: LocaleKeys.More_than.tr()),
                         TextSpan(
                           text: 'INsport',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
-                        TextSpan(text: ', главной целью которого является '),
+                        TextSpan(text: LocaleKeys.the_main.tr()),
                         TextSpan(
-                          text:
-                              'поддержание здоровья и физической формы сотрудников ',
+                          text: LocaleKeys.maintaining.tr(),
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
-                        TextSpan(text: 'а также '),
+                        TextSpan(text: LocaleKeys.and_also.tr()),
                         TextSpan(
-                          text: 'формирование общего командного духа.' + '\n\n',
-                          style: TextStyle(fontWeight: FontWeight.w600),
-                        ),
-                        TextSpan(
-                          text: '2 тренера, 9 тренировок, 525 участников ',
+                          text: LocaleKeys.formation.tr() + '\n\n',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                            text:
-                                '– вот результаты первого месяца совместных тренировок с коллегами.' +
-                                    '\n\n'),
+                          text: LocaleKeys.coaches.tr(),
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        TextSpan(text: LocaleKeys.here.tr() + '\n\n'),
                         TextSpan(
-                          text: 'Расписание:' + '\n\n',
+                          text: LocaleKeys.Schedule.tr() + '\n\n',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                            text: '17.04 (понедельник) 17:00-18:00 – функциональный тренинг с акцентом на мышцы верхнего плечевого пояса, пресса и спины' +
+                            text: LocaleKeys.Monday.tr() +
                                 '\n\n' +
-                                '20.04 (четверг) 10:00-11:00 – йога: разминочный комплекс Сурья Намаскар – Приветствие солнцу' +
+                                LocaleKeys.Thursday.tr() +
                                 '\n\n' +
-                                '24.04 (понедельник) 17:00-18:00 – функциональный тренинг с акцентом на мышцы пресса и ног' +
+                                LocaleKeys.Monday_two.tr() +
                                 '\n\n' +
-                                '27.04 (четверг) 10:00-11:00 – расслабляющая йога' +
+                                LocaleKeys.Thursday_two.tr() +
                                 '\n\n'),
                         TextSpan(
-                          text:
-                              'Уровень физической подготовки практикующих: любой.' +
-                                  '\n\n',
+                          text: LocaleKeys.The_level.tr() + '\n\n',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                          text: 'Тренировки проведут:' + '\n\n',
+                          text: LocaleKeys.Training.tr() + '\n\n',
                         ),
                         TextSpan(
-                          text:
-                              'Функциональный тренинг – Светлана Ловдина, сертифицированный тренер групповых программ и функционального тренинга.' +
-                                  '\n\n',
+                          text: LocaleKeys.Functional.tr() + '\n\n',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                          text:
-                              'Йога – Анастасия Старостина, сертифицированный инструктор по хатха-йоге.' +
-                                  '\n\n',
+                          text: LocaleKeys.Yoga.tr() + '\n\n',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                          text:
-                              'Для того, чтобы принять участие в спортивных занятиях, необходимо сообщить менеджеру.  Приглашение на подключение придет в течение нескольких дней на почту Присоединяйтесь к совместным тренировкам. Включайте камеры, чтобы видеть и поддерживать друг друга!' +
-                                  '\n',
+                          text: LocaleKeys.In_order.tr() + '\n',
                         ),
                       ],
                     ),

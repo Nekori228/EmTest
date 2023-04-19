@@ -1,5 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class sale_card extends StatelessWidget {
   const sale_card({Key? key}) : super(key: key);
@@ -11,7 +14,7 @@ class sale_card extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Скидочная карта',
+          LocaleKeys.Discount_card.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -19,7 +22,13 @@ class sale_card extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,

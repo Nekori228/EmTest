@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/pages/pdfView.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class date extends StatelessWidget {
   const date({Key? key}) : super(key: key);
@@ -15,7 +18,7 @@ class date extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.grey),
           backgroundColor: Colors.white,
           title: Text(
-            'Мои финансовые данные',
+            LocaleKeys.My_financia_data.tr(),
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
@@ -23,7 +26,13 @@ class date extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    if (context.locale == Locale('en')) {
+                      context.setLocale(Locale('ru'));
+                    } else {
+                      context.setLocale(Locale('en'));
+                    }
+                  },
                   child: Icon(
                     Icons.translate,
                     color: Colors.grey,

@@ -365,27 +365,49 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'С наступающим Новым 2023 годом!' +
-                                                '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
-                                  ]),
-                            ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.Happy.tr(),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.Dear_colleagues.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
+                            ],
                           ),
+                          // child: SizedBox(
+                          //   child: RichText(
+                          //     text:  TextSpan(
+                          //         style: TextStyle(
+                          //             color: Color(0xFF000000),
+                          //             fontWeight: FontWeight.w400,
+                          //             fontSize: 15,
+                          //             fontFamily: 'SourceSansPro'),
+                          //         children: <TextSpan>[
+                          //           TextSpan(
+                          //               text:
+                          //                   LocaleKeys.Happy.tr() +
+                          //                       '\n',
+                          //               style: TextStyle(
+                          //                   fontWeight: FontWeight.bold)),
+                          //           TextSpan(
+                          //               text:
+                          //                   'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
+                          //         ]),
+                          //   ),
+                          // ),
                         ),
                       )
                     ],

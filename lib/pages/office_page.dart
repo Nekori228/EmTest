@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/main.dart';
 import 'package:emtest/pages/change_password.dart';
 import 'package:emtest/pages/finansal_date.dart';
@@ -7,6 +8,7 @@ import 'package:emtest/pages/test_file.dart';
 import 'package:emtest/pages/tests_page.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/locale_keys.g.dart';
 import '../globals.dart';
 import 'applications.dart';
 import 'bio.dart';
@@ -54,7 +56,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.account_box),
                           ),
                           Text(
-                            'Личные данные',
+                            LocaleKeys.Personal_data.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -93,7 +95,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.credit_card),
                           ),
                           Text(
-                            'Скидочная карта',
+                            LocaleKeys.Discount_card.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -132,7 +134,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.account_balance_outlined),
                           ),
                           Text(
-                            'Мои финансовые данные',
+                            LocaleKeys.My_financia_data.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -171,7 +173,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.settings_applications_outlined),
                           ),
                           Text(
-                            'Заявки',
+                            LocaleKeys.Applications.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -210,7 +212,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.history),
                           ),
                           Text(
-                            'История',
+                            LocaleKeys.History.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -251,7 +253,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.password),
                           ),
                           Text(
-                            'Смена пароля',
+                            LocaleKeys.Password_change.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -290,7 +292,7 @@ class office extends StatelessWidget {
                             child: Icon(Icons.logout),
                           ),
                           Text(
-                            'Выйти',
+                            LocaleKeys.Exit.tr(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],

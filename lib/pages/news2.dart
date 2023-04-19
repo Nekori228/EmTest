@@ -1,7 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class news_two extends StatelessWidget {
   const news_two({Key? key}) : super(key: key);
@@ -13,7 +16,7 @@ class news_two extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -21,7 +24,13 @@ class news_two extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -53,15 +62,32 @@ class news_two extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Телефонное мошенничество',
+                    LocaleKeys.Phone.tr(),
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
                   SizedBox(height: 15),
-                  Text(
-                    'Мы живем в эру технологий, и это огромное поле для деятельности разного рода мошенников. К сожалению, в последнее время участились случаи «нападения» киберпреступниками на сотрудников нашей компании в России. И зачастую даже опытные сотрудники поддавались на их уловки и несли финансовые потери. \n\nДля того, чтобы снизить количество подобных ситуаций мы подготовили короткий видеоролик, рассказывающий о самой частой схеме мошенничества. \n\nПередайте информацию своим коллегам и порекомендуйте посмотреть данный ролик! Если вы заметите, что ваш коллега планирует передать кому-то денежные средства магазина, остановите его и расскажите о возможных последствиях. \n\nДавайте совместно сделаем так, чтобы таких ситуаций больше не происходило!',
+                  RichText(
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 19, height: 1.3),
+                    text: TextSpan(
+                      text: LocaleKeys.Did_you.tr(),
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 19, height: 1.3),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: LocaleKeys.We_live.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.In_order_to.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.Pass.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.Lets.tr() + '\n\n',
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -85,13 +111,13 @@ class DefaultPlayer extends StatefulWidget {
 
 class _DefaultPlayerState extends State<DefaultPlayer> {
   late FlickManager flickManager;
+
   @override
   void initState() {
     super.initState();
     flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.asset(
-          'assets/video/video1.MP4'
-      ),
+      videoPlayerController:
+          VideoPlayerController.asset('assets/video/video1.MP4'),
     );
   }
 

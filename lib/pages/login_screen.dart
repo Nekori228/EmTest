@@ -79,7 +79,8 @@ class _LoginScreenState extends State<LoginScreen> {
     prefs.setString('isAuth', '1');
     selectedPage = 3;
     setState(() {});
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => bottomNavigation()));
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => bottomNavigation()));
   }
 
   @override
@@ -90,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
-            LocaleKeys.Profile.tr(),
+          LocaleKeys.Profile.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -120,10 +121,12 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Row(
-                children: const [
+                children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 40, 0, 50),
-                    child: Text('Вход', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(LocaleKeys.Entrance.tr(),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -131,7 +134,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
                 controller: emailTextInputController,
-                validator: (email) => email != null && !EmailValidator.validate(email) ? 'Введите правильный Email' : null,
+                validator: (email) =>
+                    email != null && !EmailValidator.validate(email)
+                        ? 'Введите правильный Email'
+                        : null,
                 decoration: const InputDecoration(
                   hintText: 'Эл. почта',
                 ),
@@ -141,14 +147,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 autocorrect: false,
                 controller: passwordTextInputController,
                 obscureText: isHiddenPassword,
-                validator: (value) => value != null && value.length < 6 ? 'Минимум 6 символов' : null,
+                validator: (value) => value != null && value.length < 6
+                    ? 'Минимум 6 символов'
+                    : null,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
                   hintText: 'Пароль',
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(
-                      isHiddenPassword ? Icons.visibility_off : Icons.visibility,
+                      isHiddenPassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
                       color: Colors.black,
                     ),
                   ),
@@ -156,9 +166,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 30),
               TextButton(
-                onPressed: () => Navigator.of(context).pushNamed('/forgot_password'),
-                child: const Text(
-                  'Забыли пароль?',
+                onPressed: () =>
+                    Navigator.of(context).pushNamed('/forgot_password'),
+                child: Text(
+                  LocaleKeys.Forgot.tr(),
                   style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
@@ -168,10 +179,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 21),
-                      backgroundColor: Colors.blueAccent,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                      backgroundColor: Color.fromRGBO(1, 103, 255, 1.0),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
                   onPressed: login,
-                  child: const Center(child: Text('Войти')),
+                  child: Center(child: Text(LocaleKeys.Enter.tr())),
                 ),
               ),
             ],
