@@ -75,6 +75,7 @@ class _quiz_fiveState extends State<quiz_five> {
                 : result(
                 count: _countResult,
                 total: data.questions.length,
+                name: 'Стандарты безопасности. Сейф',
                 onClearState: _clearstate)
           ],
         ),

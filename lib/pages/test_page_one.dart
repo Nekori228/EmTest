@@ -74,6 +74,7 @@ class _quiz_oneState extends State<quiz_one> {
                   )
                 : result(
                     count: _countResult,
+                    name: 'Минимумы кассиров',
                     total: data.questions.length,
                     onClearState: _clearstate)
           ],

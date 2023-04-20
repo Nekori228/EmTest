@@ -74,6 +74,7 @@ class _quiz_threeState extends State<quiz_three> {
             )
                 : result(
                 count: _countResult,
+                name: 'Стандарты безопасности. Алармы',
                 total: data.questions.length,
                 onClearState: _clearstate)
           ],

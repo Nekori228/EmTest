@@ -216,6 +216,9 @@ class applications extends StatelessWidget {
                           _formKey.currentState!.save();
                           mailSend(context).then((value) {
                             Navigator.of(context).pop();
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("Заявка отправлена"),
+                            ));
                           });
                         }
                       },

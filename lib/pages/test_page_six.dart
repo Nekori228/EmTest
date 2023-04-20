@@ -74,6 +74,7 @@ class _quiz_sixState extends State<quiz_six> {
             )
                 : result(
                 count: _countResult,
+                name: 'Технические проблемы',
                 total: data.questions.length,
                 onClearState: _clearstate)
           ],

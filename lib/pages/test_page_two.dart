@@ -79,6 +79,7 @@ class _quiz_twoState extends State<quiz_two> {
                   )
                 : result(
                     count: _countResult,
+                    name: 'Стандарты безопасности. Кассовая зона',
                     total: data.questions.length,
                     onClearState: _clearstate)
           ],
