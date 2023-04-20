@@ -19,7 +19,7 @@ class _material_contentState extends State<material_content4> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Материал',
+          LocaleKeys.Material.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,

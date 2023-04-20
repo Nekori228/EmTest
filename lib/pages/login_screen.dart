@@ -138,8 +138,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     email != null && !EmailValidator.validate(email)
                         ? 'Введите правильный Email'
                         : null,
-                decoration: const InputDecoration(
-                  hintText: 'Эл. почта',
+                decoration: InputDecoration(
+                  hintText: LocaleKeys.Email_small.tr(),
                 ),
               ),
               const SizedBox(height: 30),
@@ -152,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     : null,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
-                  hintText: 'Пароль',
+                  hintText: LocaleKeys.Password_one.tr(),
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(

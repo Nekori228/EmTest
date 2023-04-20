@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_six extends StatefulWidget {
   const quiz_six({Key? key}) : super(key: key);
@@ -19,21 +22,26 @@ class _quiz_sixState extends State<quiz_six> {
   List<Icon> _icons = [];
 
   void _clearstate() => setState(() {
-    _questionIndex = 0;
-    _countResult = 0;
-    _icons = [];
-  });
+        _questionIndex = 0;
+        _countResult = 0;
+        _icons = [];
+      });
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
-    if (isCorrect) {
-      _icons.add(Icon(Icons.crop_square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0), size: 30,));
-      _countResult++;
-    } else {
-      _icons.add(Icon(Icons.square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0)));
-    }
+        if (isCorrect) {
+          _icons.add(Icon(
+            Icons.square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 30,
+          ));
+          _countResult++;
+        } else {
+          _icons.add(Icon(Icons.crop_square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0)));
+        }
 
-    _questionIndex += 1;
-  });
+        _questionIndex += 1;
+      });
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,15 +76,16 @@ class _quiz_sixState extends State<quiz_six> {
             ),
             _questionIndex < data.questions.length
                 ? quiz(
-              index: _questionIndex,
-              questionData: data,
-              onChangeAnswer: _onChangeAnswer,
-            )
+                    index: _questionIndex,
+                    questionData: data,
+                    onChangeAnswer: _onChangeAnswer,
+                  )
                 : result(
-                count: _countResult,
-                name: 'Технические проблемы',
-                total: data.questions.length,
-                onClearState: _clearstate)
+                    count: _countResult,
+                    name: LocaleKeys.Technical_problems.tr(),
+                    total: data.questions.length,
+                    onClearState: _clearstate,
+                  )
           ],
         ),
       ),
@@ -93,21 +102,32 @@ class Question {
 
 class QuestionData {
   final questions = [
-    Question(title: 'В каком момент нужно предпринимать действия, если при закрытии кассы не распечатался Z-отчет?', answers: [
-      {'answer': 'Вечером'},
-      {'answer': 'Сразу увидем проблему'},
-      {'answer': 'Утром', 'isCorrect': 1},
-    ]),
-    Question(title: 'Если касса не реагирует ни на монитор, ни на клавиатуру, с кем нужно связаться?', answers: [
-      {'answer': 'Менеджером'},
-      {'answer': 'Менеджером корпоративных бизнес-приложений', 'isCorrect': 1},
-      {'answer': 'Старшим кассиром'},
-    ]),
-    Question(title: 'В чем может быть причина не загрузки продаж в 1С?', answers: [
-      {'answer': 'Не найден файл', 'isCorrect': 1},
-      {'answer': 'Не было продаж'},
-      {'answer': '1С не связана с кассой'},
-    ]),
+    Question(
+        title:
+            'В каком момент нужно предпринимать действия, если при закрытии кассы не распечатался Z-отчет?',
+        answers: [
+          {'answer': 'Вечером'},
+          {'answer': 'Сразу увидем проблему'},
+          {'answer': 'Утром', 'isCorrect': 1},
+        ]),
+    Question(
+        title:
+            'Если касса не реагирует ни на монитор, ни на клавиатуру, с кем нужно связаться?',
+        answers: [
+          {'answer': 'Менеджером'},
+          {
+            'answer': 'Менеджером корпоративных бизнес-приложений',
+            'isCorrect': 1
+          },
+          {'answer': 'Старшим кассиром'},
+        ]),
+    Question(
+        title: 'В чем может быть причина не загрузки продаж в 1С?',
+        answers: [
+          {'answer': 'Не найден файл', 'isCorrect': 1},
+          {'answer': 'Не было продаж'},
+          {'answer': '1С не связана с кассой'},
+        ]),
     Question(title: 'По какому времени начинаются решения проблем?', answers: [
       {'answer': 'В 8 по МСК', 'isCorrect': 1},
       {'answer': 'В 10 по МСК'},
@@ -123,9 +143,9 @@ class answer extends StatelessWidget {
 
   answer(
       {Key? key,
-        required this.title,
-        required this.isCorrect,
-        required this.onChangeAnswer})
+      required this.title,
+      required this.isCorrect,
+      required this.onChangeAnswer})
       : super(key: key);
 
   @override
@@ -140,7 +160,8 @@ class answer extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         width: double.infinity,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
+            border:
+                Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
             borderRadius: BorderRadius.circular(5),
             color: Colors.white),
         child: Text(

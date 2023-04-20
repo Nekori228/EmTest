@@ -176,4 +176,9 @@ abstract class  LocaleKeys {
   static const Password_change = 'Password_change';
   static const Exit = 'Exit';
   static const question = 'question';
+  static const Change_Password = 'Change_Password';
+  static const To_change = 'To_change';
+  static const To_change_the = 'To_change_the';
+  static const Email_small = 'Email_small';
+  static const Password_one = 'Password_one';
 }

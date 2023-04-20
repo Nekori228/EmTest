@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_four extends StatefulWidget {
   const quiz_four({Key? key}) : super(key: key);
@@ -19,21 +22,26 @@ class _quiz_fourState extends State<quiz_four> {
   List<Icon> _icons = [];
 
   void _clearstate() => setState(() {
-    _questionIndex = 0;
-    _countResult = 0;
-    _icons = [];
-  });
+        _questionIndex = 0;
+        _countResult = 0;
+        _icons = [];
+      });
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
-    if (isCorrect) {
-      _icons.add(Icon(Icons.crop_square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0), size: 30,));
-      _countResult++;
-    } else {
-      _icons.add(Icon(Icons.square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0)));
-    }
+        if (isCorrect) {
+          _icons.add(Icon(
+            Icons.square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 30,
+          ));
+          _countResult++;
+        } else {
+          _icons.add(Icon(Icons.crop_square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0)));
+        }
 
-    _questionIndex += 1;
-  });
+        _questionIndex += 1;
+      });
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,15 +76,16 @@ class _quiz_fourState extends State<quiz_four> {
             ),
             _questionIndex < data.questions.length
                 ? quiz(
-              index: _questionIndex,
-              questionData: data,
-              onChangeAnswer: _onChangeAnswer,
-            )
+                    index: _questionIndex,
+                    questionData: data,
+                    onChangeAnswer: _onChangeAnswer,
+                  )
                 : result(
-                count: _countResult,
-                name: 'Стандарты безопасности. Кассовые операции',
-                total: data.questions.length,
-                onClearState: _clearstate)
+                    count: _countResult,
+                    name: LocaleKeys.Safety_standards_Cash_operations.tr(),
+                    total: data.questions.length,
+                    onClearState: _clearstate,
+                  )
           ],
         ),
       ),
@@ -98,40 +107,57 @@ class QuestionData {
       {'answer': 'Ответственного лица'},
       {'answer': 'Присутствие необязательно'},
     ]),
-    Question(title: 'Если сотрудник обнаружил чек покупателя, что необходимо сделать?', answers: [
-      {'answer': 'Оставить себе'},
-      {'answer': 'Утилизировать'},
-      {'answer': 'Утилизировать в присутствии ответственного лица', 'isCorrect': 1},
-    ]),
+    Question(
+        title:
+            'Если сотрудник обнаружил чек покупателя, что необходимо сделать?',
+        answers: [
+          {'answer': 'Оставить себе'},
+          {'answer': 'Утилизировать'},
+          {
+            'answer': 'Утилизировать в присутствии ответственного лица',
+            'isCorrect': 1
+          },
+        ]),
     Question(title: 'Что необходимо проверять ежедневно?', answers: [
       {'answer': 'Отчет менеджера', 'isCorrect': 1},
       {'answer': 'Сумму продаж'},
       {'answer': 'РКО И СКО'},
     ]),
-    Question(title: 'В случае если покупатель возвращает не все позиции из исходного чека, какой документ необходимо предоставить ему?', answers: [
-      {'answer': 'Заверенную кассовую копию этого чека', 'isCorrect': 1},
-      {'answer': 'Чек возврата'},
-      {'answer': 'Чек покупки'},
-    ]),
-    Question(title: 'В случае возврата без чека в течение какого времени возможно использование копии чека из 1с?', answers: [
-      {'answer': 'В течение 10 минут', 'isCorrect': 1},
-      {'answer': 'В течение 5 минут'},
-      {'answer': 'В течение 15 минут'},
-    ]),
+    Question(
+        title:
+            'В случае если покупатель возвращает не все позиции из исходного чека, какой документ необходимо предоставить ему?',
+        answers: [
+          {'answer': 'Заверенную кассовую копию этого чека', 'isCorrect': 1},
+          {'answer': 'Чек возврата'},
+          {'answer': 'Чек покупки'},
+        ]),
+    Question(
+        title:
+            'В случае возврата без чека в течение какого времени возможно использование копии чека из 1с?',
+        answers: [
+          {'answer': 'В течение 10 минут', 'isCorrect': 1},
+          {'answer': 'В течение 5 минут'},
+          {'answer': 'В течение 15 минут'},
+        ]),
     Question(title: '', answers: [
       {'answer': ''},
       {'answer': '', 'isCorrect': 1},
     ]),
-    Question(title: 'Менеджер обязан присутствовать на протяжении всей процедуры возврата?', answers: [
-      {'answer': 'Да', 'isCorrect': 1},
-      {'answer': 'Нет'},
-
-    ]),
-    Question(title: 'После истечения какого времени запрещается аннулирование чека прихода?', answers: [
-      {'answer': 'по истечении 3-х минут', 'isCorrect': 1},
-      {'answer': 'по истечении 5-х минут'},
-      {'answer': 'по истечении 10-х минут'},
-    ]),
+    Question(
+        title:
+            'Менеджер обязан присутствовать на протяжении всей процедуры возврата?',
+        answers: [
+          {'answer': 'Да', 'isCorrect': 1},
+          {'answer': 'Нет'},
+        ]),
+    Question(
+        title:
+            'После истечения какого времени запрещается аннулирование чека прихода?',
+        answers: [
+          {'answer': 'по истечении 3-х минут', 'isCorrect': 1},
+          {'answer': 'по истечении 5-х минут'},
+          {'answer': 'по истечении 10-х минут'},
+        ]),
   ];
 }
 
@@ -142,9 +168,9 @@ class answer extends StatelessWidget {
 
   answer(
       {Key? key,
-        required this.title,
-        required this.isCorrect,
-        required this.onChangeAnswer})
+      required this.title,
+      required this.isCorrect,
+      required this.onChangeAnswer})
       : super(key: key);
 
   @override
@@ -159,7 +185,8 @@ class answer extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         width: double.infinity,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
+            border:
+                Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
             borderRadius: BorderRadius.circular(5),
             color: Colors.white),
         child: Text(

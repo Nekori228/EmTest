@@ -1,5 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -23,7 +26,7 @@ class _ForgotPassword extends State<ForgotPassword> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Смена пароля',
+          LocaleKeys.Password_change.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -31,7 +34,13 @@ class _ForgotPassword extends State<ForgotPassword> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -42,9 +51,21 @@ class _ForgotPassword extends State<ForgotPassword> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Center(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.03),
           child: Column(
             children: [
+              SizedBox(height: 100),
+              Text(
+                LocaleKeys.To_change_the.tr(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 22,
+                  fontFamily: 'SourceSansPro',
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 5),
                 child: SizedBox(
@@ -54,7 +75,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                     controller: mailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: "Эл. почта",
+                      hintText: LocaleKeys.Email_small.tr(),
                     ),
                   ),
                 ),
@@ -112,17 +133,21 @@ class _ForgotPassword extends State<ForgotPassword> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Color.fromRGBO(1, 103, 255, 1.0)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))),
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromRGBO(1, 103, 255, 1.0)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)))),
                 onPressed: () {
-                  FirebaseAuth.instance.sendPasswordResetEmail(email: mailController.text).then((value) => print('1'));
+                  FirebaseAuth.instance
+                      .sendPasswordResetEmail(email: mailController.text)
+                      .then((value) => print('1'));
                 },
                 child: SizedBox(
                   width: 320,
                   height: 50,
                   child: Center(
                     child: Text(
-                      'Сменить пароль',
+                      LocaleKeys.Change_Password.tr(),
                       style: TextStyle(fontSize: 21),
                     ),
                   ),

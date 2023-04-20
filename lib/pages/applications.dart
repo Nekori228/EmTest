@@ -208,7 +208,7 @@ class applications extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 125,
+                      height: 20,
                     ),
                     const SizedBox(height: 0),
                     ElevatedButton(

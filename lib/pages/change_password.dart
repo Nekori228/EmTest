@@ -49,95 +49,115 @@ class _password_changeState extends State<password_change> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.03),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     hintText: "Старый пароль",
-              //     suffixIcon: GestureDetector(
-              //       onTap: () {
-              //         setState(() {
-              //           _obscureText1 = !_obscureText1;
-              //         });
-              //       },
-              //       child: Icon(_obscureText1
-              //           ? Icons.visibility
-              //           : Icons.visibility_off),
-              //     ),
-              //   ),
-              //   obscureText: _obscureText1,
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     hintText: "Новый пароль",
-              //     suffixIcon: GestureDetector(
-              //       onTap: () {
-              //         setState(() {
-              //           _obscureText2 = !_obscureText2;
-              //         });
-              //       },
-              //       child: Icon(_obscureText2
-              //           ? Icons.visibility
-              //           : Icons.visibility_off),
-              //     ),
-              //   ),
-              //   obscureText: _obscureText2,
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     hintText: "Повторите пароль",
-              //     suffixIcon: GestureDetector(
-              //       onTap: () {
-              //         setState(() {
-              //           _obscureText3 = !_obscureText3;
-              //         });
-              //       },
-              //       child: Icon(_obscureText3
-              //           ? Icons.visibility
-              //           : Icons.visibility_off),
-              //     ),
-              //   ),
-              //   obscureText: _obscureText3,
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        Color.fromRGBO(1, 103, 255, 1.0)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)))),
-                onPressed: () {
-                  FirebaseAuth.instance.sendPasswordResetEmail(email: user['Адрес электронной почты']).then((value) => print('1'));
-                },
-                child: SizedBox(
-                  height: 50,
-                  child: Center(
-                    child: Text(
-                      'Сменить пароль',
-                      style: TextStyle(fontSize: 21),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.03),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  // TextFormField(
+                  //   decoration: InputDecoration(
+                  //     border: OutlineInputBorder(),
+                  //     hintText: "Старый пароль",
+                  //     suffixIcon: GestureDetector(
+                  //       onTap: () {
+                  //         setState(() {
+                  //           _obscureText1 = !_obscureText1;
+                  //         });
+                  //       },
+                  //       child: Icon(_obscureText1
+                  //           ? Icons.visibility
+                  //           : Icons.visibility_off),
+                  //     ),
+                  //   ),
+                  //   obscureText: _obscureText1,
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // TextFormField(
+                  //   decoration: InputDecoration(
+                  //     border: OutlineInputBorder(),
+                  //     hintText: "Новый пароль",
+                  //     suffixIcon: GestureDetector(
+                  //       onTap: () {
+                  //         setState(() {
+                  //           _obscureText2 = !_obscureText2;
+                  //         });
+                  //       },
+                  //       child: Icon(_obscureText2
+                  //           ? Icons.visibility
+                  //           : Icons.visibility_off),
+                  //     ),
+                  //   ),
+                  //   obscureText: _obscureText2,
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // TextFormField(
+                  //   decoration: InputDecoration(
+                  //     border: OutlineInputBorder(),
+                  //     hintText: "Повторите пароль",
+                  //     suffixIcon: GestureDetector(
+                  //       onTap: () {
+                  //         setState(() {
+                  //           _obscureText3 = !_obscureText3;
+                  //         });
+                  //       },
+                  //       child: Icon(_obscureText3
+                  //           ? Icons.visibility
+                  //           : Icons.visibility_off),
+                  //     ),
+                  //   ),
+                  //   obscureText: _obscureText3,
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  SizedBox(height: 100),
+                  Text(
+                    LocaleKeys.To_change.tr(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontFamily: 'SourceSansPro',
                     ),
                   ),
-                ),
+                  SizedBox(height: 40),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                            Color.fromRGBO(1, 103, 255, 1.0)),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)))),
+                    onPressed: () {
+                      FirebaseAuth.instance
+                          .sendPasswordResetEmail(
+                              email: user['Адрес электронной почты'])
+                          .then((value) => print('1'));
+                    },
+                    child: SizedBox(
+                      height: 50,
+                      child: Center(
+                        child: Text(
+                          LocaleKeys.Change_Password.tr(),
+                          style: TextStyle(fontSize: 21),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

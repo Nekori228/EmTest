@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/globals.dart';
 import 'package:emtest/pages/intro_test.dart';
 import 'package:emtest/pages/test_page_five.dart';
@@ -8,6 +9,7 @@ import 'package:emtest/pages/test_page_three.dart';
 import 'package:emtest/pages/test_page_two.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/locale_keys.g.dart';
 import 'info_regist.dart';
 import 'login_screen.dart';
 

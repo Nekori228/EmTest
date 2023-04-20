@@ -84,7 +84,7 @@ class news_one extends StatelessWidget {
                           text: LocaleKeys.I_wish.tr() + '\n\n',
                         ),
                         TextSpan(
-                          text: LocaleKeys.Nikita_Kucherov.tr(),
+                          text: LocaleKeys.Nikita_Kucherov.tr() + '\n',
                         )
                       ],
                     ),

@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_five extends StatefulWidget {
   const quiz_five({Key? key}) : super(key: key);
@@ -19,21 +22,26 @@ class _quiz_fiveState extends State<quiz_five> {
   List<Icon> _icons = [];
 
   void _clearstate() => setState(() {
-    _questionIndex = 0;
-    _countResult = 0;
-    _icons = [];
-  });
+        _questionIndex = 0;
+        _countResult = 0;
+        _icons = [];
+      });
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
-    if (isCorrect) {
-      _icons.add(Icon(Icons.crop_square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0), size: 30,));
-      _countResult++;
-    } else {
-      _icons.add(Icon(Icons.square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0)));
-    }
+        if (isCorrect) {
+          _icons.add(Icon(
+            Icons.square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 30,
+          ));
+          _countResult++;
+        } else {
+          _icons.add(Icon(Icons.crop_square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0)));
+        }
 
-    _questionIndex += 1;
-  });
+        _questionIndex += 1;
+      });
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,22 +69,25 @@ class _quiz_fiveState extends State<quiz_five> {
       body: Center(
         child: Column(
           children: <Widget>[
-            _questionIndex != data.questions.length ? progressBar(
-              icons: _icons,
-              count: _questionIndex,
-              total: data.questions.length,
-            ) : Container(),
+            _questionIndex != data.questions.length
+                ? progressBar(
+                    icons: _icons,
+                    count: _questionIndex,
+                    total: data.questions.length,
+                  )
+                : Container(),
             _questionIndex < data.questions.length
                 ? quiz(
-              index: _questionIndex,
-              questionData: data,
-              onChangeAnswer: _onChangeAnswer,
-            )
+                    index: _questionIndex,
+                    questionData: data,
+                    onChangeAnswer: _onChangeAnswer,
+                  )
                 : result(
-                count: _countResult,
-                total: data.questions.length,
-                name: 'Стандарты безопасности. Сейф',
-                onClearState: _clearstate)
+                    count: _countResult,
+                    name: LocaleKeys.Safety_standards_Safe_deposit.tr(),
+                    total: data.questions.length,
+                    onClearState: _clearstate,
+                  )
           ],
         ),
       ),
@@ -129,9 +140,9 @@ class answer extends StatelessWidget {
 
   answer(
       {Key? key,
-        required this.title,
-        required this.isCorrect,
-        required this.onChangeAnswer})
+      required this.title,
+      required this.isCorrect,
+      required this.onChangeAnswer})
       : super(key: key);
 
   @override
@@ -146,7 +157,8 @@ class answer extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         width: double.infinity,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
+            border:
+                Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
             borderRadius: BorderRadius.circular(5),
             color: Colors.white),
         child: Text(

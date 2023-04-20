@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_two extends StatefulWidget {
   const quiz_two({Key? key}) : super(key: key);
@@ -27,13 +30,13 @@ class _quiz_twoState extends State<quiz_two> {
   void _onChangeAnswer(bool isCorrect) => setState(() {
         if (isCorrect) {
           _icons.add(Icon(
-            Icons.crop_square_rounded,
+            Icons.square_rounded,
             color: Color.fromRGBO(1, 103, 255, 1.0),
             size: 30,
           ));
           _countResult++;
         } else {
-          _icons.add(Icon(Icons.square_rounded,
+          _icons.add(Icon(Icons.crop_square_rounded,
               color: Color.fromRGBO(1, 103, 255, 1.0)));
         }
 
@@ -79,7 +82,7 @@ class _quiz_twoState extends State<quiz_two> {
                   )
                 : result(
                     count: _countResult,
-                    name: 'Стандарты безопасности. Кассовая зона',
+                    name: LocaleKeys.Safety_standards_Cash_zone.tr(),
                     total: data.questions.length,
                     onClearState: _clearstate)
           ],

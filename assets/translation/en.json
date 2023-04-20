@@ -173,5 +173,10 @@
   "History": "History",
   "Password_change": "Password change",
   "Exit": "Exit",
-  "question": "questions"
+  "question": "questions",
+  "Change_Password": "Change Password",
+  "To_change": "To change the password, click on the \"Change password\" button. You will receive a message by email, follow the steps from the letter.",
+  "To_change_the": "To change the password, enter the email from the account from which you forgot the password. Click on the \"Change password\" button. You will receive a message by email, follow the steps from the letter.",
+  "Email_small": "Email",
+  "Password_one": "Password"
 }

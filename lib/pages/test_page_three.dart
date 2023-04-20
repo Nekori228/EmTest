@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/widgets/progress_bar.dart';
 import 'package:emtest/widgets/quiz.dart';
 import 'package:emtest/widgets/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class quiz_three extends StatefulWidget {
   const quiz_three({Key? key}) : super(key: key);
@@ -19,21 +22,26 @@ class _quiz_threeState extends State<quiz_three> {
   List<Icon> _icons = [];
 
   void _clearstate() => setState(() {
-    _questionIndex = 0;
-    _countResult = 0;
-    _icons = [];
-  });
+        _questionIndex = 0;
+        _countResult = 0;
+        _icons = [];
+      });
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
-    if (isCorrect) {
-      _icons.add(Icon(Icons.crop_square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0), size: 30,));
-      _countResult++;
-    } else {
-      _icons.add(Icon(Icons.square_rounded, color: Color.fromRGBO(1, 103, 255, 1.0)));
-    }
+        if (isCorrect) {
+          _icons.add(Icon(
+            Icons.square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 30,
+          ));
+          _countResult++;
+        } else {
+          _icons.add(Icon(Icons.crop_square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0)));
+        }
 
-    _questionIndex += 1;
-  });
+        _questionIndex += 1;
+      });
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,15 +76,16 @@ class _quiz_threeState extends State<quiz_three> {
             ),
             _questionIndex < data.questions.length
                 ? quiz(
-              index: _questionIndex,
-              questionData: data,
-              onChangeAnswer: _onChangeAnswer,
-            )
+                    index: _questionIndex,
+                    questionData: data,
+                    onChangeAnswer: _onChangeAnswer,
+                  )
                 : result(
-                count: _countResult,
-                name: 'Стандарты безопасности. Алармы',
-                total: data.questions.length,
-                onClearState: _clearstate)
+                    count: _countResult,
+                    name: LocaleKeys.Safety_standards_Alarms.tr(),
+                    total: data.questions.length,
+                    onClearState: _clearstate,
+                  )
           ],
         ),
       ),
@@ -93,23 +102,37 @@ class Question {
 
 class QuestionData {
   final questions = [
-    Question(title: 'При окончании смены, что нужно сделать с алармами?', answers: [
-      {'answer': 'Оставить в ящике'},
-      {'answer': 'Убрать в коробку и опечатать', 'isCorrect': 1},
-    ]),
-    Question(title: 'В случае если покупатель обращается по факту неснятого аларма на оплаченном товаре в вашем магазине?', answers: [
-      {'answer': 'Сообщить менеджеру', 'isCorrect': 1},
-      {'answer': 'Снять аларм самостоятельно'},
-    ]),
-    Question(title: 'Кем осуществляется выдача ручного алармосъемника?', answers: [
-      {'answer': 'Ответственным за сейф', 'isCorrect': 1},
-      {'answer': 'Менеджеров'},
-      {'answer': 'Кассир вправе сам открыть сейф и взять'},
-    ]),
-    Question(title: 'В случае если покупатель обращается по факту неснятого аларма на оплаченном товаре в другом магазине?', answers: [
-      {'answer': 'Сказать покупателю, что он должен обратиться в магазин, в котором была совершена покупка', 'isCorrect': 1},
-      {'answer': 'Снять аларм самостоятельно'},
-    ]),
+    Question(
+        title: 'При окончании смены, что нужно сделать с алармами?',
+        answers: [
+          {'answer': 'Оставить в ящике'},
+          {'answer': 'Убрать в коробку и опечатать', 'isCorrect': 1},
+        ]),
+    Question(
+        title:
+            'В случае если покупатель обращается по факту неснятого аларма на оплаченном товаре в вашем магазине?',
+        answers: [
+          {'answer': 'Сообщить менеджеру', 'isCorrect': 1},
+          {'answer': 'Снять аларм самостоятельно'},
+        ]),
+    Question(
+        title: 'Кем осуществляется выдача ручного алармосъемника?',
+        answers: [
+          {'answer': 'Ответственным за сейф', 'isCorrect': 1},
+          {'answer': 'Менеджеров'},
+          {'answer': 'Кассир вправе сам открыть сейф и взять'},
+        ]),
+    Question(
+        title:
+            'В случае если покупатель обращается по факту неснятого аларма на оплаченном товаре в другом магазине?',
+        answers: [
+          {
+            'answer':
+                'Сказать покупателю, что он должен обратиться в магазин, в котором была совершена покупка',
+            'isCorrect': 1
+          },
+          {'answer': 'Снять аларм самостоятельно'},
+        ]),
   ];
 }
 
@@ -120,9 +143,9 @@ class answer extends StatelessWidget {
 
   answer(
       {Key? key,
-        required this.title,
-        required this.isCorrect,
-        required this.onChangeAnswer})
+      required this.title,
+      required this.isCorrect,
+      required this.onChangeAnswer})
       : super(key: key);
 
   @override
@@ -137,7 +160,8 @@ class answer extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         width: double.infinity,
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
+            border:
+                Border.all(width: 1, color: Color.fromRGBO(1, 103, 255, 1.0)),
             borderRadius: BorderRadius.circular(5),
             color: Colors.white),
         child: Text(

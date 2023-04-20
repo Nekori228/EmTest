@@ -85,11 +85,9 @@ class news_three extends StatelessWidget {
                         TextSpan(
                             text: '\n\n' + LocaleKeys.Email.tr() + '\n\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: LocaleKeys.Email_is.tr()),
                         TextSpan(
-                            text:
-                                LocaleKeys.Email_is.tr()),
-                        TextSpan(
-                            text: '\n\n' + LocaleKeys.Security.tr(),
+                            text: '\n\n' + LocaleKeys.Security.tr() + '\n',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),

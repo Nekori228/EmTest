@@ -74,7 +74,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Место проживания', style: TextStyle(fontSize: 17)),
+                    Expanded(child: Text('Место проживания', style: TextStyle(fontSize: 17))),
                     Text(user['Место проживания'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
