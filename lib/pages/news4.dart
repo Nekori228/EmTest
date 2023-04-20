@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class news_four extends StatelessWidget {
   const news_four({Key? key}) : super(key: key);
@@ -10,7 +13,7 @@ class news_four extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -18,7 +21,13 @@ class news_four extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -49,7 +58,7 @@ class news_four extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'ОТКРЫТЫЕ ТРЕНИНГИ: эффективная презентация в виртуальной реальности',
+                    LocaleKeys.OPEN_TRAININGS.tr(),
                     textAlign: TextAlign.start,
                     style: TextStyle(color: Colors.black, fontSize: 26),
                   ),
@@ -57,36 +66,52 @@ class news_four extends StatelessWidget {
                   RichText(
                     textAlign: TextAlign.start,
                     text: TextSpan(
-                      text:
-                      '13 апреля состоялась встреча по Take Back Program в рамках проектах. ',
-                      style: TextStyle(color: Colors.black, fontSize: 19, height: 1.3),
+                      text: LocaleKeys.On_April.tr(),
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 19, height: 1.3),
                       children: <TextSpan>[
                         TextSpan(
-                            text: '«Открытые тренинги» ',
+                            text: LocaleKeys.Open_trainings.tr(),
+                            style: TextStyle(fontWeight: FontWeight.w500)),
+                        TextSpan(text: LocaleKeys.Diana.tr() + '\n\n'),
+                        TextSpan(text: LocaleKeys.The_training.tr()),
+                        TextSpan(
+                            text: LocaleKeys.of.tr(),
+                            style: TextStyle(fontWeight: FontWeight.w500)),
+                        TextSpan(text: '\n\n' + LocaleKeys.The_next.tr()),
+                        TextSpan(
+                            text: LocaleKeys.Effective.tr(),
+                            style: TextStyle(fontWeight: FontWeight.w500)),
+                        TextSpan(text: LocaleKeys.Will.tr()),
+                        TextSpan(
+                            text: LocaleKeys.Oksana.tr(),
                             style: TextStyle(fontWeight: FontWeight.w500)),
                         TextSpan(
-                            text:
-                            'Диана Идиятова, аналитик отдела по работе с персоналом и драйвер направления sustainability в компании, и специальный гость Дарья Алексеева, учредитель фонда «Второе дыхание», рассказали о переработке одежды в России и о результатах проектах ТВР в нашей компании. \n\nТренинг посетили 317 человек. По итогам обратной связи '),
+                          text: '\n\n' + LocaleKeys.Oksana_will.tr(),
+                        ),
                         TextSpan(
-                            text: '91% из них готовы порекомендовать данный тренинг коллегам!',
-                            style: TextStyle(fontWeight: FontWeight.w500)),
+                          text: '\n' + LocaleKeys.Oksana_will.tr(),
+                        ),
                         TextSpan(
-                            text:
-                            '\n\nСледующий Открытый тренинг '),
+                          text: '\n' + LocaleKeys.importance.tr(),
+                        ),
                         TextSpan(
-                            text: '«Эффективная презентация в виртуальной реальности» состоится 27 апреля. ',
-                            style: TextStyle(fontWeight: FontWeight.w500)),
+                          text: '\n' + LocaleKeys.gestures.tr(),
+                        ),
                         TextSpan(
-                            text:
-                            'Проведет его '),
+                          text: '\n' + LocaleKeys.features.tr(),
+                        ),
                         TextSpan(
-                            text: 'Оксана Огородникова, руководитель отдела обучения и развития персонала в АО «Новая Мода».',
-                            style: TextStyle(fontWeight: FontWeight.w500)),
+                          text: '\n' + LocaleKeys.technical.tr() + '\n',
+                        ),
                         TextSpan(
-                            text:
-                            '\n\nОксана сделает акцент на таких темах как:\n- важность и сила речи: логика конструкций, слова-паразиты, метафоры; \n- жестикуляция, голос, дыхание и артикуляционная гимнастика в прямом эфире;\n- особенности визуальной составляющей презентации и спикера;\n- технические лайфхаки при презентации в виртуальной реальности.\n\nЧтобы зарегистрироваться и принять участие в Открытом тренинге – обратитесь к менеджеру для заполнения опросника. Уже 935 сотрудников оставили заявку!\n\nСсылка на подключение к трансляции в Teams придет на указанную в опроснике почту в течение нескольких дней.'),
+                          text: '\n' + LocaleKeys.To_register.tr() + '\n',
+                        ),
                         TextSpan(
-                            text: '\n\nНе упустите уникальную возможность обучаться у экспертов компании!',
+                          text: '\n' + LocaleKeys.A_link.tr() + '\n',
+                        ),
+                        TextSpan(
+                            text: '\n' + LocaleKeys.Do_not.tr() + '\n',
                             style: TextStyle(fontWeight: FontWeight.w500)),
                       ],
                     ),

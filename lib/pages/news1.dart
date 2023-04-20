@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class news_one extends StatelessWidget {
   const news_one({Key? key}) : super(key: key);
@@ -10,7 +13,7 @@ class news_one extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -18,7 +21,13 @@ class news_one extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -48,16 +57,37 @@ class news_one extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 15),
-                  Text(
-                    'С наступающим Новым 2023 годом!',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 26),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      LocaleKeys.Happy_New.tr(),
+                      style: TextStyle(color: Colors.black, fontSize: 26),
+                    ),
                   ),
                   SizedBox(height: 15),
-                  Text(
-                    'Дорогие коллеги, \n\nКаждый год, готовя новогоднее сообщение, я размышляю о достигнутых результатах, ваших успехах и вспоминаю поводы для гордости и сложности, которые вы преодолели. \nИ всякий раз мне кажется, что отдаваться делу с еще большей ответственностью и страстью просто невозможно. \nНо каждый год я с удивлением понимаю, что вы снова и снова делаете что-то невероятное, демонстрируя свою преданность и любовь к делу. \nИ сегодня я опять впечатлен нашими достижениями и благодарен вам за работу и старания. И хочу сказать за это БОЛЬШОЕ СПАСИБО каждому из вас.\n\nВ этом году в нашей компании произошло много важных изменений. Ясно, что все они найдут отражение в нашей работе в следующем, наступающем году. Вместе мы будем сильнее и сможем двигаться вперед и решать новые задачи. И я хочу попросить вас, чтобы вы продолжали быть КОМАНДОЙ и показывали такой же высокий уровень сплоченности. И иногда останавливались и задумывались: учитываю ли я мнение КАЖДОГО из членов команды? Как я могу позаботиться об окружающих меня людях? Слушаю ли я достаточно внимательно или просто слышу? Что я могу сделать иначе сегодня, чтобы завтра получить лучший результат? И всегда находили время для слов благодарности для тех, кто рядом с нами, и говорили им о том, как цените их работу. \n\nПоздравляю вас и ваших близких с наступающим Новым годом и Рождеством! Счастья, здоровья и благополучия вам! \n\nНикита Кучеров',
+                  RichText(
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 19, height: 1.3),
+                    text: TextSpan(
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 19, height: 1.3),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: LocaleKeys.Dear_colleagues_one.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.Every.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.There.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.I_wish.tr() + '\n\n',
+                        ),
+                        TextSpan(
+                          text: LocaleKeys.Nikita_Kucherov.tr(),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),

@@ -11,6 +11,7 @@ import 'package:emtest/pages/tests_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'generated/locale_keys.g.dart';
 import 'globals.dart';
 
 import 'firebase_options.dart';
@@ -29,7 +30,7 @@ Future<void> main() async {
     EasyLocalization(
         supportedLocales: [Locale('en'), Locale('ru')],
         path: 'assets/translation',
-        fallbackLocale: Locale('en'),
+        fallbackLocale: Locale('ru'),
         assetLoader: CodegenLoader(),
         child: MyApp()),
   );
@@ -121,10 +122,10 @@ class _pagesState extends State<bottomNavigation> {
           currentIndex: selectedPage,
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Новости'),
-            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: 'Материал'),
-            BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: 'Тесты'),
-            BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'Кабинет'),
+            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: LocaleKeys.News.tr()),
+            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: LocaleKeys.Material.tr()),
+            BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: LocaleKeys.Tests.tr()),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: LocaleKeys.Profile.tr()),
           ],
           onTap: onSelectTab,
         ),

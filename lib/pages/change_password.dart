@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/locale_keys.g.dart';
 import '../globals.dart';
 
 class password_change extends StatefulWidget {
@@ -22,7 +24,7 @@ class _password_changeState extends State<password_change> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Смена пароля',
+          LocaleKeys.Password_change.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -30,7 +32,13 @@ class _password_changeState extends State<password_change> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,

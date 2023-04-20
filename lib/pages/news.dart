@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:emtest/generated/locale_keys.g.dart';
 import 'package:emtest/pages/news3.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class _newsState extends State<news> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Новости',
+          LocaleKeys.News.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -29,7 +31,13 @@ class _newsState extends State<news> {
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (context.locale == Locale('en')) {
+                    context.setLocale(Locale('ru'));
+                  } else {
+                    context.setLocale(Locale('en'));
+                  }
+                },
                 child: Icon(
                   Icons.translate,
                   color: Colors.grey,
@@ -59,25 +67,46 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: RichText(
-                            text: const TextSpan(
+                          child: Column(
+                            children: [
+                              Text(
+                                LocaleKeys.Bershka.tr(),
                                 style: TextStyle(
-                                    color: Color(0xFF000000),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.In_April.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,
                                     fontFamily: 'SourceSansPro'),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text:
-                                          'Bershka, Pull&Bear и Zara вернутся в Россию' +
-                                              '\n',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text:
-                                          'В апреле Бренды ушедшей с российского рынка испанской фэшн...')
-                                ]),
+                              ),
+                            ],
                           ),
+                          // child: RichText(
+                          //   text: const TextSpan(
+                          //       style: TextStyle(
+                          //           color: Color(0xFF000000),
+                          //           fontWeight: FontWeight.w400,
+                          //           fontSize: 15,
+                          //           fontFamily: 'SourceSansPro'),
+                          //       children: <TextSpan>[
+                          //         TextSpan(
+                          //             text:
+                          //                 'Bershka, Pull&Bear и Zara вернутся в Россию' +
+                          //                     '\n',
+                          //             style: TextStyle(
+                          //                 fontWeight: FontWeight.bold)),
+                          //         TextSpan(
+                          //             text:
+                          //                 'В апреле Бренды ушедшей с российского рынка испанской фэшн...')
+                          //       ]),
+                          // ),
                         ),
                       )
                     ],
@@ -101,25 +130,47 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: RichText(
-                            text: const TextSpan(
+                          child: Column(
+                            children: [
+                              Text(
+                                LocaleKeys.INsport.tr(),
                                 style: TextStyle(
-                                    color: Color(0xFF000000),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.More.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,
                                     fontFamily: 'SourceSansPro'),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text:
-                                          'INsport – спортивные онлайн-тренировки с коллегами' +
-                                              '\n',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text:
-                                          'Больше месяца назад для всех сотрудников...')
-                                ]),
+                              ),
+                            ],
                           ),
+
+                          // child: RichText(
+                          //   text: const TextSpan(
+                          //       style: TextStyle(
+                          //           color: Color(0xFF000000),
+                          //           fontWeight: FontWeight.w400,
+                          //           fontSize: 15,
+                          //           fontFamily: 'SourceSansPro'),
+                          //       children: <TextSpan>[
+                          //         TextSpan(
+                          //             text:
+                          //                 'INsport – спортивные онлайн-тренировки с коллегами' +
+                          //                     '\n',
+                          //             style: TextStyle(
+                          //                 fontWeight: FontWeight.bold)),
+                          //         TextSpan(
+                          //             text:
+                          //                 'Больше месяца назад для всех сотрудников...')
+                          //       ]),
+                          // ),
                         ),
                       )
                     ],
@@ -143,14 +194,27 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: Text(
-                            'ОТКРЫТЫЕ ТРЕНИНГИ эффективная презентация в виртуальной реальности',
-                            style: TextStyle(
-                                color: Color(0xFF000000),
-                                fontSize: 15,
-                                fontFamily: 'SourceSansPro',
-                                fontWeight: FontWeight.bold),
+                          child: Column(
+                            children: [
+                              Text(
+                                LocaleKeys.OPEN.tr(),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                            ],
                           ),
+                          // child: Text(
+                          //   'ОТКРЫТЫЕ ТРЕНИНГИ эффективная презентация в виртуальной реальности',
+                          //   style: TextStyle(
+                          //       color: Color(0xFF000000),
+                          //       fontSize: 15,
+                          //       fontFamily: 'SourceSansPro',
+                          //       fontWeight: FontWeight.bold),
+                          // ),
                         ),
                       )
                     ],
@@ -174,25 +238,46 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: RichText(
-                            text: const TextSpan(
+                          child: Column(
+                            children: [
+                              Text(
+                                LocaleKeys.The_first.tr(),
                                 style: TextStyle(
-                                    color: Color(0xFF000000),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.Did.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,
                                     fontFamily: 'SourceSansPro'),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text:
-                                          'Первая линия защиты от кибератак – это вы' +
-                                              '\n',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text:
-                                          'Знаете ли вы, что причиной более 85% кибератак является...')
-                                ]),
+                              ),
+                            ],
                           ),
+                          // child: RichText(
+                          //   text: const TextSpan(
+                          //       style: TextStyle(
+                          //           color: Color(0xFF000000),
+                          //           fontWeight: FontWeight.w400,
+                          //           fontSize: 15,
+                          //           fontFamily: 'SourceSansPro'),
+                          //       children: <TextSpan>[
+                          //         TextSpan(
+                          //             text:
+                          //                 'Первая линия защиты от кибератак – это вы' +
+                          //                     '\n',
+                          //             style: TextStyle(
+                          //                 fontWeight: FontWeight.bold)),
+                          //         TextSpan(
+                          //             text:
+                          //                 'Знаете ли вы, что причиной более 85% кибератак является...')
+                          //       ]),
+                          // ),
                         ),
                       )
                     ],
@@ -216,23 +301,45 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: RichText(
-                            text: const TextSpan(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.Phone_fraud.tr(),
                                 style: TextStyle(
-                                    color: Color(0xFF000000),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.Dear.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,
                                     fontFamily: 'SourceSansPro'),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: 'Телефонное мошенничество' + '\n',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text:
-                                          'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
-                                ]),
+                              ),
+                            ],
                           ),
+                          // child: RichText(
+                          //   text: const TextSpan(
+                          //       style: TextStyle(
+                          //           color: Color(0xFF000000),
+                          //           fontWeight: FontWeight.w400,
+                          //           fontSize: 15,
+                          //           fontFamily: 'SourceSansPro'),
+                          //       children: <TextSpan>[
+                          //         TextSpan(
+                          //             text: 'Телефонное мошенничество' + '\n',
+                          //             style: TextStyle(
+                          //                 fontWeight: FontWeight.bold)),
+                          //         TextSpan(
+                          //             text:
+                          //                 'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
+                          //       ]),
+                          // ),
                         ),
                       )
                     ],
@@ -258,27 +365,49 @@ class _newsState extends State<news> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            child: RichText(
-                              text: const TextSpan(
-                                  style: TextStyle(
-                                      color: Color(0xFF000000),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      fontFamily: 'SourceSansPro'),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text:
-                                            'С наступающим Новым 2023 годом!' +
-                                                '\n',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text:
-                                            'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
-                                  ]),
-                            ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                LocaleKeys.Happy.tr(),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  fontFamily: 'SourceSansPro',
+                                ),
+                              ),
+                              Text(
+                                LocaleKeys.Dear_colleagues.tr(),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    fontFamily: 'SourceSansPro'),
+                              ),
+                            ],
                           ),
+                          // child: SizedBox(
+                          //   child: RichText(
+                          //     text:  TextSpan(
+                          //         style: TextStyle(
+                          //             color: Color(0xFF000000),
+                          //             fontWeight: FontWeight.w400,
+                          //             fontSize: 15,
+                          //             fontFamily: 'SourceSansPro'),
+                          //         children: <TextSpan>[
+                          //           TextSpan(
+                          //               text:
+                          //                   LocaleKeys.Happy.tr() +
+                          //                       '\n',
+                          //               style: TextStyle(
+                          //                   fontWeight: FontWeight.bold)),
+                          //           TextSpan(
+                          //               text:
+                          //                   'Дорогие коллеги, Каждый год, готовя новогоднее сообщение, я...')
+                          //         ]),
+                          //   ),
+                          // ),
                         ),
                       )
                     ],

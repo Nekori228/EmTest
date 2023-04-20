@@ -8,6 +8,9 @@ import 'package:emtest/pages/test_page_three.dart';
 import 'package:emtest/pages/test_page_two.dart';
 import 'package:flutter/material.dart';
 
+import 'info_regist.dart';
+import 'login_screen.dart';
+
 class tests extends StatelessWidget {
   const tests({Key? key}) : super(key: key);
 
@@ -17,7 +20,7 @@ class tests extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Тесты',
+          LocaleKeys.Tests.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -25,7 +28,13 @@ class tests extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
