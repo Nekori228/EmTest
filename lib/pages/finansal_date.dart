@@ -132,7 +132,6 @@ class _downloaderState extends State<downloader> {
                 itemCount: files.length,
                 itemBuilder: (context, index) {
                   final file = files[index];
-
                   return Container(
                     decoration: BoxDecoration(
                       border: Border(
