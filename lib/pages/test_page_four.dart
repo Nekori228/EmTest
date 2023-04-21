@@ -139,10 +139,6 @@ class QuestionData {
           {'answer': 'В течение 5 минут'},
           {'answer': 'В течение 15 минут'},
         ]),
-    Question(title: '', answers: [
-      {'answer': ''},
-      {'answer': '', 'isCorrect': 1},
-    ]),
     Question(
         title:
             'Менеджер обязан присутствовать на протяжении всей процедуры возврата?',

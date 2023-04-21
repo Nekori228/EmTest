@@ -29,8 +29,11 @@ class _quiz_oneState extends State<quiz_one> {
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
         if (isCorrect) {
-          _icons.add(Icon(Icons.square_rounded,
-              color: Color.fromRGBO(1, 103, 255, 1.0)));
+          _icons.add(Icon(
+            Icons.square_rounded,
+            color: Color.fromRGBO(1, 103, 255, 1.0),
+            size: 25,
+          ));
           _countResult++;
         } else {
           _icons.add(Icon(

@@ -92,7 +92,7 @@ class history extends StatelessWidget {
                 ),
               );
             },
-            itemCount: jsonDecode(prefs.getString('listTestsResult')).length,
+            itemCount: prefs.getString('listTestsResult') == null ? 0 : jsonDecode(prefs.getString('listTestsResult')).length,
             shrinkWrap: true,
             // itemCount: jsonDecode(prefs.getString('listTestsResult')).keys.toList().length,
           ),

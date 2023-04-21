@@ -149,7 +149,7 @@ class _downloaderState extends State<downloader> {
                         onPressed: () => openFile(file),
                       ),
                       title: Text(file.name),
-                      trailing: Text('10/11/2022'),
+                      trailing: Text(growableList.toString()),
                     ),
                   );
                 },
@@ -171,6 +171,8 @@ class _downloaderState extends State<downloader> {
           }),
     );
   }
+
+  final growableList = ['A', 'b', 'd'];
 
   Future openFile(Reference ref) async {
     // final dir = await getApplicationDocumentsDirectory();
