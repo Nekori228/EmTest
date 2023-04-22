@@ -47,7 +47,7 @@ class history extends StatelessWidget {
               return Row(
                 children: [
                   Text(
-                    (index + 1).toString(),
+                    '0' + (index + 1).toString(),
                     style: TextStyle(color: Color(0xFFB5B5B5), fontFamily: 'SourceSansPro', fontSize: 20),
                   ),
                   Expanded(
@@ -57,7 +57,7 @@ class history extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.fromLTRB(20, 20, 0, 10),
                           child: Text(
-                            jsonDecode(prefs.getString('listTestsResult'))[(index + 1).toString()]['name'] + 'w1dijqwlidj',
+                            jsonDecode(prefs.getString('listTestsResult'))[(index + 1).toString()]['name'],
                             softWrap: true,
                             style: TextStyle(color: Color(0xFF000000), fontFamily: 'SourceSansPro', fontSize: 21),
                           ),
