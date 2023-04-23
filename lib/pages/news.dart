@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/generated/locale_keys.g.dart';
+import 'package:emtest/globals.dart';
 import 'package:emtest/pages/news3.dart';
 import 'package:flutter/material.dart';
 
@@ -33,9 +34,13 @@ class _newsState extends State<news> {
               child: GestureDetector(
                 onTap: () {
                   if (context.locale == Locale('en')) {
-                    context.setLocale(Locale('ru'));
+                    context.setLocale(Locale('ru')).then((value) {
+                      callbackSetStateKtp();
+                    });
                   } else {
-                    context.setLocale(Locale('en'));
+                    context.setLocale(Locale('en')).then((value) {
+                      callbackSetStateKtp();
+                    });
                   }
                 },
                 child: Icon(
@@ -56,8 +61,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_six()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_six()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -81,11 +85,7 @@ class _newsState extends State<news> {
                               ),
                               Text(
                                 LocaleKeys.In_April.tr(),
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    fontFamily: 'SourceSansPro'),
+                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 15, fontFamily: 'SourceSansPro'),
                               ),
                             ],
                           ),
@@ -120,8 +120,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_five()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_five()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -145,11 +144,7 @@ class _newsState extends State<news> {
                               ),
                               Text(
                                 LocaleKeys.More.tr(),
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    fontFamily: 'SourceSansPro'),
+                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 15, fontFamily: 'SourceSansPro'),
                               ),
                             ],
                           ),
@@ -185,8 +180,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_four()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_four()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -229,8 +223,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_three()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_three()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -253,11 +246,7 @@ class _newsState extends State<news> {
                               ),
                               Text(
                                 LocaleKeys.Did.tr(),
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    fontFamily: 'SourceSansPro'),
+                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 15, fontFamily: 'SourceSansPro'),
                               ),
                             ],
                           ),
@@ -292,8 +281,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_two()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_two()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -317,11 +305,7 @@ class _newsState extends State<news> {
                               ),
                               Text(
                                 LocaleKeys.Dear.tr(),
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    fontFamily: 'SourceSansPro'),
+                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 15, fontFamily: 'SourceSansPro'),
                               ),
                             ],
                           ),
@@ -354,8 +338,7 @@ class _newsState extends State<news> {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => news_one()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => news_one()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -381,11 +364,7 @@ class _newsState extends State<news> {
                               ),
                               Text(
                                 LocaleKeys.Dear_colleagues.tr(),
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    fontFamily: 'SourceSansPro'),
+                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 15, fontFamily: 'SourceSansPro'),
                               ),
                             ],
                           ),

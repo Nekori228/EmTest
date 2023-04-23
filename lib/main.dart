@@ -71,12 +71,7 @@ class bottomNavigation extends StatefulWidget {
 }
 
 class _pagesState extends State<bottomNavigation> {
-  void onSelectTab(int index) {
-    if (selectedPage == index) return;
-    setState(() {
-      selectedPage = index;
-    });
-  }
+
 
   @override
   void initState() {
@@ -91,6 +86,17 @@ class _pagesState extends State<bottomNavigation> {
         user[value.docs.first.data()['Адрес электронной почты']] = value.docs.first.data();
       });
     }
+  }
+
+  void onSelectTab(int index) {
+    if (selectedPage == index) return;
+    setState(() {
+      selectedPage = index;
+    });
+  }
+
+  setStateKtp() {
+    setState(() {});
   }
 
   @override
@@ -112,22 +118,27 @@ class _pagesState extends State<bottomNavigation> {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: Scaffold(
-        body: Center(
-          child: _widgetOptions[selectedPage],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.blue,
-          currentIndex: selectedPage,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: LocaleKeys.News.tr()),
-            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: LocaleKeys.Material.tr()),
-            BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: LocaleKeys.Tests.tr()),
-            BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: LocaleKeys.Profile.tr()),
-          ],
-          onTap: onSelectTab,
-        ),
+      home: StatefulBuilder(
+        builder: (context, setStateObject) {
+          callbackSetStateKtp = setStateObject;
+          return Scaffold(
+            body: Center(
+              child: _widgetOptions[selectedPage],
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              selectedItemColor: Colors.blue,
+              currentIndex: selectedPage,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: LocaleKeys.News.tr()),
+                BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: LocaleKeys.Material.tr()),
+                BottomNavigationBarItem(icon: Icon(Icons.quiz_outlined), label: LocaleKeys.Tests.tr()),
+                BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: LocaleKeys.Profile.tr()),
+              ],
+              onTap: onSelectTab,
+            ),
+          );
+        }
       ),
     );
   }
