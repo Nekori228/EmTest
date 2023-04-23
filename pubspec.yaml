@@ -39,13 +39,14 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^21.1.38
   cloud_firestore: ^4.4.3
   dropdown_button2: ^1.9.2
+  images_picker: ^1.2.11
   easy_localization: ^3.0.1
   video_player: ^2.4.10
   enough_mail: ^2.1.1
   visibility_detector: ^0.4.0+2
   flick_video_player: ^0.5.0
-  firebase_core: ^2.5.0
-  firebase_storage: ^11.0.16
+  firebase_core: ^2.10.0
+  firebase_storage: ^11.1.1
   firebase_auth: ^4.0.2
   email_validator: ^2.1.17
   flutter_svg: ^2.0.5

@@ -29,15 +29,12 @@ class _quiz_fiveState extends State<quiz_five> {
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
         if (isCorrect) {
-          _icons.add(Icon(
-            Icons.square_rounded,
-            color: Color.fromRGBO(1, 103, 255, 1.0),
-            size: 30,
-          ));
+          _icons.add(Icon(Icons.square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0), size: 25));
           _countResult++;
         } else {
           _icons.add(Icon(Icons.crop_square_rounded,
-              color: Color.fromRGBO(1, 103, 255, 1.0)));
+              color: Color.fromRGBO(1, 103, 255, 1.0), size: 30));
         }
 
         _questionIndex += 1;
@@ -84,7 +81,7 @@ class _quiz_fiveState extends State<quiz_five> {
                   )
                 : result(
                     count: _countResult,
-                    name: LocaleKeys.Safety_standards_Safe_deposit.tr(),
+                    name: "Стандарты безопасности. Сейф",
                     total: data.questions.length,
                     onClearState: _clearstate,
                   )

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/main.dart';
 import 'package:emtest/pages/change_password.dart';
@@ -7,6 +9,7 @@ import 'package:emtest/pages/sale_card.dart';
 import 'package:emtest/pages/test_file.dart';
 import 'package:emtest/pages/tests_page.dart';
 import 'package:flutter/material.dart';
+import 'package:images_picker/images_picker.dart';
 
 import '../generated/locale_keys.g.dart';
 import '../globals.dart';
@@ -40,8 +43,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => bio_info()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => bio_info()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -79,8 +81,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => sale_card()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => sale_card()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -118,8 +119,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => date()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => date()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -157,8 +157,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => applications()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => applications()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -196,8 +195,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => history()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => history()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -235,10 +233,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => password_change()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => password_change()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -330,19 +325,40 @@ class office extends StatelessWidget {
   }
 }
 
-class acc_photo extends StatelessWidget {
+class acc_photo extends StatefulWidget {
   const acc_photo({Key? key}) : super(key: key);
 
   @override
+  State<acc_photo> createState() => _acc_photoState();
+}
+
+class _acc_photoState extends State<acc_photo> {
+  Future getImage() async {
+    await ImagesPicker.pick(
+      count: 1,
+      pickType: PickType.image,
+    ).then((value) {
+      setState(() {
+        prefs.setString('avatar', value?.first.path.toString());
+        print(value?.first.path.toString());
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 450,
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        image: DecorationImage(
-          image: AssetImage('assets/images/proffile_photo.png'),
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        getImage();
+      },
+      child: Container(
+        height: 400,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          image: DecorationImage(
+            image: prefs.getString('avatar') != null ? FileImage(File(prefs.getString('avatar'))) : AssetImage('assets/images/no_avatar.png') as ImageProvider,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

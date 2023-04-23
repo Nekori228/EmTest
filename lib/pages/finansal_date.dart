@@ -111,6 +111,7 @@ class downloader extends StatefulWidget {
 
 class _downloaderState extends State<downloader> {
   late Future<ListResult> futureFiles;
+  final growableList = ['10/01/2023', '10/02/2023', '10/03/2023', '10/04/2023', '10/05/2023'];
 
   @override
   void initState() {
@@ -132,7 +133,6 @@ class _downloaderState extends State<downloader> {
                 itemCount: files.length,
                 itemBuilder: (context, index) {
                   final file = files[index];
-
                   return Container(
                     decoration: BoxDecoration(
                       border: Border(
@@ -149,7 +149,7 @@ class _downloaderState extends State<downloader> {
                         onPressed: () => openFile(file),
                       ),
                       title: Text(file.name),
-                      trailing: Text(growableList.toString()),
+                      trailing: Text(growableList[index].toString()),
                     ),
                   );
                 },
@@ -171,8 +171,6 @@ class _downloaderState extends State<downloader> {
           }),
     );
   }
-
-  final growableList = ['A', 'b', 'd'];
 
   Future openFile(Reference ref) async {
     // final dir = await getApplicationDocumentsDirectory();
