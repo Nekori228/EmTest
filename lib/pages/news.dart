@@ -68,6 +68,7 @@ class _newsState extends State<news> {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 LocaleKeys.Bershka.tr(),
@@ -131,6 +132,7 @@ class _newsState extends State<news> {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 LocaleKeys.INsport.tr(),
