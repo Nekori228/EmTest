@@ -356,7 +356,7 @@ class _acc_photoState extends State<acc_photo> {
         decoration: BoxDecoration(
           color: Colors.white,
           image: DecorationImage(
-            image: prefs.getString('avatar') != null ? FileImage(File(prefs.getString('avatar'))) : AssetImage('assets/images/profile_photo.png') as ImageProvider,
+            image: prefs.getString('avatar') != null ? FileImage(File(prefs.getString('avatar'))) : AssetImage('assets/images/no_avatar.png') as ImageProvider,
             fit: BoxFit.cover,
           ),
         ),

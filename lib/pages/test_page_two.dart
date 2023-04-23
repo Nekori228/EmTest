@@ -29,15 +29,12 @@ class _quiz_twoState extends State<quiz_two> {
 
   void _onChangeAnswer(bool isCorrect) => setState(() {
         if (isCorrect) {
-          _icons.add(Icon(
-            Icons.square_rounded,
-            color: Color.fromRGBO(1, 103, 255, 1.0),
-            size: 30,
-          ));
+          _icons.add(Icon(Icons.square_rounded,
+              color: Color.fromRGBO(1, 103, 255, 1.0), size: 25));
           _countResult++;
         } else {
           _icons.add(Icon(Icons.crop_square_rounded,
-              color: Color.fromRGBO(1, 103, 255, 1.0)));
+              color: Color.fromRGBO(1, 103, 255, 1.0), size: 30));
         }
 
         _questionIndex += 1;
@@ -82,7 +79,7 @@ class _quiz_twoState extends State<quiz_two> {
                   )
                 : result(
                     count: _countResult,
-                    name: LocaleKeys.Safety_standards_Cash_zone.tr(),
+                    name: "Стандарты безопасности. Кассовая зона",
                     total: data.questions.length,
                     onClearState: _clearstate)
           ],

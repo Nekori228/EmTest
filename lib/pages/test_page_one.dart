@@ -91,7 +91,7 @@ class _quiz_oneState extends State<quiz_one> {
                   )
                 : result(
                     count: _countResult,
-                    name: LocaleKeys.Cashiers_minimums.tr(),
+                    name: "Минимумы кассиров",
                     total: data.questions.length,
                     onClearState: _clearstate)
           ],
