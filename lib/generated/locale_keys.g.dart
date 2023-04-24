@@ -181,4 +181,16 @@ abstract class  LocaleKeys {
   static const To_change_the = 'To_change_the';
   static const Email_small = 'Email_small';
   static const Password_one = 'Password_one';
+  static const Gender = 'Gender';
+  static const Date_of_birth = 'Date_of_birth';
+  static const Place_of_residence = 'Place_of_residence';
+  static const Company = 'Company';
+  static const Date_of_admission = 'Date_of_admission';
+  static const Mobile_phone = 'Mobile_phone';
+  static const Select_equipment = 'Select_equipment';
+  static const The_cause_of_the_breakdown = 'The_cause_of_the_breakdown';
+  static const Message = 'Message';
+  static const Send = 'Send';
+  static const financia_data = 'financia_data';
+  static const The_application_has_been_sent = 'The_application_has_been_sent';
 }

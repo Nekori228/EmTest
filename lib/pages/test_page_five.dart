@@ -46,7 +46,7 @@ class _quiz_fiveState extends State<quiz_five> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Тесты',
+          LocaleKeys.Tests.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -54,7 +54,13 @@ class _quiz_fiveState extends State<quiz_five> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,

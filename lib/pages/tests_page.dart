@@ -81,7 +81,7 @@ class tests_block1 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Cashiers_minimums.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
@@ -126,7 +126,7 @@ class tests_block2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Safety_standards_Cash_zone.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
@@ -171,7 +171,7 @@ class tests_block3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Safety_standards_Alarms.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
@@ -216,7 +216,7 @@ class tests_block4 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Safety_standards_Cash_operations.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
@@ -261,7 +261,7 @@ class tests_block5 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Safety_standards_Safe_deposit.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),
@@ -306,7 +306,7 @@ class tests_block6 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                padding: const EdgeInsets.fromLTRB(12, 20, 15, 20),
                 child: Text(
                   LocaleKeys.Technical_problems.tr(),
                   style: TextStyle(color: Colors.black, fontSize: 19),

@@ -185,6 +185,7 @@ class CodegenLoader extends AssetLoader{
   "Personal_data": "Личные данные",
   "Discount_card": "Скидочная карта",
   "My_financia_data": "Мои финансовые данные",
+  "financia_data": "Финансовые данные",
   "Applications": "Заявки",
   "History": "История",
   "Password_change": "Смена пароля",
@@ -194,7 +195,18 @@ class CodegenLoader extends AssetLoader{
   "To_change": "Для смены пароля, нажмите на кнопку «Сменить пароль». Вам придет сообщение на почту, выполните действия из письма.",
   "To_change_the": "Для смены пароля, введите почту от аккаунта, от которого Вы забыли пароль. Нажмите на кнопку «Сменить пароль». Вам придет сообщение на почту, выполните действия из письма.",
   "Email_small": "Эл. почта",
-  "Password_one": "Пароль"
+  "Password_one": "Пароль",
+  "Gender": "Пол",
+  "Date_of_birth": "Дата рождения",
+  "Place_of_residence": "Место проживания",
+  "Company": "Компания",
+  "Date_of_admission": "Дата приёма",
+  "Mobile_phone": "Мобильный телефон",
+  "Select_equipment": "Выберите оборудование",
+  "The_cause_of_the_breakdown": "Причина поломки",
+  "Message": "Сообщение",
+  "Send": "Отправить",
+  "The_application_has_been_sent": "Заявка отправлена"
 };
 static const Map<String,dynamic> en = {
   "News": "News",
@@ -310,7 +322,7 @@ static const Map<String,dynamic> en = {
   "INsport_online": "INsport – online sports training with colleagues",
   "More_than": "More than a month ago, a project was launched for all employees of JSC \"New Fashion\"",
   "the_main": " the main purpose of which is ",
-  "maintaining": "maintaining the health and fitness of employees",
+  "maintaining": " maintaining the health and fitness of employees",
   "and_also": " and also",
   "formation": " formation of a common team spirit.",
   "coaches": "2 coaches, 9 trainings, 525 participants",
@@ -348,10 +360,10 @@ static const Map<String,dynamic> en = {
   "Nikita_Kucherov": "Nikita Kucherov",
   "OPEN_TRAININGS": "OPEN TRAININGS: effective presentation in virtual reality",
   "On_April": "On April 13, a meeting was held on the Take Back Program within the framework of the project.",
-  "Open_trainings": " «Open trainings» ",
+  "Open_trainings": "  «Open trainings» ",
   "Diana": "Diana Idiyatova, HR Analyst and sustainability driver at the company, and special guest Daria Alekseeva, founder of the Second Wind Foundation, spoke about clothing recycling in Russia and the results of TVR projects in our company.",
   "The_training": "The training was attended by 317 people. Based on the results of feedback",
-  "of": "91% of them are ready to recommend this training to colleagues!",
+  "of": " 91% of them are ready to recommend this training to colleagues!",
   "The_next": "The next Open Training",
   "Effective": " «Effective presentation in virtual reality» will take place on April 27.",
   "Will": " Will hold it ",
@@ -367,6 +379,7 @@ static const Map<String,dynamic> en = {
   "Personal_data": "Personal data",
   "Discount_card": "Discount card",
   "My_financia_data": "My financial data",
+  "financia_data": "Financia data",
   "Applications": "Applications",
   "History": "History",
   "Password_change": "Password change",
@@ -376,7 +389,18 @@ static const Map<String,dynamic> en = {
   "To_change": "To change the password, click on the \"Change password\" button. You will receive a message by email, follow the steps from the letter.",
   "To_change_the": "To change the password, enter the email from the account from which you forgot the password. Click on the \"Change password\" button. You will receive a message by email, follow the steps from the letter.",
   "Email_small": "Email",
-  "Password_one": "Password"
+  "Password_one": "Password",
+  "Gender": "Gender",
+  "Date_of_birth": "Date of birth",
+  "Place_of_residence": "Place of residence",
+  "Company": "Company",
+  "Date_of_admission": "Date of admission",
+  "Mobile_phone": "Mobile phone",
+  "Select_equipment": "Select equipment",
+  "The_cause_of_the_breakdown": "The cause of the breakdown",
+  "Message": "Message",
+  "Send": "Send",
+  "The_application_has_been_sent": "The application has been sent"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "en": en};
 }

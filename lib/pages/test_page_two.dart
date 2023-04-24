@@ -46,7 +46,7 @@ class _quiz_twoState extends State<quiz_two> {
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
         title: Text(
-          'Тесты',
+          LocaleKeys.Tests.tr(),
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -54,7 +54,13 @@ class _quiz_twoState extends State<quiz_two> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (context.locale == Locale('en')) {
+                  context.setLocale(Locale('ru'));
+                } else {
+                  context.setLocale(Locale('en'));
+                }
+              },
               child: Icon(
                 Icons.translate,
                 color: Colors.grey,
@@ -66,11 +72,13 @@ class _quiz_twoState extends State<quiz_two> {
       body: Center(
         child: Column(
           children: <Widget>[
-            progressBar(
-              icons: _icons,
-              count: _questionIndex,
-              total: data.questions.length,
-            ),
+            _questionIndex != data.questions.length
+                ? progressBar(
+                    icons: _icons,
+                    count: _questionIndex,
+                    total: data.questions.length,
+                  )
+                : Container(),
             _questionIndex < data.questions.length
                 ? quiz(
                     index: _questionIndex,

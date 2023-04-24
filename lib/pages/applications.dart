@@ -113,8 +113,8 @@ class applications extends StatelessWidget {
                         ),
                       ),
                       isExpanded: true,
-                      hint: const Text(
-                        'Выберите оборудование',
+                      hint: Text(
+                        LocaleKeys.Select_equipment.tr(),
                         style: TextStyle(fontSize: 16),
                       ),
                       icon: const Icon(
@@ -160,8 +160,8 @@ class applications extends StatelessWidget {
                         ),
                       ),
                       isExpanded: true,
-                      hint: const Text(
-                        'Причина поломки',
+                      hint: Text(
+                        LocaleKeys.The_cause_of_the_breakdown.tr(),
                         style: TextStyle(fontSize: 16),
                       ),
                       icon: const Icon(
@@ -204,7 +204,7 @@ class applications extends StatelessWidget {
                       controller: descriptionController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Сообщение",
+                        hintText: LocaleKeys.Message.tr(),
                       ),
                     ),
                     SizedBox(
@@ -226,7 +226,7 @@ class applications extends StatelessWidget {
                           mailSend(context).then((value) {
                             Navigator.of(context).pop();
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text("Заявка отправлена"),
+                              content: Text(LocaleKeys.The_application_has_been_sent.tr()),
                             ));
                           });
                         }
@@ -234,8 +234,8 @@ class applications extends StatelessWidget {
                       child: SizedBox(
                         height: 50,
                         child: Center(
-                          child: const Text(
-                            'Отправить',
+                          child: Text(
+                            LocaleKeys.Send.tr(),
                             style: TextStyle(fontSize: 21),
                           ),
                         ),
