@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
@@ -117,29 +119,11 @@ class _DefaultPlayerState extends State<DefaultPlayer> {
       videoPlayerController:
           VideoPlayerController.asset('assets/video/video1.MP4'),
     );
+    Timer(Duration(milliseconds: 300), () {
+      flickManager.flickControlManager?.pause();
+    });
   }
 
-  ///If you have subtitle assets
-  Future<ClosedCaptionFile> _loadCaptions() async {
-    final String fileContents = await DefaultAssetBundle.of(context)
-        .loadString('images/bumble_bee_captions.srt');
-    flickManager.flickControlManager!.toggleSubtitle();
-    return SubRipCaptionFile(fileContents);
-  }
-
-  ///If you have subtitle urls
-  // Future<ClosedCaptionFile> _loadCaptions() async {
-  //   final url = Uri.parse('SUBTITLE URL LINK');
-  //   try {
-  //     final data = await http.get(url);
-  //     final srtContent = data.body.toString();
-  //     print(srtContent);
-  //     return SubRipCaptionFile(srtContent);
-  //   } catch (e) {
-  //     print('Failed to get subtitles for ${e}');
-  //     return SubRipCaptionFile('');
-  //   }
-  //}
 
   @override
   void dispose() {
@@ -151,13 +135,7 @@ class _DefaultPlayerState extends State<DefaultPlayer> {
   Widget build(BuildContext context) {
     return VisibilityDetector(
       key: ObjectKey(flickManager),
-      onVisibilityChanged: (visibility) {
-        if (visibility.visibleFraction == 0 && this.mounted) {
-          flickManager.flickControlManager?.autoPause();
-        } else if (visibility.visibleFraction == 1) {
-          flickManager.flickControlManager?.autoResume();
-        }
-      },
+      onVisibilityChanged: (visibility) {},
       child: Container(
         child: FlickVideoPlayer(
           flickManager: flickManager,

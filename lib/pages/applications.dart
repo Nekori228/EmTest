@@ -38,19 +38,20 @@ class applications extends StatelessWidget {
       await client.connectToServer('smtp.mail.ru', 465, isSecure: true);
       await client.ehlo();
       if (client.serverInfo.supportsAuth(AuthMechanism.plain)) {
-        await client.authenticate('applications23@mail.ru', 'BPwHuTdNHcVXQ3FsgQmL', AuthMechanism.plain);
+        await client.authenticate('applications23@mail.ru', 'fBW4PkxYtqWCuLyjLRg7', AuthMechanism.plain);
       } else if (client.serverInfo.supportsAuth(AuthMechanism.login)) {
-        await client.authenticate('applications23@mail.ru', 'BPwHuTdNHcVXQ3FsgQmL', AuthMechanism.login);
+        await client.authenticate('applications23@mail.ru', 'fBW4PkxYtqWCuLyjLRg7', AuthMechanism.login);
       } else {
         return;
       }
-
       final builder = MessageBuilder.prepareMultipartAlternativeMessage(
-        plainText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
-        htmlText: '${descriptionController.text} ${selectedValue} ${selectedValue2}',
+        plainText: 'Заявка на поломку оборудования',
+        htmlText:
+            'Заявка на поломку оборудования <br/> Устройство: ${selectedValue}<br/>Причина: ${selectedValue2}<br/>Сообщение: ${descriptionController.text}',
       )
         ..from = [MailAddress('Application', 'applications23@mail.ru')]
-        ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')];
+        ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')]
+        ..subject = 'Поломка оборудования';
 
       final mimeMessage = builder.buildMimeMessage();
       final sendResponse = await client.sendMessage(mimeMessage);

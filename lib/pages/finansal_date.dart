@@ -104,21 +104,25 @@ class _downloaderState extends State<downloader> {
                 itemCount: files.length,
                 itemBuilder: (context, index) {
                   final file = files[index];
-                  return TextButton(
-                    style: ElevatedButton.styleFrom(
-
-                      primary: Colors.white.withOpacity(0), // Background color
-                    ),
-                    onPressed: () => openFile(file),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
-                      leading: Icon(
-                          Icons.picture_as_pdf,
-                          color: Colors.black,
+                  return Column(
+                    children: [
+                      TextButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white.withOpacity(0), // Background color
                         ),
-                      title: Text(nameList[index].toString()),
-                      trailing: Text(growableList[index].toString()),
-                    ),
+                        onPressed: () => openFile(file),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
+                          leading: Icon(
+                              Icons.picture_as_pdf,
+                              color: Colors.black,
+                            ),
+                          title: Text(nameList[index].toString()),
+                          trailing: Text(growableList[index].toString()),
+                        ),
+                      ),
+                      Divider(height: 2, thickness: 2, color: Color(0xffD9D9D9),)
+                    ],
                   );
                 },
               );

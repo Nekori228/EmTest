@@ -18,12 +18,28 @@ import 'bio.dart';
 import 'intro_test.dart';
 import 'material_contant_page1.dart';
 
-class office extends StatelessWidget {
+class office extends StatefulWidget {
   const office({Key? key}) : super(key: key);
 
+  @override
+  State<office> createState() => _officeState();
+}
+
+class _officeState extends State<office> {
   void onSelectTab(int index) {
     if (selectedPage == index) return;
     selectedPage = index;
+  }
+
+  Future getImage() async {
+    await ImagesPicker.pick(
+      count: 1,
+      pickType: PickType.image,
+    ).then((value) {
+      setState(() {
+        prefs.setString('avatar', value?.first.path.toString());
+      });
+    });
   }
 
   @override
@@ -41,7 +57,9 @@ class office extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                getImage();
+              },
               child: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.grey,
@@ -80,8 +98,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => bio_info()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => bio_info()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -119,8 +136,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => sale_card()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => sale_card()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -158,8 +174,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => date()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => date()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -197,8 +212,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => applications()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => applications()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -236,8 +250,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => history()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => history()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -275,10 +288,7 @@ class office extends StatelessWidget {
                   elevation: MaterialStateProperty.all(0),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => password_change()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => password_change()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -317,8 +327,7 @@ class office extends StatelessWidget {
                 ),
                 onPressed: () {
                   prefs.remove('user');
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => MyApp()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
                 },
                 child: SizedBox(
                   width: 400,
@@ -379,34 +388,17 @@ class acc_photo extends StatefulWidget {
 }
 
 class _acc_photoState extends State<acc_photo> {
-  Future getImage() async {
-    await ImagesPicker.pick(
-      count: 1,
-      pickType: PickType.image,
-    ).then((value) {
-      setState(() {
-        prefs.setString('avatar', value?.first.path.toString());
-        print(value?.first.path.toString());
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        getImage();
-      },
-      child: Container(
-        height: 400,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-            image: prefs.getString('avatar') != null
-                ? FileImage(File(prefs.getString('avatar')))
-                : AssetImage('assets/images/no_avatar.png') as ImageProvider,
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      height: 400,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(
+          image: prefs.getString('avatar') != null
+              ? FileImage(File(prefs.getString('avatar')))
+              : AssetImage('assets/images/no_avatar.png') as ImageProvider,
+          fit: BoxFit.cover,
         ),
       ),
     );
