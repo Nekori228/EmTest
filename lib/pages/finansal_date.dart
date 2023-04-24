@@ -18,7 +18,7 @@ class date extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.grey),
           backgroundColor: Colors.white,
           title: Text(
-            LocaleKeys.My_financia_data.tr(),
+            LocaleKeys.financia_data.tr(),
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
@@ -72,36 +72,6 @@ class date extends StatelessWidget {
   }
 }
 
-class pdf_block extends StatelessWidget {
-  const pdf_block({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 350,
-      height: 50,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Icon(Icons.picture_as_pdf),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: Text(
-                  'Октябрь - расчётный лист',
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-            ],
-          ),
-          Text('10/11/2022'),
-        ],
-      ),
-    );
-  }
-}
-
 class downloader extends StatefulWidget {
   const downloader({Key? key}) : super(key: key);
 
@@ -111,7 +81,8 @@ class downloader extends StatefulWidget {
 
 class _downloaderState extends State<downloader> {
   late Future<ListResult> futureFiles;
-  final growableList = ['10/01/2023', '10/02/2023', '10/03/2023', '10/04/2023', '10/05/2023'];
+  final growableList = ['10/02/2023', '10/03/2023', '10/04/2023', '10/05/2023', '10/06/2023'];
+  final nameList = ['Январь - расчётный лист', 'Февраль - расчётный лист', 'Март - расчётный лист', 'Апрель - расчётный лист', 'Май - расчётный лист'];
 
   @override
   void initState() {
@@ -133,22 +104,19 @@ class _downloaderState extends State<downloader> {
                 itemCount: files.length,
                 itemBuilder: (context, index) {
                   final file = files[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Color(0xFFD9D9D9)),
-                      ),
+                  return TextButton(
+                    style: ElevatedButton.styleFrom(
+
+                      primary: Colors.white.withOpacity(0), // Background color
                     ),
+                    onPressed: () => openFile(file),
                     child: ListTile(
                       contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
-                      leading: IconButton(
-                        icon: Icon(
+                      leading: Icon(
                           Icons.picture_as_pdf,
                           color: Colors.black,
                         ),
-                        onPressed: () => openFile(file),
-                      ),
-                      title: Text(file.name),
+                      title: Text(nameList[index].toString()),
                       trailing: Text(growableList[index].toString()),
                     ),
                   );

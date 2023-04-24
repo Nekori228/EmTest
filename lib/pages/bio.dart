@@ -49,7 +49,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Пол', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Gender.tr(), style: TextStyle(fontSize: 17)),
                     Text(user['Пол'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -60,7 +60,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Дата рождения', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Date_of_birth.tr(), style: TextStyle(fontSize: 17)),
                     Text(
                         '${(user['Дата рождения'] as Timestamp).toDate().day.toString().length == 1 ? '0' + (user['Дата рождения'] as Timestamp).toDate().day.toString() : (user['Дата рождения'] as Timestamp).toDate().day.toString()}.'
                         '${(user['Дата рождения'] as Timestamp).toDate().month.toString().length == 1 ? '0' + (user['Дата рождения'] as Timestamp).toDate().month.toString() : (user['Дата рождения'] as Timestamp).toDate().month.toString()}.${(user['Дата рождения'] as Timestamp).toDate().year.toString()}',
@@ -74,7 +74,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(child: Text('Место проживания', style: TextStyle(fontSize: 17))),
+                    Expanded(child: Text(LocaleKeys.Place_of_residence.tr(), style: TextStyle(fontSize: 17))),
                     Text(user['Место проживания'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -85,7 +85,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Компания', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Company.tr(), style: TextStyle(fontSize: 17)),
                     Text(user['Компания'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -96,7 +96,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Дата приёма', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Date_of_admission.tr(), style: TextStyle(fontSize: 17)),
                     Text(
                         '${(user['Дата приёма'] as Timestamp).toDate().day.toString().length == 1 ? '0' + (user['Дата приёма'] as Timestamp).toDate().day.toString() : (user['Дата приёма'] as Timestamp).toDate().day.toString()}.'
                         '${(user['Дата приёма'] as Timestamp).toDate().month.toString().length == 1 ? '0' + (user['Дата приёма'] as Timestamp).toDate().month.toString() : (user['Дата приёма'] as Timestamp).toDate().month.toString()}.${(user['Дата приёма'] as Timestamp).toDate().year.toString()}',
@@ -110,7 +110,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Эл. почта', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Email_small.tr(), style: TextStyle(fontSize: 17)),
                     Text(user['Адрес электронной почты'], style: TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -121,7 +121,7 @@ class bio_info extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Мобильный телефон', style: TextStyle(fontSize: 17)),
+                    Text(LocaleKeys.Mobile_phone.tr(), style: TextStyle(fontSize: 17)),
                     Text(user['Мобильный телефон'].toString(), style: TextStyle(fontSize: 15)),
                   ],
                 ),

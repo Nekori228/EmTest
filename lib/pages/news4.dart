@@ -90,9 +90,6 @@ class news_four extends StatelessWidget {
                           text: '\n\n' + LocaleKeys.Oksana_will.tr(),
                         ),
                         TextSpan(
-                          text: '\n' + LocaleKeys.Oksana_will.tr(),
-                        ),
-                        TextSpan(
                           text: '\n' + LocaleKeys.importance.tr(),
                         ),
                         TextSpan(

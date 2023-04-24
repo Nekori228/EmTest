@@ -77,7 +77,7 @@ class news_five extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(text: LocaleKeys.More_than.tr()),
                         TextSpan(
-                          text: 'INsport',
+                          text: ' INsport',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         TextSpan(text: LocaleKeys.the_main.tr()),

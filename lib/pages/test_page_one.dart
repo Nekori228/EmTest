@@ -78,11 +78,13 @@ class _quiz_oneState extends State<quiz_one> {
       body: Center(
         child: Column(
           children: <Widget>[
-            progressBar(
-              icons: _icons,
-              count: _questionIndex,
-              total: data.questions.length,
-            ),
+            _questionIndex != data.questions.length
+                ? progressBar(
+                    icons: _icons,
+                    count: _questionIndex,
+                    total: data.questions.length,
+                  )
+                : Container(),
             _questionIndex < data.questions.length
                 ? quiz(
                     index: _questionIndex,
