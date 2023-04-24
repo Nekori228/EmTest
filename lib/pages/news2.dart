@@ -74,9 +74,7 @@ class news_two extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.black, fontSize: 19, height: 1.3),
                       children: <TextSpan>[
-                        TextSpan(
-                          text: LocaleKeys.We_live.tr() + '\n\n',
-                        ),
+
                         TextSpan(
                           text: LocaleKeys.In_order_to.tr() + '\n\n',
                         ),
