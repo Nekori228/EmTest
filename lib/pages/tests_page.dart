@@ -13,9 +13,14 @@ import '../generated/locale_keys.g.dart';
 import 'info_regist.dart';
 import 'login_screen.dart';
 
-class tests extends StatelessWidget {
+class tests extends StatefulWidget {
   const tests({Key? key}) : super(key: key);
 
+  @override
+  State<tests> createState() => _testsState();
+}
+
+class _testsState extends State<tests> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +53,39 @@ class tests extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Center(
-          child: Column(
-            children: [tests_block1(), tests_block2(), tests_block3(), tests_block4(), tests_block5(), tests_block6()],
-          ),
+          child: prefs.getString('isAuth') == "1"
+              ? Column(
+                  children: [tests_block1(), tests_block2(), tests_block3(), tests_block4(), tests_block5(), tests_block6()],
+                )
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width * 0.4,
+                    ),
+                    Text(
+                      'Для прохождения теста необходимо войти',
+                      style: TextStyle(fontSize: 22),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width * 0.25,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.85,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          selectedPage = 3;
+                          callbackSetStateKtp(() {});
+                        },
+                        child: Text('Войти'),
+                        style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xff0167FF))),
+                      ),
+                    )
+                  ],
+                ),
         ),
       ),
     );
@@ -71,9 +106,7 @@ class tests_block1 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_one())); //LoginScreen}
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_one())); //LoginScreen}
         },
         child: SizedBox(
           width: 380,
@@ -116,9 +149,7 @@ class tests_block2 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_two())); //LoginScreen
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_two())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -161,9 +192,7 @@ class tests_block3 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_three())); //LoginScreen
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_three())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -206,9 +235,7 @@ class tests_block4 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_four())); //LoginScreen
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_four())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -251,9 +278,7 @@ class tests_block5 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_five())); //LoginScreen
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_five())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -296,9 +321,7 @@ class tests_block6 extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          if (prefs.getString('isAuth') == "1") {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_six())); //LoginScreen
-          }
+          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_six())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
