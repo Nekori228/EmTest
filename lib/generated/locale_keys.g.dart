@@ -193,4 +193,5 @@ abstract class  LocaleKeys {
   static const Send = 'Send';
   static const financia_data = 'financia_data';
   static const The_application_has_been_sent = 'The_application_has_been_sent';
+  static const To_pass = 'To_pass';
 }

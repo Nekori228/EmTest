@@ -55,7 +55,14 @@ class _testsState extends State<tests> {
         child: Center(
           child: prefs.getString('isAuth') == "1"
               ? Column(
-                  children: [tests_block1(), tests_block2(), tests_block3(), tests_block4(), tests_block5(), tests_block6()],
+                  children: [
+                    tests_block1(),
+                    tests_block2(),
+                    tests_block3(),
+                    tests_block4(),
+                    tests_block5(),
+                    tests_block6()
+                  ],
                 )
               : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -65,25 +72,29 @@ class _testsState extends State<tests> {
                       height: MediaQuery.of(context).size.width * 0.4,
                     ),
                     Text(
-                      'Для прохождения теста необходимо войти',
+                      LocaleKeys.To_pass.tr(),
                       style: TextStyle(fontSize: 22),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.width * 0.25,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.85,
-                      height: 50,
+                    SizedBox(
+                      width: 330,
+                      height: 55,
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            textStyle: const TextStyle(fontSize: 21),
+                            backgroundColor: Color.fromRGBO(1, 103, 255, 1.0),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15))),
                         onPressed: () {
                           selectedPage = 3;
                           callbackSetStateKtp(() {});
                         },
-                        child: Text('Войти'),
-                        style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xff0167FF))),
+                        child: Center(child: Text(LocaleKeys.Enter.tr())),
                       ),
-                    )
+                    ),
                   ],
                 ),
         ),
@@ -101,12 +112,17 @@ class tests_block1 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_one())); //LoginScreen}
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_one())); //LoginScreen}
         },
         child: SizedBox(
           width: 380,
@@ -144,12 +160,17 @@ class tests_block2 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_two())); //LoginScreen
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_two())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -187,12 +208,17 @@ class tests_block3 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_three())); //LoginScreen
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_three())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -230,12 +256,17 @@ class tests_block4 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_four())); //LoginScreen
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_four())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -273,12 +304,17 @@ class tests_block5 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_five())); //LoginScreen
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_five())); //LoginScreen
         },
         child: SizedBox(
           width: 380,
@@ -316,12 +352,17 @@ class tests_block6 extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), side: BorderSide(color: Colors.grey))),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+              side: BorderSide(color: Colors.grey))),
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shadowColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => quiz_six())); //LoginScreen
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => quiz_six())); //LoginScreen
         },
         child: SizedBox(
           width: 380,

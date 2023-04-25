@@ -126,7 +126,7 @@ class CodegenLoader extends AssetLoader{
   "Earlier": "Ранее источники уже сообщали, что обновлённые магазины Zara получат название Maag. Отмечалось, что новый владелец российской части бизнеса Inditex - DaherGroup - может открыть первые магазины под своими брендами весной 2023 года. Одной из первых под вывеской Maag станет точка в московском торговом центре «Авиапарк» с женской, мужской и детской одеждой.",
   "In_March": "В марте прошлого года Inditex принял решение временно прекратить работу в России. В октябре компания, у которой насчитывалось более 500 магазинов в стране, заявила о соглашении по продаже российского бизнеса ливанской группе Daher.",
   "INsport_online": "INsport – спортивные онлайн-тренировки с коллегами",
-  "More_than": "Больше месяца назад для всех сотрудников АО «Новая Мода» был запущен проект ",
+  "More_than": "Больше месяца назад для всех сотрудников АО «Новая Мода» был запущен проект",
   "the_main": " главной целью которого является ",
   "maintaining": "поддержание здоровья и физической формы сотрудников ",
   "and_also": "а также ",
@@ -206,7 +206,8 @@ class CodegenLoader extends AssetLoader{
   "The_cause_of_the_breakdown": "Причина поломки",
   "Message": "Сообщение",
   "Send": "Отправить",
-  "The_application_has_been_sent": "Заявка отправлена"
+  "The_application_has_been_sent": "Заявка отправлена",
+  "To_pass": "Для прохождения теста необходимо войти"
 };
 static const Map<String,dynamic> en = {
   "News": "News",
@@ -360,7 +361,7 @@ static const Map<String,dynamic> en = {
   "Nikita_Kucherov": "Nikita Kucherov",
   "OPEN_TRAININGS": "OPEN TRAININGS: effective presentation in virtual reality",
   "On_April": "On April 13, a meeting was held on the Take Back Program within the framework of the project.",
-  "Open_trainings": "  «Open trainings» ",
+  "Open_trainings": " «Open trainings» ",
   "Diana": "Diana Idiyatova, HR Analyst and sustainability driver at the company, and special guest Daria Alekseeva, founder of the Second Wind Foundation, spoke about clothing recycling in Russia and the results of TVR projects in our company.",
   "The_training": "The training was attended by 317 people. Based on the results of feedback",
   "of": " 91% of them are ready to recommend this training to colleagues!",
@@ -400,7 +401,8 @@ static const Map<String,dynamic> en = {
   "The_cause_of_the_breakdown": "The cause of the breakdown",
   "Message": "Message",
   "Send": "Send",
-  "The_application_has_been_sent": "The application has been sent"
+  "The_application_has_been_sent": "The application has been sent",
+  "To_pass": "To pass the test, you need to log in"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "en": en};
 }
