@@ -47,7 +47,7 @@ class history extends StatelessWidget {
               return Row(
                 children: [
                   Text(
-                    '0' + (index + 1).toString(),
+                    (index + 1).toString().length == 1 ? '0' + (index + 1).toString() : (index + 1).toString(),
                     style: TextStyle(color: Color(0xFFB5B5B5), fontFamily: 'SourceSansPro', fontSize: 20),
                   ),
                   Expanded(

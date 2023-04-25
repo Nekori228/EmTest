@@ -28,6 +28,7 @@ class applications extends StatelessWidget {
   ];
 
   var descriptionController = TextEditingController();
+  var kodController = TextEditingController();
 
   String? selectedValue;
   String? selectedValue2;
@@ -47,7 +48,8 @@ class applications extends StatelessWidget {
       final builder = MessageBuilder.prepareMultipartAlternativeMessage(
         plainText: 'Заявка на поломку оборудования',
         htmlText:
-            'Заявка на поломку оборудования <br/> Устройство: ${selectedValue}<br/>Причина: ${selectedValue2}<br/>Сообщение: ${descriptionController.text}',
+            'Заявка на поломку оборудования <br/> Устройство: ${selectedValue}<br/>Причина: ${selectedValue2}<br/>Сообщение: '
+                '${descriptionController.text}<br/>Код магазина: ${kodController.text}',
       )
         ..from = [MailAddress('Application', 'applications23@mail.ru')]
         ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')]
@@ -211,7 +213,16 @@ class applications extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    const SizedBox(height: 0),
+                    TextField(
+                      controller: kodController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Код магазина",
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Color.fromRGBO(1, 103, 255, 1.0)),

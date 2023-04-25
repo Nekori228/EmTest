@@ -119,7 +119,7 @@ class _DefaultPlayerState extends State<DefaultPlayer> {
       videoPlayerController:
           VideoPlayerController.asset('assets/video/video1.MP4'),
     );
-    Timer(Duration(milliseconds: 300), () {
+    Timer(Duration(milliseconds: 500), () {
       flickManager.flickControlManager?.pause();
     });
   }
