@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emtest/globals.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../generated/locale_keys.g.dart';
 
 class result extends StatelessWidget {
   final int count;
@@ -31,10 +34,10 @@ class result extends StatelessWidget {
     String msg = '';
 
     if (0 <= count && count <= 3) {
-      msg = 'Вы не прошли тест!';
+      msg = LocaleKeys.You_failed.tr();
       saveResult();
     } else if ((2 <= count && count <= 7)) {
-      msg = 'Вы прошли тест!';
+      msg = LocaleKeys.You_have_passed.tr();
       saveResult();
     }
     return Column(
@@ -45,7 +48,7 @@ class result extends StatelessWidget {
           style: TextStyle(color: Colors.black, fontSize: 26, fontFamily: 'SourceSansPro'),
         ),
         Text(
-          'Количество правильных ответов: $count',
+          LocaleKeys.Number_of_correct_answers.tr() + ' $count',
           style: TextStyle(color: Colors.black, fontSize: 22, fontFamily: 'SourceSansPro'),
         ),
         SizedBox(height: 50),
@@ -64,8 +67,8 @@ class result extends StatelessWidget {
             child: SizedBox(
               height: 50,
               child: Center(
-                child: const Text(
-                  'Пройти тест еще раз',
+                child: Text(
+                  LocaleKeys.Take_the_test_again.tr(),
                   style: TextStyle(fontSize: 21, color: Colors.white),
                 ),
               ),
@@ -90,8 +93,8 @@ class result extends StatelessWidget {
             child: SizedBox(
               height: 50,
               child: Center(
-                child: const Text(
-                  'Перейти к списку тестов',
+                child: Text(
+                  LocaleKeys.Go_to_the_list_of_tests.tr(),
                   style: TextStyle(fontSize: 21, color: Colors.white),
                 ),
               ),

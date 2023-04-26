@@ -194,4 +194,10 @@ abstract class  LocaleKeys {
   static const financia_data = 'financia_data';
   static const The_application_has_been_sent = 'The_application_has_been_sent';
   static const To_pass = 'To_pass';
+  static const Store_code = 'Store_code';
+  static const Take_the_test_again = 'Take_the_test_again';
+  static const Go_to_the_list_of_tests = 'Go_to_the_list_of_tests';
+  static const Number_of_correct_answers = 'Number_of_correct_answers';
+  static const You_failed = 'You_failed';
+  static const You_have_passed = 'You_have_passed';
 }

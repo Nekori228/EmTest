@@ -52,7 +52,7 @@ class applications extends StatelessWidget {
                 '${descriptionController.text}<br/>Код магазина: ${kodController.text}',
       )
         ..from = [MailAddress('Application', 'applications23@mail.ru')]
-        ..to = [MailAddress('Recipient Name', 'kalichak_eo@mail.ru')]
+        ..to = [MailAddress('Recipient Name', 'sophia.romanova0203@mail.ru')]
         ..subject = 'Поломка оборудования';
 
       final mimeMessage = builder.buildMimeMessage();
@@ -217,7 +217,7 @@ class applications extends StatelessWidget {
                       controller: kodController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Код магазина",
+                        hintText: LocaleKeys.Store_code.tr(),
                       ),
                     ),
                     SizedBox(

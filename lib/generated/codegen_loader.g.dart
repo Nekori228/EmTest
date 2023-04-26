@@ -207,7 +207,13 @@ class CodegenLoader extends AssetLoader{
   "Message": "Сообщение",
   "Send": "Отправить",
   "The_application_has_been_sent": "Заявка отправлена",
-  "To_pass": "Для прохождения теста необходимо войти"
+  "To_pass": "Для прохождения теста необходимо войти",
+  "Store_code": "Код магазина",
+  "Take_the_test_again": "Пройти тест еще раз",
+  "Go_to_the_list_of_tests": "Перейти к списку тестов",
+  "Number_of_correct_answers": "Количество правильных ответов:",
+  "You_have_passed": "Вы прошли тест!",
+  "You_failed": "Вы не прошли тест!"
 };
 static const Map<String,dynamic> en = {
   "News": "News",
@@ -402,7 +408,13 @@ static const Map<String,dynamic> en = {
   "Message": "Message",
   "Send": "Send",
   "The_application_has_been_sent": "The application has been sent",
-  "To_pass": "To pass the test, you need to log in"
+  "To_pass": "To pass the test, you need to log in",
+  "Store_code": "Store code",
+  "Take_the_test_again": "Take the test again",
+  "Go_to_the_list_of_tests": "Go to the list of tests",
+  "Number_of_correct_answers": "Number of correct answers:",
+  "You_have_passed": "You have passed the test!",
+  "You_failed": "You failed the test!"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "en": en};
 }

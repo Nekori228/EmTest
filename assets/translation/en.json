@@ -191,5 +191,11 @@
   "Message": "Message",
   "Send": "Send",
   "The_application_has_been_sent": "The application has been sent",
-  "To_pass": "To pass the test, you need to log in"
+  "To_pass": "To pass the test, you need to log in",
+  "Store_code": "Store code",
+  "Take_the_test_again": "Take the test again",
+  "Go_to_the_list_of_tests": "Go to the list of tests",
+  "Number_of_correct_answers": "Number of correct answers:",
+  "You_have_passed": "You have passed the test!",
+  "You_failed": "You failed the test!"
 }
